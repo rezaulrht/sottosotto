@@ -1,0 +1,88 @@
+.page {
+  padding-top: calc(var(--header-h) + var(--space-7));
+  padding-bottom: var(--space-10);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.title {
+  margin-bottom: var(--space-5);
+}
+
+.lead {
+  margin-bottom: var(--space-8);
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Index */
+.cards {
+  display: grid;
+  gap: var(--space-6);
+  padding: 0;
+  list-style: none;
+  counter-reset: proto;
+}
+.card {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.cardTitle {
+  margin-bottom: var(--space-4);
+  font-size: var(--step-h3);
+}
+.cardTitle a {
+  color: var(--color-accent);
+  text-underline-offset: 0.25em;
+}
+.checks {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+}
+
+/* Candle page: dimmed, not black (PAGES.md Menu "Page tone"). */
+.candlePage {
+  background: rgb(12 11 10 / 0.72);
+  /* The dishes' pools of light reach past the cards; never into a sideways scroll. */
+  overflow-x: clip;
+}
+
+.menuGroup + .menuGroup {
+  margin-top: var(--space-9);
+}
+
+.groupTitle {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+.groupTitle small {
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--color-text-muted);
+}
+
+.groupNotes {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-7);
+  font-size: var(--step-small);
+  color: var(--bone-300);
+}
+
+.dishGrid {
+  display: grid;
+  gap: var(--space-8) var(--space-7);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  padding: 0;
+  list-style: none;
+}

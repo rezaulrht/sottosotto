@@ -1,0 +1,42 @@
+{
+  "_about": "Allergen categories and key, exactly as the client's allergy forms list them (decision D20). Do not add, remove, rename or reorder categories, and do not map them to any outside standard. Every menu, dessert and drink item reads its labels from here.",
+  "source": [
+    "Allergy Form April 2026 (client)",
+    "Bar Allergy Form (client)"
+  ],
+  "categories": [
+    "Celery",
+    "Gluten",
+    "Crustaceans",
+    "Eggs",
+    "Fish",
+    "Garlic/Onion",
+    "Lactose",
+    "Molluscs",
+    "Mustard",
+    "Nuts",
+    "Sesame seeds",
+    "Fennel seeds",
+    "Soya",
+    "Citrus"
+  ],
+  "key": {
+    "contains": {
+      "mark": "x",
+      "label": "Contains"
+    },
+    "canBeOmitted": {
+      "mark": "x*",
+      "label": "Can be made without"
+    }
+  },
+  "_keyNote": "Client's wording for x* is: the dish CAN be done without it. The two labels above are a proposal for the site's wording.",
+  "generalNote": "Guests are asked to tell staff about any allergies or intolerances in advance.",
+  "_generalNoteStatus": "Wording from the Update 1 brief. Exact menu wording still pending (OPEN_QUESTIONS Q12).",
+  "itemSchema": {
+    "allergens": "Array of {name, canBeOmitted}. [] means the client's form lists no allergens for this item. null means there is no data at all.",
+    "allergenSource": "\"client\" = from the client's form. \"estimated\" = filled in by the team, not yet confirmed (OPEN_QUESTIONS Q29). null = no data.",
+    "allergenVariants": "Used instead of allergens when one menu item has more than one allergen set (Gelato / Sorbetto). Array of {label, allergens}.",
+    "display": "No data (null) must never be shown as 'no allergens'. Show nothing for the item and rely on the general note."
+  }
+}

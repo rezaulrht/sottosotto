@@ -1,0 +1,227 @@
+{
+  "_about": "Business details for Sotto Sotto. Single source for the header, footer, hero hours chip, Find Us page and booking modal. Any object with \"mock\": true is placeholder data and must be replaced before launch. \"confirmed\": false means the value comes from the current site but still needs the client's sign-off. \"toConfirm\": true means a placeholder taken from the current site that the client must confirm.",
+  "name": "Sotto Sotto",
+  "tagline": "Italian Restaurant in Bath",
+  "website": "https://www.sottosotto.co.uk",
+  "copy": {
+    "_source": "targets/sottosotto-site/index.html (current site). Full copy with line references is in docs/CONTENT.md.",
+    "philosophyShort": "The main characteristic of our cuisine is simplicity. We rely on the quality of our ingredients rather than on elaborate preparation.",
+    "philosophyHeading": "Our Food Is Our Culture",
+    "philosophyFull": [
+      "The main characteristic of our cuisine is simplicity. We rely on the quality of our ingredients rather than on elaborate preparation.",
+      "We also like to offer traditional Italian dishes with a contemporary twist because we strongly believe in those 'Sapori' (flavours).",
+      "With our finest ingredients coming from Italy, and all of our fresh vegetables, seafood and meats sourced locally, we are able to ensure that you get the best quality dining that will exceed your expectations."
+    ],
+    "_philosophyFullNote": "First paragraph uses the footer wording. The menu section of the current site reads \"is it's simplicity\" (typo).",
+    "homeIntro": "Situated just a few steps away from the Roman Baths, the casual warmth of Sotto Sotto invites you to have a fun dining experience.",
+    "bookingNote": "Sotto Sotto is a very small restaurant and booking is strongly recommended.",
+    "emailResponseNote": "We will respond to your email within 24 hours.",
+    "enquiriesHeading": "Enquiries",
+    "careers": {
+      "_source": "Current site index.html lines 383-386 (docs/CONTENT.md section 6). applyText is followed by contact.careersEmail as a link. The button label is new.",
+      "heading": "Careers at Sotto Sotto",
+      "paragraphs": ["We are always looking for dedicated professionals to join our team."],
+      "applyText": "If you are interested in working at Sotto Sotto please apply by sending a brief covering letter, CV and photograph to",
+      "button": "Send your CV"
+    }
+  },
+  "hours": {
+    "_source": "Decision D6 in docs/DECISIONS.md. Matches the current site's footer.",
+    "timezone": "Europe/London",
+    "weekly": {
+      "monday": [],
+      "tuesday": [
+        {
+          "open": "12:00",
+          "close": "14:00"
+        },
+        {
+          "open": "17:00",
+          "close": "22:00"
+        }
+      ],
+      "wednesday": [
+        {
+          "open": "12:00",
+          "close": "14:00"
+        },
+        {
+          "open": "17:00",
+          "close": "22:00"
+        }
+      ],
+      "thursday": [
+        {
+          "open": "12:00",
+          "close": "14:00"
+        },
+        {
+          "open": "17:00",
+          "close": "22:00"
+        }
+      ],
+      "friday": [
+        {
+          "open": "12:00",
+          "close": "14:00"
+        },
+        {
+          "open": "17:00",
+          "close": "22:00"
+        }
+      ],
+      "saturday": [
+        {
+          "open": "12:00",
+          "close": "14:00"
+        },
+        {
+          "open": "17:00",
+          "close": "22:00"
+        }
+      ],
+      "sunday": []
+    },
+    "closures": [
+      {
+        "label": "Christmas Day",
+        "from": "12-25",
+        "to": "12-25",
+        "recurring": "yearly",
+        "confirmed": false,
+        "mock": true
+      },
+      {
+        "label": "January break",
+        "from": "01-01",
+        "to": "01-14",
+        "recurring": "yearly",
+        "confirmed": false,
+        "mock": true
+      }
+    ],
+    "_closuresNote": "MOCK placeholders from the current site's footer (\"closed ... Christmas Day & from 1st - 14th January\"). Holiday closures still to come from the client (OPEN_QUESTIONS Q14).",
+    "_timesNote": "Unknown whether 14:00 and 22:00 are last orders or closing times. See OPEN_QUESTIONS Q13."
+  },
+  "contact": {
+    "_source": "targets/sottosotto-site/index.html, contact section and footer.",
+    "phone": "01225 330236",
+    "phoneE164": "+441225330236",
+    "phoneLabel": "Reservations & Enquiries",
+    "email": "info@sottosotto.co.uk",
+    "emailLabel": "Enquiries only",
+    "careersEmail": "careers@sottosotto.co.uk",
+    "toConfirm": true,
+    "_note": "Placeholders from the current site's index.html, to confirm with the client (decision D24)."
+  },
+  "address": {
+    "mock": true,
+    "line1": "10 North Parade",
+    "city": "Bath",
+    "postcode": "BA2 4AL",
+    "country": "United Kingdom",
+    "_note": "MOCK (decision D23). The current site shows both \"10 N Parade\" (map query) and \"12a North Parade\" (footer, privacy policy). Postcode BA2 4AL appears in both. Real address to come from the client (OPEN_QUESTIONS Q1)."
+  },
+  "geo": {
+    "mock": true,
+    "lat": 51.3807,
+    "lng": -2.3573,
+    "_note": "MOCK. Approximate point on North Parade, not a verified pin. Replace with the client's confirmed map pin."
+  },
+  "parking": [
+    {
+      "name": "Sports and Leisure Centre car park",
+      "address": "2 North Parade Road, Bathwick, Bath BA2 4EU",
+      "note": null,
+      "walkingMinutes": {
+        "value": 4,
+        "mock": true
+      }
+    },
+    {
+      "name": "Manvers Street Car Park",
+      "address": "5A Manvers Street, Bath BA1 1JZ",
+      "note": "Open 24/7",
+      "walkingMinutes": {
+        "value": 6,
+        "mock": true
+      }
+    },
+    {
+      "name": "Bath Cricket Club Public Car Park",
+      "address": null,
+      "addressMissing": true,
+      "note": null,
+      "walkingMinutes": {
+        "value": 4,
+        "mock": true
+      }
+    }
+  ],
+  "gettingHere": [
+    {
+      "mock": true,
+      "mode": "train",
+      "text": "Placeholder: nearest station and walking time."
+    },
+    {
+      "mock": true,
+      "mode": "foot",
+      "text": "Placeholder: a one-line walking direction from the city centre."
+    }
+  ],
+  "social": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/pages/Sotto-Sotto/237906832969452",
+      "confirmed": false,
+      "_note": "Current site href is malformed (ends with ?sk=info and a stray quote character). This is the same page ID with the broken part removed. Not checked live.",
+      "mock": true
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/sottosottobath",
+      "confirmed": false,
+      "_note": "Current site uses the old format https://twitter.com/#!/sottosottobath. Not checked live; the account may be inactive or renamed.",
+      "mock": true
+    }
+  ],
+  "booking": {
+    "provider": "Hospres",
+    "phase": 1,
+    "widgetUrl": "https://app.hospres.com/YO7Z73/reserve",
+    "_note": "Phase 1: this URL in an iframe inside our own modal. Phase 2: custom UI on the Hospres API once the client provides access."
+  },
+  "analytics": {
+    "ga4MeasurementId": "G-2TMCMCTHRD",
+    "requiresConsent": true,
+    "_note": "GA4 ID was seen in the live network capture (investigations/sottosotto/ledger.md), not in the downloaded index.html. The retired Universal Analytics tag UA-46473274-1 is not carried over."
+  },
+  "legal": {
+    "privacyPolicyLastUpdated": "October 2018",
+    "_note": "Policy text is in docs/CONTENT.md and is used exactly as on the current site, with no changes (decision D25)."
+  },
+  "_parkingNote": "Names and addresses from the client (2026-11-14). Walking times are MOCK team estimates (OPEN_QUESTIONS Q30). The Bath Cricket Club address was not provided; show the card without an address until it is.",
+  "brand": {
+    "mock": true,
+    "logo": null,
+    "colours": null,
+    "fonts": null,
+    "_note": "MOCK. No logo files or brand colours/fonts from the client yet. Use the placeholders proposed in docs/DESIGN_SYSTEM.md (OPEN_QUESTIONS Q9, Q31)."
+  },
+  "media": {
+    "heroVideo": {
+      "mock": true,
+      "src": "hero",
+      "poster": "hero",
+      "_note": "Key in src/content/video-manifest.json (npm run video). Placeholder loop made from the dish photos (D51) until the client supplies the video (D9)."
+    },
+    "bookingVideo": {
+      "mock": true,
+      "src": null,
+      "poster": null,
+      "_note": "Optional. Placeholder until supplied."
+    }
+  },
+  "allergensFile": "allergens.json"
+}

@@ -1,0 +1,208 @@
+{
+  "_about": "Desserts and cheese. Source: the client's PDF dessert menu (final per the client), transcribed from the project brief. Names, descriptions and prices are unchanged by Update 1: desserts and cheese are not on the November 2026 menu but are still served (prices to confirm, OPEN_QUESTIONS Q27). Tags and allergens are exactly as given and are never inferred. Allergens: Allergy Form April 2026 (client).",
+  "currency": "GBP",
+  "imageSourceDir": "../sotto sotto assets/",
+  "tagLegend": {
+    "v": "Vegetarian",
+    "n": "Contains nuts or traces of nuts"
+  },
+  "sections": [
+    {
+      "id": "desserts",
+      "nameIt": "Peccati di gola",
+      "nameEn": "Desserts",
+      "items": [
+        {
+          "id": "mousse-al-cioccolato-e-amaretto-disaronno",
+          "name": "Mousse al cioccolato e Amaretto Disaronno",
+          "description": "Dark chocolate mousse with Amaretto Disaronno",
+          "price": 9.75,
+          "tags": [
+            "n"
+          ],
+          "image": "Moody Chocolate Mousse on Charcoal Plate.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Eggs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "semifreddo-alla-nocciola",
+          "name": "Semifreddo alla nocciola",
+          "description": "Hazelnut semifreddo served with chocolate sauce",
+          "price": 9.5,
+          "tags": [
+            "n"
+          ],
+          "image": "Dramatic Chocolate Drizzle Dessert.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Eggs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "tiramisu",
+          "name": "Tiramisu",
+          "description": "\"Pick me up\" — the classic",
+          "price": 9.75,
+          "tags": [],
+          "image": "Cocoa-Dusted Tiramisu on a Glowing Plate.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Eggs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "pannacotta-alla-vaniglia",
+          "name": "Pannacotta alla vaniglia",
+          "description": "Vanilla pannacotta with locally sourced wild berries",
+          "price": 9.25,
+          "tags": [],
+          "image": "Vanilla Panna Cotta with Berries.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "tartufi-di-cioccolato",
+          "name": "Tartufi di cioccolato",
+          "description": "Selection of handmade chocolate truffles",
+          "price": 8.25,
+          "tags": [
+            "n"
+          ],
+          "image": "Pistachio and Cocoa Truffle Plate.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "biscotti",
+          "name": "Biscotti",
+          "description": "Almond cantuccini biscuits",
+          "price": 5.75,
+          "tags": [
+            "n"
+          ],
+          "image": "Powdered Sugar Biscotti Starflower.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Eggs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "gelato-sorbetto",
+          "name": "Gelato / Sorbetto",
+          "description": "Chef's homemade ice cream or sorbet",
+          "price": 7.5,
+          "tags": [],
+          "image": "Realistic Ice Cream Sundae in Frosted Glass.png",
+          "photoMatch": "likely",
+          "allergens": null,
+          "allergenVariants": [
+            {
+              "label": "Gelato",
+              "allergens": [
+                {
+                  "name": "Lactose",
+                  "canBeOmitted": false
+                }
+              ]
+            },
+            {
+              "label": "Sorbetto",
+              "allergens": []
+            }
+          ],
+          "allergenSource": "client",
+          "_allergenNote": "The client's form lists Gelato and Sorbet separately; the menu has one item. Both sets are shown inside this item."
+        }
+      ]
+    },
+    {
+      "id": "cheese",
+      "nameIt": "Formaggi",
+      "nameEn": "Cheese",
+      "items": [
+        {
+          "id": "formaggi-con-marmellata-di-cipolle",
+          "name": "Formaggi con marmellata di cipolle",
+          "description": "Italian cheeses served with red onion marmalade",
+          "price": 12.0,
+          "tags": [],
+          "image": "Rustic Cheese Board with Caramelized Onions.png",
+          "photoMatch": "clear",
+          "allergens": null,
+          "allergenSource": null,
+          "_allergenNote": "Not on the client's allergy form. Shows no allergen labels until the client provides them (OPEN_QUESTIONS Q28)."
+        }
+      ]
+    }
+  ]
+}

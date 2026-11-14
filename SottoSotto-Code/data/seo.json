@@ -1,0 +1,36 @@
+{
+  "_about": "Page titles and meta descriptions (D43). MOCK: written by the team from facts already in site.json; the client has not supplied or approved them (OPEN_QUESTIONS Q21). No award claims (D15).",
+  "titleTemplate": "%s · Sotto Sotto",
+  "pages": {
+    "home": {
+      "title": "Sotto Sotto · Italian Restaurant in Bath",
+      "description": "Sotto Sotto is an Italian restaurant on North Parade in Bath. It is a very small restaurant and booking is strongly recommended.",
+      "mock": true
+    },
+    "menu": {
+      "title": "Menu",
+      "description": "Food, desserts, wine and bar menu at Sotto Sotto, Italian restaurant in Bath.",
+      "mock": true
+    },
+    "venue": {
+      "title": "The Venue",
+      "description": "Sotto Sotto, an Italian restaurant on North Parade in Bath.",
+      "mock": true
+    },
+    "findUs": {
+      "title": "Find Us",
+      "description": "Address, phone, email and nearby parking for Sotto Sotto, Italian restaurant in Bath.",
+      "mock": true
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Sotto Sotto privacy policy.",
+      "mock": true
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "This page does not exist.",
+      "mock": true
+    }
+  }
+}

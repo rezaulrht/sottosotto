@@ -1,0 +1,114 @@
+/* Layers, back to front: poster → video → overlay → grain (PAGES.md Home §1). */
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--ink-900);
+  /* Fades into the concrete wall below, so the hero has no hard bottom edge. */
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 10rem), transparent);
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  background: var(--ink-900);
+}
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+.media[data-video-shown] .video {
+  opacity: 1;
+}
+
+/*
+ * Dark overlay: ink-900 at 55% across the frame (spec: 50–60%), deepening to solid at the
+ * bottom so the headline sits on near-black and the hero blends into the page.
+ */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, var(--ink-900) 0%, rgb(18 17 16 / 0.75) 30%, transparent 65%),
+    linear-gradient(to bottom, rgb(18 17 16 / 0.6), transparent 25%), rgb(18 17 16 / 0.55);
+}
+
+.grain {
+  position: absolute;
+  inset: -40px;
+  background: url('/textures/grain.png') repeat;
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .grain {
+    animation: grain 0.8s steps(4) infinite;
+  }
+  :global([data-motion-paused]) .grain {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-17px, 9px, 0);
+  }
+  50% {
+    transform: translate3d(11px, -21px, 0);
+  }
+  75% {
+    transform: translate3d(-7px, 23px, 0);
+  }
+}
+
+/* Pause / play: WCAG 2.2.2 (motion over 5 s). 44 px target. */
+.toggle {
+  position: absolute;
+  z-index: 2;
+  left: var(--margin);
+  bottom: var(--space-5);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--bone-100) 35%, transparent);
+  border-radius: var(--radius-full);
+  background: rgb(18 17 16 / 0.6);
+  color: var(--bone-100);
+  transition: border-color var(--dur-micro) var(--ease-out);
+}
+.toggle:hover {
+  border-color: var(--color-accent);
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+}
+.icon[data-icon='pause'] {
+  border-inline: 3px solid currentColor;
+  width: 10px;
+}
+.icon[data-icon='play'] {
+  margin-left: 3px;
+  border-left: 11px solid currentColor;
+  border-block: 6.5px solid transparent;
+  width: 0;
+  height: 0;
+}

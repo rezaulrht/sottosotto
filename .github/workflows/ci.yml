@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: SottoSotto-Code
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: SottoSotto-Code/.nvmrc
+          cache: npm
+          cache-dependency-path: SottoSotto-Code/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - name: Build (staging)
+        run: npm run build:staging
+      - name: Production build must refuse mock data
+        run: |
+          if npm run build:production; then
+            echo "Production build passed: no flagged values left."
+          else
+            echo "::notice::Production build blocked by flagged content (expected until the client answers)."
+          fi
+      - name: Playwright smoke tests
+        run: |
+          npx playwright install --with-deps chromium
+          npm run build:staging
+          npm run test:e2e

@@ -1,0 +1,775 @@
+{
+  "_about": "Main menu. Source: Food Menu November 26 (client, received 2026-11-14), which replaces the website PDF (decision D17). Names, descriptions and prices are the client's own wording. Tags (v)/(n) and allergens are exactly as given and are never inferred. Allergen categories and key: allergens.json.",
+  "currency": "GBP",
+  "imageSourceDir": "../sotto sotto assets/",
+  "tagLegend": {
+    "v": "Vegetarian",
+    "n": "Contains nuts or traces of nuts"
+  },
+  "notes": {
+    "verbatim": false,
+    "allergy": "Guests are asked to tell staff about any allergies or intolerances in advance.",
+    "sourcing": "Fresh local ingredients; Italian products imported from Italy.",
+    "_note": "Both notes are paraphrases from the project briefs. Exact menu wording is still needed (OPEN_QUESTIONS Q12). The allergy note is also held in allergens.json; read it from there."
+  },
+  "sections": [
+    {
+      "id": "starters",
+      "nameIt": "A per cominciare",
+      "nameEn": "To start",
+      "items": [
+        {
+          "id": "bruschetta-ai-gamberoni",
+          "name": "Bruschetta ai gamberoni",
+          "description": "Marinated king prawns tossed with an infusion of Mediterranean flavours and fresh chilli on Sotto Sotto focaccia bread",
+          "price": 12.95,
+          "tags": [],
+          "image": "Shrimp Toasts on Warm Wood.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Crustaceans",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "portobello-alla-griglia-con-caprino",
+          "name": "Portobello alla griglia con caprino",
+          "description": "Grilled portobello mushroom topped with crumbled goat cheese, walnuts and aged balsamic reduction",
+          "price": 11.75,
+          "tags": [
+            "v",
+            "n"
+          ],
+          "image": "Dramatic Truffle-Stuffed Mushrooms.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "calamaretti-fritti-ai-sette-sapori",
+          "name": "Calamaretti fritti ai sette sapori",
+          "description": "Seven herb crisp and tender squid with a delicate garlic aioli",
+          "price": 12.0,
+          "tags": [],
+          "image": "Cheesy Calamari Rings on Wooden Board.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Eggs",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Molluscs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "baccala-impanato-con-salsa-pizzaiola",
+          "name": "Baccalà impanato con salsa Pizzaiola",
+          "description": "Breaded cod pieces with tomato sauce, oregano, basil, onions and garlic",
+          "price": 12.75,
+          "tags": [],
+          "image": "Golden Crusted Fish with Tomato Ragout.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Eggs",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "cicchetti-della-casa",
+          "name": "Cicchetti della casa",
+          "description": "A selection of imported venison bresaola, wild boar salame, speck, cheese and grilled marinated vegetables",
+          "price": 13.75,
+          "tags": [],
+          "image": "Moody Charcuterie Board with Grilled Bites.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "bruschetta-con-zucca-caprino-e-noci",
+          "name": "Bruschetta con zucca, caprino e noci",
+          "description": "Toasted Tuscan bread with roasted butternut squash, walnuts and goat cheese mousse",
+          "price": 11.5,
+          "tags": [
+            "v",
+            "n"
+          ],
+          "image": "Steaming Pumpkin Crostini with Thyme.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "pasta-risotto",
+      "nameIt": "I farinacei",
+      "nameEn": "Pasta & risotto",
+      "items": [
+        {
+          "id": "linguine-con-gamberi",
+          "name": "Linguine con gamberi",
+          "description": "Linguine tossed with prawns, sun-dried tomatoes, anchovies, black olives, capers, garlic and EVO oil",
+          "price": 18.25,
+          "tags": [],
+          "image": "Steaming Shrimp Linguine in Rustic Parchment.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Crustaceans",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Molluscs",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Sesame seeds",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "penne-con-funghi-noci-e-gorgonzola",
+          "name": "Penne con funghi, noci e Gorgonzola",
+          "description": "Penne pasta with mushrooms, walnuts and Gorgonzola cheese",
+          "price": 17.75,
+          "tags": [
+            "v",
+            "n"
+          ],
+          "image": "Dramatic Creamy Mushroom Penne.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "fettucce-alla-crema-di-zucca",
+          "name": "Fettucce alla crema di zucca",
+          "description": "Fettucce pasta with sage, chilli, roasted butternut squash, diced salt-cured pork belly and truffle cream",
+          "price": 18.25,
+          "tags": [],
+          "image": "Steaming Fettuccine with Thyme and Seared Garnishes.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "fettucce-al-ragu-di-manzo",
+          "name": "Fettucce al ragù di manzo con fonduta di Pecorino",
+          "description": "Fettucce pasta with beef ragout on a bed of Pecorino cheese fondue",
+          "price": 18.75,
+          "tags": [],
+          "image": "Cinematic Pasta Ragù with Creamy Sauce.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "penne-alla-vodka",
+          "name": "Penne alla vodka",
+          "description": "Penne pasta, diced salt-cured pork belly, onions, fresh tomato sauce, cream and vodka",
+          "price": 17.75,
+          "tags": [],
+          "image": "Creamy Penne with Pancetta and Parsley.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "risotto-con-zucchine-e-salmone",
+          "name": "Risotto con zucchine e salmone",
+          "description": "Italian arborio rice risotto with courgettes, smoked and fresh salmon, lemon zest and a touch of Pinot Grigio",
+          "price": 17.95,
+          "tags": [],
+          "image": "Creamy Salmon Risotto with Lemon Zest.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Crustaceans",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Molluscs",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "specialities",
+      "nameIt": "Le specialità",
+      "nameEn": "Specialities",
+      "items": [
+        {
+          "id": "pollo-e-salsiccia",
+          "name": "Pollo e salsiccia",
+          "description": "Strips of chicken breast and Italian sausage in sautéed white wine, rosemary, garlic and aged balsamic vinegar",
+          "price": 22.0,
+          "tags": [],
+          "image": "Rosemary-Glazed Meat and Mushrooms.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fennel seeds",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "bistecca-di-manzo-con-crema-di-funghi",
+          "name": "Bistecca di manzo con crema di funghi",
+          "description": "10oz grilled sirloin of beef with red wine sauce and mushroom cream",
+          "price": 32.0,
+          "tags": [],
+          "image": "Crosshatched Steak with Creamy Sauce.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Sesame seeds",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "filetto-di-manzo-in-crosta-di-pistacchi",
+          "name": "Filetto di manzo in crosta di pistacchi",
+          "description": "Pistachio crusted 7oz fillet of beef with mixed root vegetables and Primitivo red wine sauce",
+          "price": 34.75,
+          "tags": [
+            "n"
+          ],
+          "image": "Pistachio-Crusted Steak with Root Vegetables.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Sesame seeds",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "pesce-spada-al-salmoriglio",
+          "name": "Pesce spada al salmoriglio",
+          "description": "Fresh grilled swordfish, roasted vegetables, and salmoriglio sauce",
+          "price": 24.5,
+          "tags": [],
+          "image": "Grilled Herb Fish with Lemon and Vegetables.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "branzino-in-crosta-di-noci",
+          "name": "Branzino in crosta di noci",
+          "description": "Walnut-crusted fresh sea bass with roasted potatoes, black olives, red onion and cherry tomatoes",
+          "price": 25.25,
+          "tags": [
+            "n"
+          ],
+          "image": "Glossy Sauced Seabass with Roasted Vegetables.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Sesame seeds",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "salmone-alla-mostarda",
+          "name": "Salmone alla mostarda",
+          "description": "Grilled fresh salmon with whole grain mustard and shallots in a creamy sauce",
+          "price": 24.25,
+          "tags": [],
+          "image": "Cinematic Seared Salmon with Herb Sauce.png",
+          "photoMatch": "likely",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Fish",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Soya",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "polenta-grigliata-con-zucca-e-pecorino",
+          "name": "Polenta grigliata con zucca e Pecorino",
+          "description": "Chargrilled polenta with roasted butternut squash and pecorino cheese",
+          "price": 17.25,
+          "tags": [],
+          "image": "Charred Polenta Wedges with Roasted Vegetables.png",
+          "photoMatch": "clear",
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "nameIt": "I contorni",
+      "nameEn": "Side dishes",
+      "textOnly": true,
+      "items": [
+        {
+          "id": "patate-arrosto-al-rosmarino",
+          "name": "Patate arrosto al rosmarino",
+          "description": "Rosemary roasted potatoes",
+          "price": 5.5,
+          "tags": [],
+          "image": null,
+          "photoMatch": "none",
+          "allergens": [],
+          "allergenSource": "client"
+        },
+        {
+          "id": "spinaci-al-parmigiano",
+          "name": "Spinaci al Parmigiano",
+          "description": "Sautéed spinach, garlic and EV olive oil sprinkled with parmesan",
+          "price": 6.0,
+          "tags": [],
+          "image": null,
+          "photoMatch": "none",
+          "allergens": [
+            {
+              "name": "Eggs",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "insalata-mista",
+          "name": "Insalata mista",
+          "description": "Sotto Sotto garden salad",
+          "price": 5.5,
+          "tags": [],
+          "image": null,
+          "photoMatch": "none",
+          "allergens": [
+            {
+              "name": "Mustard",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "verdure-miste",
+          "name": "Verdure miste",
+          "description": "Fresh roasted mixed vegetables",
+          "price": 5.5,
+          "tags": [],
+          "image": null,
+          "photoMatch": "none",
+          "allergens": [
+            {
+              "name": "Celery",
+              "canBeOmitted": false
+            },
+            {
+              "name": "Garlic/Onion",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    }
+  ],
+  "source": "Food Menu November 26 (client, received 2026-11-14)"
+}

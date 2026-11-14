@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+deploy
+public/img
+src/content/image-manifest.json
+package-lock.json
+content-report.json
+next-env.d.ts
+test-results
+playwright-report
+data
+docs
+*.md
+.cache
+src/content/video-manifest.json

@@ -1,0 +1,1375 @@
+{
+  "_about": "Wine tab content: the wine list (groups) followed by the bar menu (drinks), all shown under the Wine tab (decision D19). Sources: Wine Menu October 26 and the bar menu (client, received 2026-11-14). Text only, no images. null = the list gives no value (glass: null = bottle only). Allergens: allergens.json; drinks with allergens: null have no data from the client.",
+  "tab": {
+    "id": "wine",
+    "label": "Wine",
+    "_note": "Renaming the tab to \"Drinks\" (OPEN_QUESTIONS Q32) changes only this label. The id and the URL hash #wine stay the same so shared links keep working."
+  },
+  "currency": "GBP",
+  "notes": {
+    "glassSizes": "Glass prices are for 175 ml (wine) or 125 ml (sparkling).",
+    "smallGlass": "Wines by the glass are also available in 125 ml.",
+    "vat": "All prices include VAT.",
+    "_note": "No 125 ml price is given for still wines (OPEN_QUESTIONS Q15). Vintages such as \"2024/25\" are kept as written."
+  },
+  "groups": [
+    {
+      "id": "white-rose",
+      "name": "White & Rosé",
+      "glassMl": 175,
+      "wines": [
+        {
+          "id": "pinot-grigio-blush",
+          "name": "Pinot Grigio Blush",
+          "producer": "Il Sospiro",
+          "region": "Veneto",
+          "vintage": null,
+          "glass": 9.75,
+          "bottle": 39.0,
+          "note": "Very soft with aromas of freshly crushed cranberries and mineral notes"
+        },
+        {
+          "id": "pinot-grigio-sartori",
+          "name": "Pinot Grigio",
+          "producer": "Sartori",
+          "region": "Veneto",
+          "vintage": null,
+          "glass": 9.5,
+          "bottle": 38.0,
+          "note": "Delicate citrus perfumes, an attractive biscuit character and white floral notes on the nose"
+        },
+        {
+          "id": "chardonnay-delle-dolomiti",
+          "name": "Chardonnay delle Dolomiti",
+          "producer": "Terre del Noce",
+          "region": "Trentino-Alto Adige",
+          "vintage": null,
+          "glass": 9.25,
+          "bottle": 37.0,
+          "note": "Crisp and harmonious with flavours of peach, nectarine, pear and spice"
+        },
+        {
+          "id": "sauvignon-blanc-borgo-tesis",
+          "name": "Sauvignon Blanc Borgo Tesis",
+          "producer": "Fantinel",
+          "region": "Friuli",
+          "vintage": null,
+          "glass": 10.0,
+          "bottle": 40.0,
+          "note": "Radiant white with delicate aromas of green pepper and apple, lively finish"
+        },
+        {
+          "id": "regaleali-bianco",
+          "name": "Regaleali Bianco",
+          "producer": "Tasca",
+          "region": "Sicily",
+          "vintage": null,
+          "glass": null,
+          "bottle": 42.0,
+          "note": "Delicately fruity nose with apple, peach and pink grapefruit notes. The palate is quite intense and crisp"
+        },
+        {
+          "id": "vernaccia-di-san-gimignano",
+          "name": "Vernaccia di San Gimignano",
+          "producer": "Teruzzi",
+          "region": "Tuscany",
+          "vintage": null,
+          "glass": null,
+          "bottle": 49.0,
+          "note": "Complex aromas of flowers, citrus and minerality on the nose"
+        },
+        {
+          "id": "pecorino",
+          "name": "Pecorino",
+          "producer": "Fattoria La Valentina",
+          "region": "Abruzzo",
+          "vintage": null,
+          "glass": null,
+          "bottle": 51.0,
+          "note": "A pure yet lively aroma with mineral and lime leaf notes"
+        },
+        {
+          "id": "gavi-di-gavi-la-meirana",
+          "name": "Gavi di Gavi La Meirana",
+          "producer": "Broglia",
+          "region": "Piedmont",
+          "vintage": null,
+          "glass": null,
+          "bottle": 54.0,
+          "note": "Great texture and precision with distinctive greengage and almond notes",
+          "_clientSpelling": "greenage"
+        },
+        {
+          "id": "roero-arneis-serra-lupini",
+          "name": "Roero Arneis Serra Lupini",
+          "producer": "Azienda Agricola Negro",
+          "region": "Piedmont",
+          "vintage": null,
+          "glass": null,
+          "bottle": 58.0,
+          "note": "Developed roundness with a hint of peach stone and a creamy texture"
+        },
+        {
+          "id": "pinot-grigio-pian-del-griso",
+          "name": "Pinot Grigio Pian del Griso",
+          "producer": "Bossi Fedrigotti",
+          "region": "Trentino-Alto Adige",
+          "vintage": null,
+          "glass": null,
+          "bottle": 61.0,
+          "note": "The nose has strong minerality with delicate floral notes and hints of peaches and plums"
+        },
+        {
+          "id": "chardonnay-bramito-del-cervo",
+          "name": "Chardonnay Bramito del Cervo",
+          "producer": "Castello della Sala",
+          "region": "Umbria",
+          "vintage": null,
+          "glass": null,
+          "bottle": 67.0,
+          "note": "Richly structured palate and aromas of apples and vanilla"
+        },
+        {
+          "id": "sauvignon-blanc-conte-della-vipera",
+          "name": "Sauvignon Blanc Conte della Vipera",
+          "producer": "Castello della Sala",
+          "region": "Umbria",
+          "vintage": null,
+          "glass": null,
+          "bottle": 75.0,
+          "note": "A rich Sauvignon Blanc with citrus aromas, herbs and nuts"
+        }
+      ]
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "glassMl": 175,
+      "wines": [
+        {
+          "id": "merlot-delle-dolomiti",
+          "name": "Merlot delle Dolomiti",
+          "producer": "Terre del Noce",
+          "region": "Trentino-Alto Adige",
+          "vintage": "2024/25",
+          "glass": 9.25,
+          "bottle": 37.0,
+          "note": "Smooth with plum and red cherry fruit with a hint of dark chocolate on the finish"
+        },
+        {
+          "id": "syrah",
+          "name": "Syrah",
+          "producer": "Molino a Vento",
+          "region": "Sicily",
+          "vintage": "2024/25",
+          "glass": 9.75,
+          "bottle": 39.0,
+          "note": "Dry, ripe fruit taste with blackberry, blueberry and pepper"
+        },
+        {
+          "id": "montepulciano-d-abruzzo",
+          "name": "Montepulciano d'Abruzzo",
+          "producer": "Itynera",
+          "region": "Abruzzo",
+          "vintage": "2024/25",
+          "glass": 10.0,
+          "bottle": 40.0,
+          "note": "Rich in notes of ripe berries, cocoa and vanilla"
+        },
+        {
+          "id": "cabernet-sauvignon-castel-firmian",
+          "name": "Cabernet Sauvignon Castel Firmian",
+          "producer": "Mezzacorona",
+          "region": "Trentino-Alto Adige",
+          "vintage": "2023/24",
+          "glass": null,
+          "bottle": 42.0,
+          "note": "Intense, complex flavour with spicy notes and sweet fruit with a fragrant scent of oak. Well balanced and full bodied"
+        },
+        {
+          "id": "valpolicella-ripasso",
+          "name": "Valpolicella Ripasso",
+          "producer": "Bertani",
+          "region": "Veneto",
+          "vintage": "2022/23",
+          "glass": null,
+          "bottle": 52.0,
+          "note": "Clean and intense aroma of ripe red fruit with hints of bramble, blackcurrant and ripe cherry"
+        },
+        {
+          "id": "primitivo-della-puglia",
+          "name": "Primitivo della Puglia",
+          "producer": "Botromagno",
+          "region": "Puglia",
+          "vintage": "2024/25",
+          "glass": null,
+          "bottle": 55.0,
+          "note": "The palate is elegant and intense with soft natural tannins"
+        },
+        {
+          "id": "chianti-classico",
+          "name": "Chianti Classico",
+          "producer": "Castello di Cacchiano",
+          "region": "Tuscany",
+          "vintage": "2023/24",
+          "glass": null,
+          "bottle": 58.0,
+          "note": "Cherry-bright and lightly woody, with strawberry candy on the nose, crisp acidity and a clean mineral finish"
+        },
+        {
+          "id": "pinot-noir-focara",
+          "name": "Pinot Noir Focara",
+          "producer": "Fattoria Mancini",
+          "region": "Marche",
+          "vintage": "2024/25",
+          "glass": null,
+          "bottle": 68.0,
+          "note": "Creamy strawberry/redcurrant aromas. Midweight and elegant"
+        },
+        {
+          "id": "barolo",
+          "name": "Barolo",
+          "producer": "Prunotto",
+          "region": "Piedmont",
+          "vintage": "2021/22",
+          "glass": null,
+          "bottle": 87.0,
+          "note": "Forest fruits character with floral and smoky finish"
+        },
+        {
+          "id": "brunello-di-montalcino",
+          "name": "Brunello di Montalcino",
+          "producer": "Il Poggione",
+          "region": "Tuscany",
+          "vintage": "2021",
+          "glass": null,
+          "bottle": 90.0,
+          "note": "A very intense, lingering and stylish bouquet with small dark berry fruit notes"
+        },
+        {
+          "id": "amarone-della-valpolicella-classico",
+          "name": "Amarone della Valpolicella Classico",
+          "producer": "Costasera Masi",
+          "region": "Veneto",
+          "vintage": "2020/21",
+          "glass": null,
+          "bottle": 100.0,
+          "note": "Preserved cherries and dried plums together with hints of fruits of the forest and cinnamon"
+        },
+        {
+          "id": "tignanello",
+          "name": "Tignanello",
+          "producer": "Antinori",
+          "region": "Tuscany",
+          "vintage": "2020/21",
+          "glass": null,
+          "bottle": 230.0,
+          "note": "Ripe red fruit and spice aromas, as well as vanilla and oaky notes"
+        }
+      ]
+    },
+    {
+      "id": "sparkling",
+      "name": "Prosecco & Champagne",
+      "glassMl": 125,
+      "wines": [
+        {
+          "id": "prosecco-brut-di-valdobbiadene",
+          "name": "Prosecco Brut di Valdobbiadene",
+          "producer": "Argeo Ruggeri",
+          "region": "Veneto",
+          "vintage": null,
+          "glass": 12.0,
+          "bottle": 66.0,
+          "note": "A palate of fresh green apple and a long, crisp finish"
+        },
+        {
+          "id": "champagne-brut-mosaique",
+          "name": "Champagne Brut Mosaïque",
+          "producer": "Jacquart",
+          "region": "France",
+          "vintage": null,
+          "glass": 17.0,
+          "bottle": 96.0,
+          "note": "The bouquet is fresh with pear hints. The palate has a long-lasting finish of spice bread and fruit flavours"
+        },
+        {
+          "id": "champagne-rose-mosaique",
+          "name": "Champagne Rosé Mosaïque",
+          "producer": "Jacquart",
+          "region": "France",
+          "vintage": null,
+          "glass": 17.0,
+          "bottle": 96.0,
+          "note": "Pink fizz that bubbles with ripe redcurrants, cherries, wild strawberries and plums"
+        },
+        {
+          "id": "dom-perignon",
+          "name": "Dom Pérignon",
+          "producer": null,
+          "region": "France",
+          "vintage": null,
+          "glass": null,
+          "bottle": 250.0,
+          "note": null
+        }
+      ]
+    }
+  ],
+  "drinks": [
+    {
+      "id": "martinis",
+      "name": "Martinis",
+      "uniformPrice": 12.5,
+      "note": "Vodka and Gin Martini are available.",
+      "items": [
+        {
+          "id": "cosmopolitan",
+          "name": "Cosmopolitan",
+          "description": "Grey Goose vodka, Cointreau, cranberry and lime juice",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "appletini",
+          "name": "Appletini",
+          "description": "Ciroc vodka, triple sec and apple liqueur",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "white-garden",
+          "name": "White Garden",
+          "description": "Gin, lychee liqueur, elderflower, lychee and apple juice with fresh cucumber",
+          "price": 12.5,
+          "allergens": [],
+          "allergenSource": "client"
+        },
+        {
+          "id": "french-martini",
+          "name": "French Martini",
+          "description": "Vanilla vodka, Chambord and pineapple juice",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "espresso-martini",
+          "name": "Espresso Martini",
+          "description": "Vodka, Kahlua and espresso coffee",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Gluten",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "chocotini",
+          "name": "Chocotini",
+          "description": "Tanqueray gin, chocolate liqueur and white cocoa cream",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "longs",
+      "name": "Longs",
+      "uniformPrice": 12.5,
+      "note": null,
+      "items": [
+        {
+          "id": "mojito",
+          "name": "Mojito",
+          "description": "White rum with mint, lime and sugar topped with soda",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "tom-collins",
+          "name": "Tom Collins",
+          "description": "Hayman's Old Tom gin, gomme syrup, lime juice topped with soda",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "long-island-iced-tea",
+          "name": "Long Island Iced Tea",
+          "description": "Vodka, gin, rum, tequila, triple sec topped with cola",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "shorts",
+      "name": "Shorts",
+      "uniformPrice": 12.5,
+      "note": "More cocktails are available upon request.",
+      "items": [
+        {
+          "id": "margarita",
+          "name": "Margarita",
+          "description": "Jose Cuervo gold tequila, triple sec and lime juice",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "caipirinha",
+          "name": "Caipirinha",
+          "description": "Sagatiba cachaça with lime wedges and sugar",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client",
+          "_clientSpelling": "Capirinha"
+        },
+        {
+          "id": "bramble",
+          "name": "Bramble",
+          "description": "Tanqueray gin, lemon juice, gomme syrup and Chambord",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        },
+        {
+          "id": "toblerone",
+          "name": "Toblerone",
+          "description": "Frangelico, Kahlua, Baileys, double cream and honey",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Lactose",
+              "canBeOmitted": true
+            },
+            {
+              "name": "Nuts",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "client"
+        }
+      ]
+    },
+    {
+      "id": "sparkling-cocktails",
+      "name": "Sparkling cocktails",
+      "uniformPrice": 12.5,
+      "note": null,
+      "_allergenNote": "Not on the client's bar allergy form. Allergens below are the team's estimate from the listed ingredients and standard serves (allergenSource: estimated). Client to confirm (OPEN_QUESTIONS Q29).",
+      "items": [
+        {
+          "id": "bellini",
+          "name": "Bellini",
+          "description": "Prosecco, peach purée",
+          "price": 12.5,
+          "allergens": [],
+          "allergenSource": "estimated",
+          "_estimateReason": "Prosecco and peach purée: no client category applies."
+        },
+        {
+          "id": "hugo-spritz",
+          "name": "Hugo Spritz",
+          "description": "Vodka, elderflower, Prosecco",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": true
+            }
+          ],
+          "allergenSource": "estimated",
+          "_estimateReason": "Usually served with a lime garnish, which can be left out."
+        },
+        {
+          "id": "aperol-spritz",
+          "name": "Aperol Spritz",
+          "description": "Aperol, Prosecco and soda",
+          "price": 12.5,
+          "allergens": [
+            {
+              "name": "Citrus",
+              "canBeOmitted": false
+            }
+          ],
+          "allergenSource": "estimated",
+          "_estimateReason": "Aperol contains bitter orange; usually also served with an orange slice."
+        }
+      ]
+    },
+    {
+      "id": "beer-cider",
+      "name": "Beer & cider",
+      "items": [
+        {
+          "id": "moretti",
+          "name": "Moretti",
+          "details": "bottle 330 ml",
+          "price": 5.0,
+          "allergens": null,
+          "allergenSource": null,
+          "abv": 4.6
+        },
+        {
+          "id": "corona",
+          "name": "Corona",
+          "details": "bottle 330 ml",
+          "price": 4.5,
+          "allergens": null,
+          "allergenSource": null,
+          "abv": 4.5
+        },
+        {
+          "id": "butcombe",
+          "name": "Butcombe",
+          "details": "bottle 500 ml",
+          "price": 5.75,
+          "allergens": null,
+          "allergenSource": null,
+          "abv": 4.5
+        },
+        {
+          "id": "thatchers-gold-cider",
+          "name": "Thatchers Gold cider",
+          "details": "bottle 500 ml",
+          "price": 5.75,
+          "allergens": null,
+          "allergenSource": null,
+          "abv": 4.8
+        }
+      ]
+    },
+    {
+      "id": "water-juices",
+      "name": "Mineral water & juices",
+      "items": [
+        {
+          "id": "san-pellegrino-sparkling-water",
+          "name": "San Pellegrino sparkling water",
+          "details": "bottle 500 ml",
+          "price": 3.5,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "panna-still-water",
+          "name": "Panna still water",
+          "details": "bottle 500 ml",
+          "price": 3.5,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "coca-cola-diet-coke-and-schweppes-lemonade",
+          "name": "Coca-Cola, Diet Coke and Schweppes Lemonade",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "juices",
+          "name": "Juices",
+          "details": null,
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "appletiser",
+          "name": "Appletiser",
+          "details": "bottle 200 ml",
+          "price": 3.5,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "fever-tree-ginger-beer",
+          "name": "Fever-Tree Ginger Beer",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "fever-tree-tonic-water",
+          "name": "Fever-Tree Tonic Water",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "fever-tree-slimline-tonic",
+          "name": "Fever-Tree Slimline Tonic",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "lemon-tonic",
+          "name": "Lemon Tonic",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "fever-tree-ginger-ale",
+          "name": "Fever-Tree Ginger Ale",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "britvic-tomato-juice",
+          "name": "Britvic Tomato Juice",
+          "details": "bottle 200 ml",
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        }
+      ]
+    },
+    {
+      "id": "spirits",
+      "name": "Spirits",
+      "priceColumns": [
+        {
+          "id": "25ml",
+          "label": "25 ml"
+        },
+        {
+          "id": "50ml",
+          "label": "50 ml"
+        }
+      ],
+      "note": "Choice of standard mixer add 50p",
+      "_clientSpelling": "Choice of standard mix add 50p",
+      "mixerSurcharge": 0.5,
+      "groups": [
+        {
+          "name": "Gin",
+          "items": [
+            {
+              "id": "gordon-s",
+              "name": "Gordon's",
+              "abv": 37.5,
+              "prices": {
+                "25ml": 4.25,
+                "50ml": 8.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "tanqueray",
+              "name": "Tanqueray",
+              "abv": 43.1,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "hendrick-s",
+              "name": "Hendrick's",
+              "abv": 41.4,
+              "prices": {
+                "25ml": 5.5,
+                "50ml": 11.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "hayman-s",
+              "name": "Hayman's",
+              "abv": 41.4,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "bombay-sapphire",
+              "name": "Bombay Sapphire",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "vii-hills",
+              "name": "VII Hills",
+              "abv": 43,
+              "prices": {
+                "25ml": 5.75,
+                "50ml": 11.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        },
+        {
+          "name": "Vodka",
+          "items": [
+            {
+              "id": "finlandia",
+              "name": "Finlandia",
+              "abv": 40,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "ciroc",
+              "name": "Ciroc",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "grey-goose",
+              "name": "Grey Goose",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.75,
+                "50ml": 11.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "absolut-vanilla",
+              "name": "Absolut Vanilla",
+              "abv": 37.5,
+              "prices": {
+                "25ml": 5.0,
+                "50ml": 10.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        },
+        {
+          "name": "Rum",
+          "items": [
+            {
+              "id": "bacardi-carta-blanca",
+              "name": "Bacardi Carta Blanca",
+              "abv": 37.5,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null,
+              "_clientSpelling": "Bacardi Carla Blanca"
+            },
+            {
+              "id": "havana-club-7-yo",
+              "name": "Havana Club 7 YO",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "diplomatico-reserva",
+              "name": "Diplomático Reserva",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.5,
+                "50ml": 11.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "sailor-jerry-spiced",
+              "name": "Sailor Jerry Spiced",
+              "abv": 40,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        },
+        {
+          "name": "Tequila & cachaça",
+          "items": [
+            {
+              "id": "jose-cuervo-especial-gold",
+              "name": "José Cuervo Especial Gold",
+              "abv": 38,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "51-cachaca",
+              "name": "51 Cachaça",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        },
+        {
+          "name": "Whisky & bourbon",
+          "items": [
+            {
+              "id": "jameson",
+              "name": "Jameson",
+              "abv": 40,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "jack-daniel-s-old-no-7",
+              "name": "Jack Daniel's Old No. 7",
+              "abv": null,
+              "prices": {
+                "25ml": 4.75,
+                "50ml": 9.5
+              },
+              "allergens": null,
+              "allergenSource": null,
+              "_abvNote": "No ABV on the client's list."
+            },
+            {
+              "id": "woodford-reserve",
+              "name": "Woodford Reserve",
+              "abv": 43.2,
+              "prices": {
+                "25ml": 5.75,
+                "50ml": 11.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "glenfiddich-12-yo",
+              "name": "Glenfiddich 12 YO",
+              "abv": 40,
+              "prices": {
+                "25ml": 6.25,
+                "50ml": 12.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "glenfarclas-10-yo",
+              "name": "Glenfarclas 10 YO",
+              "abv": 40,
+              "prices": {
+                "25ml": 6.25,
+                "50ml": 12.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "oban-14-yo",
+              "name": "Oban 14 YO",
+              "abv": 43,
+              "prices": {
+                "25ml": 6.75,
+                "50ml": 13.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "lagavulin-16-yo",
+              "name": "Lagavulin 16 YO",
+              "abv": 43,
+              "prices": {
+                "25ml": 7.25,
+                "50ml": 14.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        },
+        {
+          "name": "Grappa & cognac",
+          "items": [
+            {
+              "id": "grappa-12-francoli",
+              "name": "Grappa 12, Francoli",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.0,
+                "50ml": 10.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "grappa-12-invecchiata-francoli",
+              "name": "Grappa 12 Invecchiata, Francoli",
+              "abv": 40,
+              "prices": {
+                "25ml": 6.25,
+                "50ml": 12.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "courvoisier-vs",
+              "name": "Courvoisier VS",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "vecchia-romagna",
+              "name": "Vecchia Romagna",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.25,
+                "50ml": 10.5
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "remy-martin-vsop",
+              "name": "Rémy Martin VSOP",
+              "abv": 40,
+              "prices": {
+                "25ml": 5.5,
+                "50ml": 11.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            },
+            {
+              "id": "remy-martin-xo",
+              "name": "Rémy Martin XO",
+              "abv": 40,
+              "prices": {
+                "25ml": 9.5,
+                "50ml": 19.0
+              },
+              "allergens": null,
+              "allergenSource": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coffee-tea",
+      "nameIt": "Caffè & tè",
+      "name": "Coffee & tea",
+      "items": [
+        {
+          "id": "espresso",
+          "name": "Espresso",
+          "details": null,
+          "price": 2.75,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "large-espresso",
+          "name": "Large espresso",
+          "details": null,
+          "price": 3.5,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "americano",
+          "name": "Americano",
+          "details": null,
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "cappuccino",
+          "name": "Cappuccino",
+          "details": null,
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "latte",
+          "name": "Latte",
+          "details": null,
+          "price": 3.0,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "mocha",
+          "name": "Mocha",
+          "details": null,
+          "price": 3.75,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "hot-chocolate",
+          "name": "Hot chocolate",
+          "details": null,
+          "price": 3.5,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "earl-grey",
+          "name": "Earl Grey",
+          "details": null,
+          "price": 2.75,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "english-breakfast-tea",
+          "name": "English breakfast tea",
+          "details": null,
+          "price": 2.75,
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "herbal-tea",
+          "name": "Herbal tea",
+          "details": null,
+          "price": 2.75,
+          "allergens": null,
+          "allergenSource": null
+        }
+      ]
+    },
+    {
+      "id": "special-coffees",
+      "nameIt": "Caffè speciali",
+      "name": "Special coffees",
+      "uniformPrice": 8.0,
+      "items": [
+        {
+          "id": "italian-coffee",
+          "name": "Italian coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": "Amaretto"
+        },
+        {
+          "id": "mexican-coffee",
+          "name": "Mexican coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": "Kahlua"
+        },
+        {
+          "id": "french-coffee",
+          "name": "French coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": "Courvoisier"
+        },
+        {
+          "id": "irish-coffee",
+          "name": "Irish coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": "Jameson"
+        },
+        {
+          "id": "tia-maria-coffee",
+          "name": "Tia Maria coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": null
+        },
+        {
+          "id": "baileys-coffee",
+          "name": "Baileys coffee",
+          "details": null,
+          "price": 8.0,
+          "allergens": null,
+          "allergenSource": null,
+          "description": null
+        }
+      ]
+    },
+    {
+      "id": "liqueurs",
+      "nameIt": "Liquori",
+      "name": "Liqueurs",
+      "priceColumns": [
+        {
+          "id": "25ml",
+          "label": "25 ml"
+        },
+        {
+          "id": "50ml",
+          "label": "50 ml"
+        }
+      ],
+      "items": [
+        {
+          "id": "amaretto-disaronno",
+          "name": "Amaretto Disaronno",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "limoncello",
+          "name": "Limoncello",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "baileys",
+          "name": "Baileys",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "frangelico",
+          "name": "Frangelico",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "sambuca",
+          "name": "Sambuca",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "fernet-branca",
+          "name": "Fernet Branca",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "amaro-lucano",
+          "name": "Amaro Lucano",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "amaro-montenegro",
+          "name": "Amaro Montenegro",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "tia-maria",
+          "name": "Tia Maria",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "kahlua",
+          "name": "Kahlúa",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "cointreau",
+          "name": "Cointreau",
+          "abv": null,
+          "prices": {
+            "25ml": 4.0,
+            "50ml": 8.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "drambuie",
+          "name": "Drambuie",
+          "abv": null,
+          "prices": {
+            "25ml": 5.0,
+            "50ml": 10.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        },
+        {
+          "id": "grand-marnier",
+          "name": "Grand Marnier",
+          "abv": null,
+          "prices": {
+            "25ml": 5.0,
+            "50ml": 10.0
+          },
+          "allergens": null,
+          "allergenSource": null
+        }
+      ]
+    }
+  ]
+}
