@@ -4,7 +4,7 @@ Nothing here may be guessed. When a question is answered, update the data or doc
 
 **Blocks launch** = cannot go live without it. **Blocks build** = that part cannot be finished without it.
 
-Last updated 2026-11-14 (Update 1). Answered and removed: Q2 (parking list: replaced by Q30), Q17 (privacy policy: used as is, D25).
+Last updated 2026-11-14 (Update 1). Answered and removed: Q2 (parking list: replaced by Q30), Q17 (privacy policy: used as is, D25), Q20 (architecture approved), Q26 (placeholder video, D50), Q43 (static map, D42), Q44 (Next.js, D30), Q46 (tools approved), Q49 (branching, D49).
 
 ## Client: facts
 
@@ -54,17 +54,20 @@ Last updated 2026-11-14 (Update 1). Answered and removed: Q2 (parking list: repl
 
 | # | Question | Why it matters | Blocks |
 |---|---|---|---|
-| Q8 | Hospres API access and booking rules: party size limits, slot length, how far ahead, deposit or card capture, amend/cancel. Later; phase 1 does not need it (D28). | Phase 2 booking UI | Phase 2 only |
-| Q11 | Access to the domain, DNS, GA4 property `G-2TMCMCTHRD` and Google Business Profile. | Go-live, analytics, consistent address and hours on Google | Launch |
+| Q8 | Hospres API access and booking rules: party size limits, slot length, how far ahead, deposit or card capture, amend/cancel. Also the API's authentication: if it needs a secret key, Phase 2 needs a small serverless proxy (D48). Later; phase 1 does not need it (D28). | Phase 2 booking UI | Phase 2 only |
+| Q11 | Access to the GA4 property `G-2TMCMCTHRD` (who owns it, admin access for us) and to Google Business Profile. | Analytics, consistent address and hours on Google | Launch |
+| Q41 | Hosting account: who owns and pays for it (client or agency)? Recommendation is Cloudflare Pages (free tier allows commercial use). | Deploys, staging, ownership at hand-over | Build (staging, M9) |
+| Q42 | Domain: who is the registrar, who controls DNS, and which provider runs the info@ and careers@ mailboxes? We need the full current DNS record list (MX, SPF, DKIM, DMARC) before any change. Also: `www.sottosotto.co.uk` or the bare domain as the main address? | Launch without breaking email | Launch |
+| Q45 | Who reviews staging? Email addresses for the access-protected preview. | Client review (M9) | No |
+| Q48 | Are there other old URLs we must keep working, e.g. menu PDF links posted on Google, TripAdvisor or social pages? | Redirect list (M8) | Launch |
 
 ## Team
 
 | # | Question | Why it matters | Blocks |
 |---|---|---|---|
-| Q20 | Final tech stack and hosting. To be proposed in the next task; not decided here. | Everything in the build | Build |
+| Q47 | Where are the original photos and videos kept and backed up, since they stay out of git (D36)? | Originals must not exist only on one laptop | No |
 | Q21 | Page titles and meta descriptions for each page. The old ones contradict the agreed hours and carry award claims. | Search results and link previews | Launch |
 | Q22 | Consent scope. Should the Google Map and the Hospres iframe also wait for consent or a click (both are third-party embeds that can set cookies)? The privacy policy text is used as is (D25) and does not mention analytics or Hospres. | Cookie banner design | Build |
 | Q23 | Design system sign-off (`DESIGN_SYSTEM.md` is a proposal), including whether to keep Spectral SC. | Visual build | Build |
 | Q24 | Menu dimming and contrast. Dimming text to 25–35% fails WCAG AA. Is the proposed fix accepted (dim photos only; unlit text uses a dimmer colour that still passes)? Allergen labels follow the same rule. | Menu page | Build |
 | Q25 | Does the Hospres widget work well inside a full-screen sheet on phones? Not tested; the old site embeds it at a fixed 575 × 514 px. | Phase 1 booking modal on mobile | Build |
-| Q26 | Placeholder media: which clip, poster and venue images do we use until the client delivers? | Hero and Venue page during the build | Build |

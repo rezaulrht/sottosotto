@@ -50,10 +50,38 @@ The client sent the Food Menu November 26, the Wine Menu October 26, the bar men
 | Mocks | Address changed to "10 North Parade"; contact "to confirm"; social, closures, logo, brand and videos flagged | `data/site.json` |
 | Docs | Pages, content, assets, brief, design system note, agent rules, open questions | `docs/*`, `CLAUDE.md` |
 
+## Architecture decisions (2026-11-14)
+
+Approved by the user on 2026-11-14, with D30 changed to Next.js. D47 hosting is a recommendation only; the host and account owners are deferred (Q41, Q42). Detail and reasons: `ARCHITECTURE.md` (section in brackets).
+
+| # | Decision | Detail | Status |
+|---|---|---|---|
+| D30 | Framework | Next.js App Router + React, TypeScript strict, static export (`output: "export"`). Astro was proposed and declined by the user (§2.1, §12) | Approved |
+| D31 | Navigation | `next/link` client navigation; `MotionProvider` + per-page `gsap.context()` revert effects on every route change (§7.3) | Approved |
+| D32 | Styling | CSS Modules + CSS custom properties generated from DESIGN_SYSTEM.md; no Tailwind (§2.2) | Approved |
+| D33 | Motion | GSAP + ScrollTrigger (+ SplitText), Lenis on desktop only; one `gsap.matchMedia()` registry with desktop / mobile / reduced modes; effects loaded only where used; content visible without JS (§2.3, §7) | Approved |
+| D34 | Candle effect | DOM + CSS layers animating only `opacity` and `transform`; canvas and WebGL rejected (§7.5) | Approved |
+| D35 | Content validation | All `data/*.json` parsed with strict Zod schemas at build, with cross-file checks; build fails on invalid data; `_` keys stripped (§5.1) | Approved |
+| D36 | Images | Own `sharp` script → AVIF + WebP at 480/800/1200/source width, named by dish id, with a manifest. Generated files committed; originals kept out of git (§6.1) | Approved |
+| D37 | Video | `ffmpeg` script → 1080p/720p MP4 (H.264) + WebM, no audio, ≤ 4 MB; poster is the LCP; plays only without reduced motion, Save-Data or slow connection; pause button (§6.2) | Approved |
+| D38 | Fonts | `next/font/google`, self-hosted at build, latin + latin-ext, `swap`, 2 preloads, ≤ 4 files (§6.3) | Approved |
+| D39 | Booking modal | Native `<dialog>` shell; Book buttons are real links to Hospres (no-JS fallback); iframe created on first open; `BookingProvider` interface so Phase 2 replaces only `src/booking/providers` (§8) | Approved |
+| D40 | Consent | Own banner (Accept / Reject, equal weight); Consent Mode v2 in basic mode: GA4 not requested before consent; ads signals always denied (§9.2) | Approved |
+| D41 | Third-party load order | Nothing third-party before first paint; GA4 only after consent; Hospres only when the modal opens (§9.1) | Approved |
+| D42 | Map | Self-hosted static dark map (from OpenStreetMap data) + "Get directions" Google Maps link; no API key. **Changes PAGES.md "Google Map styled dark"**; interactive Google map only as a later click-to-load option (§9.3) | Approved |
+| D43 | SEO | `data/seo.json` for titles and descriptions; JSON-LD `Restaurant` from `site.json` with every mock / to-confirm field left out; 301s for old PDF links; script redirect for `?p=` links (§10.1) | Approved |
+| D44 | Security headers | One source (`config/headers.ts`) emitted for Cloudflare/Netlify, Vercel and Nginx; hashed CSP; Report-Only on staging first (§10.2) | Approved |
+| D45 | Environments and mock guard | `SITE_ENV` development / staging / production; content report on every build; production build fails while flagged values remain (override only for emergencies); estimated allergens never rendered (§11) | Approved |
+| D46 | Quality gates | Types, lint, Zod, Vitest, Playwright + axe on every push; Lighthouse CI budgets and header check before every deploy (§11.3) | Approved |
+| D47 | Hosting | Cloudflare Pages recommended; output is plain static files, portable to Nginx, Netlify or Vercel (§13) | Recommendation; deferred |
+| D48 | Phase 2 backend | If the Hospres API needs a secret key, Phase 2 adds one serverless proxy function; nothing else server-side (§8.2) | Approved (depends on Q8) |
+| D49 | Branching | Pull request per change with a preview deploy; `main` is production | Approved |
+| D50 | Placeholder hero video | Abstract dark loop generated with ffmpeg (no download) until the client's video arrives | Approved |
+
 ## Not decided yet
 
 | Topic | Where it is tracked |
 |---|---|
-| Tech stack and hosting | `OPEN_QUESTIONS.md` Q20 (to be proposed in the next task) |
+| Hosting provider and account owners | D47 recommends Cloudflare Pages; deferred (Q41, Q42) |
 | Design tokens (colours, fonts, motion values) | `DESIGN_SYSTEM.md` is a proposal; the developer handling design confirms |
 | Everything else unknown | `OPEN_QUESTIONS.md` |

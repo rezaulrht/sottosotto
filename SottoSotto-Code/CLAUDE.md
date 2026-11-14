@@ -2,7 +2,7 @@
 
 Rebuild of sottosotto.co.uk for Sotto Sotto, a small Italian restaurant on North Parade in Bath, UK (Somerset, not London). The current site is a single static page from around 2010. The new site is a modern, cinematic, flagship-level restaurant site.
 
-**Status:** planning only. No application code and no tech stack chosen yet.
+**Status:** architecture approved (Next.js static export, `docs/ARCHITECTURE.md`, D30–D50). Building milestone 1 of `docs/BUILD_PLAN.md`.
 
 ## Where things are
 
@@ -15,6 +15,8 @@ Rebuild of sottosotto.co.uk for Sotto Sotto, a small Italian restaurant on North
 | `docs/CONTENT.md` | All site copy, including the full privacy policy |
 | `docs/ASSETS.md` | Photo list, dish-to-photo map, missing assets |
 | `docs/OPEN_QUESTIONS.md` | Everything not yet known |
+| `docs/ARCHITECTURE.md` | Stack, folders, components, data flow, motion, assets, booking, consent, hosting (proposal) |
+| `docs/BUILD_PLAN.md` | Milestones M1–M9 with "done when" checks (proposal) |
 | `data/site.json` | Business details, hours, contact, address, parking |
 | `data/menu.json`, `desserts.json` | Food menu, desserts and cheese, with allergens |
 | `data/wine.json` | Wine tab: wine list (`groups`) and bar menu (`drinks`) |
