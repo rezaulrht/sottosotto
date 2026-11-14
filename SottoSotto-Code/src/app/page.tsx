@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BookButton } from '@/components/global/BookButton';
-import { HoursChip } from '@/components/global/HoursChip';
+import { HomeHero } from '@/components/home/HomeHero';
 import { MockImage } from '@/components/shared/MockImage';
 import { Picture } from '@/components/shared/Picture';
 import { desserts, imageFor, menu, pageMetadata, site, venue, wine } from '@/content';
@@ -42,21 +42,11 @@ function openDaysSummary(): string {
 }
 
 export default function HomePage() {
-  const { copy, hours } = site;
+  const { copy } = site;
   return (
     <>
-      {/* 1. Hero: video and rotating badge come in M3 (placeholder video D50). */}
-      <section className={styles.hero} aria-labelledby="home-title">
-        <div className={`container ${styles.stack}`}>
-          <p className={`label ${styles.eyebrow}`}>{site.tagline}</p>
-          <h1 id="home-title" className={styles.display}>
-            {site.name}
-          </h1>
-          <p className={styles.lead}>{copy.homeIntro}</p>
-          <HoursChip hours={hours} summary={openDaysSummary()} />
-          <BookButton href={site.booking.widgetUrl} />
-        </div>
-      </section>
+      {/* 1. Hero (M2 prototype): placeholder loop from the dish photos (D51). */}
+      <HomeHero hoursSummary={openDaysSummary()} />
 
       {/* 2. Philosophy */}
       <section className={styles.section} aria-labelledby="home-philosophy">

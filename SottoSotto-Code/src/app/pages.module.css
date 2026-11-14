@@ -1,5 +1,12 @@
 /* Shared page layout for M1 placeholder sections. Section-specific design comes in M3–M6. */
 
+/* Menu page tone: dimmed, not black (PAGES.md Menu). Full width over the concrete wall. */
+.dimmed {
+  background: rgb(12 11 10 / 0.72);
+  /* The dishes' pools of light reach past the cards; never into a sideways scroll. */
+  overflow-x: clip;
+}
+
 .page {
   padding-top: calc(var(--header-h) + var(--space-7));
 }
@@ -245,4 +252,50 @@
 }
 .legal li + li {
   margin-top: var(--space-1);
+}
+
+/* ---- Menu candle: dish grid and text rows (ARCHITECTURE §7.5) */
+.dishGrid {
+  display: grid;
+  gap: var(--space-8) var(--space-7);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+/* Rows (sides, wines, bar) dim to bone-500 and light up like the dishes; text colour only, never opacity. */
+.row[data-candle-item] {
+  position: relative;
+  isolation: isolate;
+}
+.row[data-candle-item]::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(-1 * var(--space-4));
+  z-index: -1;
+  background: radial-gradient(60% 140% at 25% 50%, rgb(242 201 133 / 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+  pointer-events: none;
+}
+:global([data-candle-ready]) .row[data-candle-item],
+:global([data-candle-ready]) .row[data-candle-item] :is(.price, .muted, .rowDetail, .tags) {
+  color: var(--bone-500);
+}
+:global([data-candle-ready]) .row[data-candle-item]:is([data-lit], [data-focus], [data-open]) {
+  color: var(--bone-100);
+}
+:global([data-candle-ready])
+  .row[data-candle-item]:is([data-lit], [data-focus], [data-open])
+  :is(.muted, .rowDetail, .tags) {
+  color: var(--bone-300);
+}
+:global([data-candle-ready])
+  .row[data-candle-item]:is([data-lit], [data-focus], [data-open])
+  .price {
+  color: var(--color-accent);
+}
+:global([data-candle-ready])
+  .row[data-candle-item]:is([data-lit], [data-focus], [data-open])::before {
+  opacity: 1;
 }

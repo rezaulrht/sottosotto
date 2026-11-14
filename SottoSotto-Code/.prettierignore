@@ -12,3 +12,5 @@ playwright-report
 data
 docs
 *.md
+.cache
+src/content/video-manifest.json

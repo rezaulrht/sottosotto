@@ -6,17 +6,23 @@
 import type { Metadata } from 'next';
 import { rawFiles } from './raw';
 import { flaggedValues } from './report';
-import type { ManifestEntry, SeoPageKey } from './schemas';
+import type { ManifestEntry, SeoPageKey, VideoEntry } from './schemas';
 import { validateContent } from './validate';
 
 export const content = validateContent(rawFiles);
-export const { site, allergens, menu, desserts, wine, venue, seo, privacy, manifest } = content;
+export const { site, allergens, menu, desserts, wine, venue, seo, privacy, manifest, videos } =
+  content;
 
 /** Every flagged value in the raw data (mock, to confirm, needs verification…). */
 export const flags = flaggedValues(rawFiles);
 
 export function imageFor(key: string): ManifestEntry | undefined {
   return manifest[key];
+}
+
+/** A background video by its key in site.json `media` (e.g. "hero"). */
+export function videoFor(key: string | null): VideoEntry | undefined {
+  return key === null ? undefined : videos[key];
 }
 
 /** Per-route title and description from seo.json (D43). */

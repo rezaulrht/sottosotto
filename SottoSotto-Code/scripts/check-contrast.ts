@@ -5,6 +5,7 @@
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 import { cssColors } from '../src/lib/css-tokens';
 import { bodyTextPairs, colors, contrastRatio } from '../src/lib/tokens';
 
@@ -34,6 +35,29 @@ const rows = bodyTextPairs.map(([fg, bg]) => {
 });
 
 console.table(rows);
+
+// The concrete wall must stay at or below concrete-500 behind body text (D55). Checked on
+// the 99.9th percentile of the shipped WebP, so a few encoder speckles do not count.
+const texture = fileURLToPath(new URL('../public/textures/concrete-1440.webp', import.meta.url));
+const { data } = await sharp(texture).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+const lin = (c: number) => {
+  const v = c / 255;
+  return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+};
+const lum: number[] = [];
+for (let i = 0; i < data.length; i += 3) {
+  lum.push(0.2126 * lin(data[i]!) + 0.7152 * lin(data[i + 1]!) + 0.0722 * lin(data[i + 2]!));
+}
+lum.sort((a, b) => a - b);
+const brightest = lum[Math.floor(lum.length * 0.999)]!;
+const cap = 0.2126 * lin(0x55) + 0.7152 * lin(0x52) + 0.0722 * lin(0x4d);
+console.log(
+  `Concrete texture: brightest tone L=${brightest.toFixed(3)} (cap ${cap.toFixed(3)}, concrete-500).`,
+);
+if (brightest > cap) {
+  console.error('✗ The concrete texture is lighter than concrete-500. Run `npm run images`.');
+  failed = true;
+}
 
 if (failed) {
   console.error('Contrast check failed.');

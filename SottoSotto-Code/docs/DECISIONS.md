@@ -76,7 +76,13 @@ Approved by the user on 2026-11-14, with D30 changed to Next.js. D47 hosting is 
 | D47 | Hosting | Cloudflare Pages recommended; output is plain static files, portable to Nginx, Netlify or Vercel (§13) | Recommendation; deferred |
 | D48 | Phase 2 backend | If the Hospres API needs a secret key, Phase 2 adds one serverless proxy function; nothing else server-side (§8.2) | Approved (depends on Q8) |
 | D49 | Branching | Pull request per change with a preview deploy; `main` is production | Approved |
-| D50 | Placeholder hero video | Abstract dark loop generated with ffmpeg (no download) until the client's video arrives | Approved |
+| D50 | Placeholder hero video | Abstract dark loop generated with ffmpeg (no download) until the client's video arrives | Replaced by D51 |
+| D51 | Placeholder hero video (M2) | A 22.5 s seamless loop made from 5 dish photos with slow push-ins, pans and crossfades (`npm run video`), replacing D50's abstract loop. Still mock until the client's video arrives (D9); `HERO_SRC=clip npm run video` swaps it in | Approved (user, 2026-11-14) |
+| D52 | Video quality | x264 CRF 31 (`-tune film`) and VP9 CRF 38 instead of the CRF 26 / 34 starting points, to keep the 1080p MP4 under 4 MB; also a 720p WebM for phones. No visible difference under the hero overlay | Proposed in M2, for review |
+| D53 | M2 review pages | `/lab/` (index, `/lab/candle/`, `/lab/hospres/`): noindex, not in the sitemap, 404 in production builds. The hero prototype is the real Home hero | Proposed in M2 |
+| D55 | Concrete background | The current site's wall tile (`sottosottobackground2.jpg`, downloaded with the user's OK; original in `sotto sotto assets/old-site/`) replaces the generated placeholder on every page. Highlights are soft-capped at `concrete-500` by `npm run images` (the contrast check enforces it); tiled down the page, at least 1440 px wide. The Menu page keeps a dimmed tone over it. The old site's rust top band is not used | Approved (user, 2026-11-14) |
+| D56 | Candle on the real menu (M2) | `/menu` uses the candle for every dish, side, wine and bar row; dishes and sides get the allergen toggle; drink allergens wait for M4 (Q29) | Approved (user, 2026-11-14) |
+| D54 | Allergen toggle | Native `<details>`/`<summary>`: works without JS, keyboard and screen-reader ready; an open toggle lights its dish | Proposed in M2 |
 
 ## Not decided yet
 

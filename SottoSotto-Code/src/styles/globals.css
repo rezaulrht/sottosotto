@@ -24,10 +24,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 /*
- * Concrete texture + grain, fixed behind the page (PAGES.md, Global). Both files are
- * generated placeholders (scripts/images.ts) until the real texture is made (ASSETS.md).
- * The ink overlay keeps the background at or below concrete-500 behind body text.
+ * Concrete wall + grain, fixed behind the page (PAGES.md, Global; D55). The wall is the
+ * current site's tile (scripts/images.ts), with its highlights capped at concrete-500, the
+ * lightest tone allowed behind body text (checked by npm run contrast). It tiles down the
+ * page like the old site, at least 1440 px wide so phones see the texture, not a pattern.
  * A fixed pseudo-element instead of background-attachment: fixed (smooth on phones).
+ * The Menu page dims it further (pages.module.css .dimmed).
  */
 body::before {
   content: '';
@@ -37,8 +39,11 @@ body::before {
   pointer-events: none;
   background:
     url('/textures/grain.png') repeat,
-    linear-gradient(rgb(18 17 16 / 0.6), rgb(18 17 16 / 0.6)),
-    url('/textures/concrete.webp') center / cover no-repeat,
+    image-set(
+        url('/textures/concrete-1440.avif') type('image/avif'),
+        url('/textures/concrete-1440.webp') type('image/webp')
+      )
+      top center / max(100%, 1440px) auto repeat,
     var(--color-bg);
 }
 img,

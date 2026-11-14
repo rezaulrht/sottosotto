@@ -10,6 +10,7 @@ import {
   dessertsSchema,
   manifestSchema,
   menuSchema,
+  videoManifestSchema,
   privacySchema,
   seoSchema,
   siteSchema,
@@ -23,6 +24,7 @@ import {
   type Seo,
   type Site,
   type Venue,
+  type VideoManifest,
   type Wine,
 } from './schemas';
 
@@ -36,6 +38,7 @@ export interface Content {
   seo: Seo;
   privacy: Privacy;
   manifest: ImageManifest;
+  videos: VideoManifest;
 }
 
 export interface ContentIssue {
@@ -94,8 +97,24 @@ export function validateContent(raw: RawFiles): Content {
   const seo = parse('seo.json', seoSchema);
   const privacy = parse('privacy.json', privacySchema);
   const manifest = parse('image-manifest.json', manifestSchema);
+  const videos = parse('video-manifest.json', videoManifestSchema);
 
   // ---- Cross-file checks (only on files that parsed)
+
+  if (site && videos) {
+    for (const [name, media] of Object.entries(site.media)) {
+      for (const field of ['src', 'poster'] as const) {
+        const key = media[field];
+        if (key !== null && !videos[key]) {
+          issues.push({
+            file: 'site.json',
+            path: `media.${name}.${field}`,
+            message: `No video "${key}" in the video manifest. Run \`npm run video\`.`,
+          });
+        }
+      }
+    }
+  }
 
   const categories = new Set(allergens?.categories ?? []);
   type Named = { name: string };
@@ -214,5 +233,6 @@ export function validateContent(raw: RawFiles): Content {
     seo: seo!,
     privacy: privacy!,
     manifest: manifest!,
+    videos: videos!,
   };
 }

@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "poster": {
+      "source": "hero-video",
+      "sourceHash": "57db5e6ec9ff260937906c9c5a29f0ebe463a98ae2533e6e5af031062b509e90",
+      "width": 1920,
+      "height": 1080,
+      "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABwBACdASoYAA4APu1yrU+pp6QiMAgBMB2JZgCdMoMh1EmioUFK7ViCNde/lAD+9CBEm9nF+tV8kPSc8K9PHZBneT7b28NYi4yXoKOvjG9lNesTVAQlDTpUZO/CAus16A3SkHF55mcfUIwAAAA=",
+      "sources": {
+        "avif": [
+          {
+            "width": 640,
+            "src": "/video/hero-poster-640.avif"
+          },
+          {
+            "width": 1280,
+            "src": "/video/hero-poster-1280.avif"
+          },
+          {
+            "width": 1920,
+            "src": "/video/hero-poster-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "width": 640,
+            "src": "/video/hero-poster-640.webp"
+          },
+          {
+            "width": 1280,
+            "src": "/video/hero-poster-1280.webp"
+          },
+          {
+            "width": 1920,
+            "src": "/video/hero-poster-1920.webp"
+          }
+        ]
+      }
+    },
+    "webm": [
+      {
+        "src": "/video/hero-1080.webm",
+        "height": 1080
+      },
+      {
+        "src": "/video/hero-720.webm",
+        "height": 720
+      }
+    ],
+    "mp4": [
+      {
+        "src": "/video/hero-1080.mp4",
+        "height": 1080
+      },
+      {
+        "src": "/video/hero-720.mp4",
+        "height": 720
+      }
+    ]
+  }
+}

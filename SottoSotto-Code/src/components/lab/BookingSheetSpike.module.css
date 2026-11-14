@@ -1,0 +1,146 @@
+.opener {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  background: var(--color-accent);
+  color: var(--ink-900);
+  font-family: var(--font-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+.options {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-7) 0;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+}
+.options label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+
+/* Desktop: centred panel. Phones: full-screen sheet sliding up (PAGES.md Booking modal). */
+.sheet {
+  width: min(40rem, calc(100% - 2 * var(--margin)));
+  height: min(85vh, 48rem);
+  max-height: none;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: var(--ink-800);
+  color: var(--color-text);
+  overflow: hidden;
+}
+.sheet[open] {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+.sheet::backdrop {
+  background: rgb(12 11 10 / 0.7);
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 47.99em) {
+  .sheet {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    margin: 0;
+    inset: 0;
+    border: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .sheet[open] {
+      animation: slide-up var(--dur-slow) var(--ease-out);
+    }
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-3) 0 var(--space-5);
+}
+.heading {
+  font-size: var(--step-h3);
+}
+.close {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.note {
+  padding: var(--space-2) var(--space-5) var(--space-4);
+  font-size: var(--step-small);
+  color: var(--color-text-muted);
+}
+
+.body {
+  position: relative;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bone-100);
+}
+
+.status {
+  position: absolute;
+  inset: var(--space-5) var(--space-5) auto;
+  color: var(--ink-900);
+}
+.status a {
+  color: var(--amber-700);
+}
+
+.host {
+  height: 100%;
+}
+.frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.sheet[data-size='legacy'] .frame {
+  width: 575px;
+  max-width: 100%;
+  height: 514px;
+  margin-inline: auto;
+}
+
+.readout {
+  margin-top: var(--space-7);
+}
+.readoutTitle {
+  margin-bottom: var(--space-4);
+  font-size: var(--step-h3);
+}
+.readout dl {
+  display: grid;
+  grid-template-columns: minmax(10rem, auto) 1fr;
+  gap: var(--space-2) var(--space-5);
+}
+.readout dt {
+  color: var(--color-text-muted);
+}
+.readout dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}

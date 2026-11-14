@@ -5,7 +5,7 @@
  *   deploy/nginx/security-headers.conf  Nginx (include inside the server block)
  * Runs after `next build` (see package.json "build").
  */
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CACHE_RULES, REDIRECTS, securityHeaders, type Header } from '../config/headers';
@@ -72,6 +72,9 @@ if (!existsSync(outDir)) {
   process.exit(1);
 }
 mkdirSync(join(deployDir, 'nginx'), { recursive: true });
+// M2 review pages (D53) never ship to production: remove them so they are real 404s.
+if (env === 'production') rmSync(join(outDir, 'lab'), { recursive: true, force: true });
+
 writeFileSync(join(outDir, '_headers'), headersFile());
 writeFileSync(join(outDir, '_redirects'), redirectsFile());
 writeFileSync(join(deployDir, 'vercel.json'), vercelConfig());

@@ -212,9 +212,9 @@
   "media": {
     "heroVideo": {
       "mock": true,
-      "src": null,
-      "poster": null,
-      "_note": "Placeholder clip and poster until the client supplies the video (D9)."
+      "src": "hero",
+      "poster": "hero",
+      "_note": "Key in src/content/video-manifest.json (npm run video). Placeholder loop made from the dish photos (D51) until the client supplies the video (D9)."
     },
     "bookingVideo": {
       "mock": true,

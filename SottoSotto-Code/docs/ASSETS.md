@@ -81,7 +81,7 @@ Total: 27 assigned + 8 spare = 35.
 | Logo in vector format (SVG/AI/EPS) | Header, footer, favicon, social image | Placeholder **(MOCK)**. The current site has only a 300 × 115 PNG |
 | Brand colours and fonts | Whole site | Placeholders **(MOCK)** from `DESIGN_SYSTEM.md` |
 | Bar menu images | — | Not needed: the Wine tab, bar menu included, is text only |
-| Concrete texture | Site background | To be sourced or made by design |
+| Concrete texture | Site background | From the current site: `sottosottobackground2.jpg` (2879 × 1391), kept in `sotto sotto assets/old-site/`; web copy `public/textures/concrete-1440.*` (D55) |
 | Social share image | Link previews | To be made once photos and logo arrive |
 
 The current site's slideshow images (`images/new/1.jpg` … `18.jpg` and five others) were not downloaded. Their content and quality are unknown.

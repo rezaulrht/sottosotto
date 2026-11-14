@@ -76,9 +76,10 @@ test('hours chip shows today’s state after hydration', async ({ page }) => {
 
 test('header turns solid after scrolling', async ({ page }) => {
   await page.goto('/menu/');
+  await page.waitForLoadState('load');
   const header = page.locator('#site-header');
   await expect(header).not.toHaveAttribute('data-scrolled');
-  await page.evaluate(() => window.scrollTo(0, 800));
+  await page.evaluate(() => window.scrollTo({ top: 800, behavior: 'instant' }));
   await expect(header).toHaveAttribute('data-scrolled', '');
 });
 

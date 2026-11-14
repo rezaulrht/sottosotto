@@ -470,6 +470,22 @@ export const manifestEntry = z.strictObject({
 
 export const manifestSchema = z.record(z.string(), manifestEntry);
 
+/** One encoded file of a background video, e.g. /video/hero-1080.webm (ARCHITECTURE §6.2). */
+const videoSource = z.strictObject({
+  src: nonEmpty.regex(/^\/video\/[\w-]+\.(mp4|webm)$/),
+  height: z.number().int().positive(),
+});
+
+/** src/content/video-manifest.json, written by scripts/video.sh. Sources are largest first. */
+export const videoManifestSchema = z.record(
+  z.string(),
+  z.strictObject({
+    poster: manifestEntry,
+    webm: z.array(videoSource).min(1),
+    mp4: z.array(videoSource).min(1),
+  }),
+);
+
 export type Site = z.infer<typeof siteSchema>;
 export type Allergens = z.infer<typeof allergensSchema>;
 export type Menu = z.infer<typeof menuSchema>;
@@ -483,3 +499,5 @@ export type SeoPageKey = keyof Seo['pages'];
 export type Privacy = z.infer<typeof privacySchema>;
 export type ImageManifest = z.infer<typeof manifestSchema>;
 export type ManifestEntry = z.infer<typeof manifestEntry>;
+export type VideoManifest = z.infer<typeof videoManifestSchema>;
+export type VideoEntry = VideoManifest[string];

@@ -211,7 +211,7 @@ Keys starting with `_` are notes for humans; the loaders strip them.
 | `hero-1080.webm` | VP9, CRF about 34 |
 | `hero-poster.*` | A frame from the loop → image pipeline (AVIF/WebP, under 200 KB) |
 
-The script fails if the 1080p MP4 is over 4 MB. ffmpeg is a system tool; installing it needs your OK (Q46).
+The script fails if the 1080p MP4 is over 4 MB. ffmpeg is a system tool; installing it needs your OK (Q46). If it is not on `PATH`, set `FFMPEG=/path/to/ffmpeg`. M2 tuned the settings to CRF 31 / VP9 CRF 38 and added `hero-720.webm` (D52). The poster and file list go to `src/content/video-manifest.json`, which the content check cross-references with `site.json` `media`.
 
 **Playback rules (`VideoBackground`):**
 1. HTML ships `<video muted playsinline loop preload="none" poster>` with no `src`. The poster `<img>` is the LCP element, preloaded with `fetchpriority="high"`.
@@ -278,6 +278,7 @@ How it works:
 - **Spark:** 5–6 dots in a CSS keyframe burst, 400 ms, once per enter.
 - **Reduced motion:** no flame, glow, spark or flicker; every dish lit.
 - **Proved first** in M2 with a performance trace on a mid-range laptop and a real phone.
+- **M2 findings:** focus and open allergen toggles light a dish through attributes CandleLight sets (`data-focus`, `data-open`), not `:focus-within` / `:has()`, which re-matched the whole menu on every change (long tasks). Text colour switches without a transition; only the photo overlay and the pool of light fade (opacity). Headless traces (software rendering, busy machine) were inconclusive for the full menu; the real-laptop trace decides.
 
 ## 8. Booking modal
 

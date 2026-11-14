@@ -154,6 +154,55 @@ if (!existsSync(grainPath)) {
   console.log('✓ textures/grain.png (placeholder)');
 }
 
+// ---- Concrete: the current site's wall texture (D55), highlights capped at concrete-500
+
+const CONCRETE_SRC = join(assetDir, 'old-site', 'sottosottobackground2.jpg');
+const CONCRETE_WIDTH = 1440;
+const concreteOut = (ext: string) => join(textureDir, `concrete-${CONCRETE_WIDTH}.${ext}`);
+
+/** sRGB channel (0–255) → linear light, and back. */
+const toLin = (c: number) => {
+  const v = c / 255;
+  return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+};
+const toSrgb = (v: number) =>
+  Math.round(255 * (v <= 0.0031308 ? v * 12.92 : 1.055 * v ** (1 / 2.4) - 0.055));
+const luminance = (r: number, g: number, b: number) =>
+  0.2126 * toLin(r) + 0.7152 * toLin(g) + 0.0722 * toLin(b);
+
+/** The lightest tone allowed behind body text (DESIGN_SYSTEM §2): concrete-500, #55524d. */
+const CONCRETE_MAX_LUMINANCE = luminance(0x55, 0x52, 0x4d);
+
+if (
+  existsSync(CONCRETE_SRC) &&
+  (!existsSync(concreteOut('webp')) ||
+    statSync(concreteOut('webp')).mtimeMs < statSync(CONCRETE_SRC).mtimeMs)
+) {
+  const { data, info } = await sharp(CONCRETE_SRC)
+    .resize(CONCRETE_WIDTH)
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  // Soft knee: tones below KNEE are untouched (most of the wall); brighter highlights are
+  // compressed towards the cap, keeping their hue. A small margin covers encoder drift.
+  const cap = CONCRETE_MAX_LUMINANCE * 0.92;
+  const KNEE = cap * 0.6;
+  for (let i = 0; i < data.length; i += 3) {
+    const L = luminance(data[i]!, data[i + 1]!, data[i + 2]!);
+    if (L <= KNEE) continue;
+    const target = KNEE + (cap - KNEE) * (1 - Math.exp(-(L - KNEE) / (cap - KNEE)));
+    const k = target / L;
+    for (let c = 0; c < 3; c++) data[i + c] = toSrgb(toLin(data[i + c]!) * k);
+  }
+  const raw = { raw: { width: info.width, height: info.height, channels: 3 as const } };
+  await sharp(data, raw).avif({ quality: 45, effort: 6 }).toFile(concreteOut('avif'));
+  await sharp(data, raw).webp({ quality: 62, effort: 6 }).toFile(concreteOut('webp'));
+  const kb = (ext: string) => Math.round(statSync(concreteOut(ext)).size / 1024);
+  console.log(
+    `✓ textures/concrete-${CONCRETE_WIDTH} from the current site (${info.width}×${info.height}; AVIF ${kb('avif')} KB, WebP ${kb('webp')} KB)`,
+  );
+}
+
 const concretePath = join(textureDir, 'concrete.webp');
 if (!existsSync(concretePath)) {
   // Soft, blotchy noise tinted to concrete-600 (#3b3936), darkened so text contrast holds.

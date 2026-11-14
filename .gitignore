@@ -11,6 +11,7 @@ SottoSotto-Code/*.tsbuildinfo
 SottoSotto-Code/content-report.json
 SottoSotto-Code/test-results/
 SottoSotto-Code/playwright-report/
+SottoSotto-Code/.cache/
 
 # Local env
 .env*

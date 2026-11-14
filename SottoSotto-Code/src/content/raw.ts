@@ -11,6 +11,7 @@ import site from '../../data/site.json';
 import venue from '../../data/venue.json';
 import wine from '../../data/wine.json';
 import manifest from './image-manifest.json';
+import videoManifest from './video-manifest.json';
 
 /** Keyed by file name under data/ (the manifest by its path under src/content/). */
 export const rawFiles = {
@@ -23,6 +24,7 @@ export const rawFiles = {
   'seo.json': seo,
   'privacy.json': privacy,
   'image-manifest.json': manifest,
+  'video-manifest.json': videoManifest,
 } as const satisfies Record<string, unknown>;
 
 export type RawFiles = { [K in keyof typeof rawFiles]: unknown };
