@@ -1,0 +1,122 @@
+{
+  "_about": "Venue page content. All photos are MOCK placeholders until the client supplies them. Copy and its status: docs/CONTENT.md section 4.",
+  "opening": {
+    "image": {
+      "mock": true,
+      "src": null,
+      "alt": "Placeholder: the entrance or the stairs",
+      "caption": null
+    }
+  },
+  "descent": {
+    "images": [
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: descent step 1",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: descent step 2",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: descent step 3",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: descent step 4",
+        "caption": null
+      }
+    ]
+  },
+  "setting": {
+    "eyebrow": "The street",
+    "heading": "On North Parade",
+    "lead": "Sotto Sotto is on North Parade.",
+    "fact": {
+      "text": "North Parade is a historic Georgian street and promenade in central Bath, designed by John Wood the Elder in 1741, built in honey-coloured Bath stone, with views over the River Avon and Parade Gardens.",
+      "needsVerification": true,
+      "source": "Google summary supplied by the client, 2026-11-14",
+      "_note": "Keep exactly as written. Verify against a reliable source such as Historic England before launch (OPEN_QUESTIONS Q33)."
+    },
+    "close": "Leave the street, take the stairs, and step inside.",
+    "image": {
+      "mock": true,
+      "src": null,
+      "alt": "Placeholder: North Parade in Bath stone",
+      "caption": null
+    }
+  },
+  "story": {
+    "mock": true,
+    "heading": "Our story",
+    "text": "(MOCK) Placeholder: who founded Sotto Sotto and when it opened. To come from the client.",
+    "image": {
+      "mock": true,
+      "src": null,
+      "alt": "Placeholder: the restaurant",
+      "caption": null
+    }
+  },
+  "rooms": {
+    "images": [
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: room 1",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: room 2",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: room 3",
+        "caption": null
+      }
+    ]
+  },
+  "details": {
+    "images": [
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: stone",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: table setting",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: wine shelves",
+        "caption": null
+      },
+      {
+        "mock": true,
+        "src": null,
+        "alt": "Placeholder: candle",
+        "caption": null
+      }
+    ]
+  },
+  "bookingPrompt": {
+    "heading": "See it for yourself",
+    "button": "Book a Table"
+  }
+}
