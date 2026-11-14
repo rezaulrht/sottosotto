@@ -1,0 +1,18 @@
+# Original photos and videos: kept out of git (D36). Back them up elsewhere (Q47).
+/sotto sotto assets/
+
+# App build and tooling output
+SottoSotto-Code/node_modules/
+SottoSotto-Code/.next/
+SottoSotto-Code/out/
+SottoSotto-Code/deploy/
+SottoSotto-Code/next-env.d.ts
+SottoSotto-Code/*.tsbuildinfo
+SottoSotto-Code/content-report.json
+SottoSotto-Code/test-results/
+SottoSotto-Code/playwright-report/
+
+# Local env
+.env*
+!.env.example
+.DS_Store

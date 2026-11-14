@@ -1,0 +1,116 @@
+.footer {
+  margin-top: var(--section-pad);
+  padding-block: var(--space-9) var(--space-7);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--step-small);
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-7) var(--gutter);
+  grid-template-columns: 1fr;
+}
+
+.name {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+}
+.philosophy {
+  font-size: var(--step-body);
+  color: var(--color-text);
+}
+.note {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.heading {
+  margin-bottom: var(--space-3);
+  color: var(--color-accent);
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+}
+
+.hours {
+  display: grid;
+  gap: var(--space-1);
+  font-variant-numeric: tabular-nums;
+}
+.hours div {
+  display: flex;
+  gap: var(--space-3);
+}
+.hours dt {
+  min-width: 5.5em;
+  color: var(--color-text-muted);
+}
+.hours dd {
+  margin: 0;
+}
+
+.address {
+  font-style: normal;
+}
+
+.list,
+.inline {
+  padding: 0;
+  list-style: none;
+}
+.list {
+  display: grid;
+  gap: var(--space-2);
+}
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+.muted {
+  color: var(--color-text-muted);
+}
+
+.footer a {
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 0.25em;
+}
+.footer a:hover {
+  color: var(--color-accent);
+}
+.inline a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 48em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .lead,
+  .bottom {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 64em) {
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  }
+  .lead {
+    grid-column: auto;
+    padding-right: var(--space-7);
+  }
+}

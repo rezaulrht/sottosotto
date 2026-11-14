@@ -1,0 +1,24 @@
+.figure {
+  width: 100%;
+  margin: 0;
+}
+
+.box {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 12px, rgb(110 106 100 / 0.08) 12px 13px),
+    var(--ink-800);
+  color: var(--color-text-dim);
+  font-size: var(--step-small);
+  text-align: center;
+}
+
+.caption {
+  margin-top: var(--space-2);
+  font-size: var(--step-small);
+  color: var(--color-text-muted);
+}

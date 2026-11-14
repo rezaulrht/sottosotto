@@ -15,7 +15,15 @@
     "_philosophyFullNote": "First paragraph uses the footer wording. The menu section of the current site reads \"is it's simplicity\" (typo).",
     "homeIntro": "Situated just a few steps away from the Roman Baths, the casual warmth of Sotto Sotto invites you to have a fun dining experience.",
     "bookingNote": "Sotto Sotto is a very small restaurant and booking is strongly recommended.",
-    "emailResponseNote": "We will respond to your email within 24 hours."
+    "emailResponseNote": "We will respond to your email within 24 hours.",
+    "enquiriesHeading": "Enquiries",
+    "careers": {
+      "_source": "Current site index.html lines 383-386 (docs/CONTENT.md section 6). applyText is followed by contact.careersEmail as a link. The button label is new.",
+      "heading": "Careers at Sotto Sotto",
+      "paragraphs": ["We are always looking for dedicated professionals to join our team."],
+      "applyText": "If you are interested in working at Sotto Sotto please apply by sending a brief covering letter, CV and photograph to",
+      "button": "Send your CV"
+    }
   },
   "hours": {
     "_source": "Decision D6 in docs/DECISIONS.md. Matches the current site's footer.",
