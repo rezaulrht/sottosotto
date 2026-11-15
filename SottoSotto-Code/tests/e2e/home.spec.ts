@@ -27,7 +27,7 @@ const mode = (page: Page) => page.locator('[data-motion-mode]');
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
 
-  test('all content is visible and Book links go to Hospres', async ({ page }) => {
+  test('all content is visible and Book links go to the booking page', async ({ page }) => {
     await page.goto('/');
     for (const name of SECTIONS) {
       await expect(page.getByRole('heading', { level: 2, name })).toBeVisible();
@@ -36,7 +36,7 @@ test.describe('without JavaScript', () => {
     await expect(page.locator('[data-step]')).toHaveCount(4);
     await expect(page.locator('[data-pinned]')).toHaveCount(0);
     for (const link of await page.locator('main a[data-booking]').all()) {
-      await expect(link).toHaveAttribute('href', site.booking.widgetUrl);
+      await expect(link).toHaveAttribute('href', site.booking.page);
     }
     const opacity = await page
       .locator('[data-step]')

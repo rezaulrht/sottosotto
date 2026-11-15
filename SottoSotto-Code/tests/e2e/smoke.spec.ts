@@ -58,12 +58,11 @@ for (const route of ROUTES) {
   });
 }
 
-test('Book a Table is a real link to Hospres (no-JS fallback)', async ({ page }) => {
+test('Book a Table is a real link to the booking page (no-JS fallback)', async ({ page }) => {
   await page.goto('/');
   // By role: the closed mobile menu (also inside the header) is not in the accessibility tree.
   const book = page.getByRole('banner').getByRole('link', { name: /^Book a Table/ });
-  await expect(book).toHaveAttribute('href', site.booking.widgetUrl);
-  await expect(book).toHaveAttribute('target', '_blank');
+  await expect(book).toHaveAttribute('href', site.booking.page);
   await expect(book).toBeVisible();
 });
 
@@ -74,13 +73,24 @@ test('hours chip shows today’s state after hydration', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('header turns solid after scrolling', async ({ page }) => {
+test('header turns solid after scrolling', async ({ page, isMobile }) => {
   await page.goto('/menu/');
   await page.waitForLoadState('load');
   const header = page.locator('#site-header');
   await expect(header).not.toHaveAttribute('data-scrolled');
-  await page.evaluate(() => window.scrollTo({ top: 800, behavior: 'instant' }));
-  await expect(header).toHaveAttribute('data-scrolled', '');
+  // A wheel scroll, like a visitor: works with Lenis (desktop) and native scrolling.
+  if (isMobile) {
+    // Phones have no Lenis; emulated touch devices may ignore wheel input, so jump directly.
+    await page.evaluate(() => window.scrollTo({ top: 1200, behavior: 'instant' }));
+    await expect(header).toHaveAttribute('data-scrolled', '');
+  } else {
+    // Desktop: a wheel scroll, like a visitor (Lenis). Retry: one early event can be lost under load.
+    await page.mouse.move(200, 400);
+    await expect(async () => {
+      await page.mouse.wheel(0, 600);
+      await expect(header).toHaveAttribute('data-scrolled', '', { timeout: 1000 });
+    }).toPass();
+  }
 });
 
 test('menu sections are reachable by hash', async ({ page }) => {

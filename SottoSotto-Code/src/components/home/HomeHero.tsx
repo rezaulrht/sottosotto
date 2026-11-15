@@ -26,12 +26,12 @@ export function HomeHero({ hoursSummary }: Props) {
         <p className={styles.tagline}>{site.tagline}</p>
         <p className={styles.intro}>{site.copy.homeIntro}</p>
         <div className={styles.actions}>
-          <BookButton href={site.booking.widgetUrl} />
+          <BookButton />
           <HoursChip hours={site.hours} summary={hoursSummary} />
         </div>
       </div>
       <div className={styles.badge}>
-        <RotatingBadge href={site.booking.widgetUrl} />
+        <RotatingBadge />
       </div>
     </section>
   );

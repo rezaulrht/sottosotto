@@ -299,3 +299,9 @@
   .row[data-candle-item]:is([data-lit], [data-focus], [data-open])::before {
   opacity: 1;
 }
+
+/* Booking page */
+.bookPanel {
+  max-width: 40rem;
+  margin-top: var(--space-7);
+}

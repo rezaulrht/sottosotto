@@ -8,8 +8,11 @@ export const NAV_LINKS = [
 
 export type NavLink = (typeof NAV_LINKS)[number];
 
+/** The guest booking page (D59). Book a Table buttons link here; with JS they open the booking dialog. */
+export const BOOK_PATH = '/book/';
+
 /** Every route, for the sitemap and smoke tests. */
-export const ROUTES = ['/', '/menu/', '/venue/', '/find-us/', '/privacy/'] as const;
+export const ROUTES = ['/', '/menu/', '/venue/', '/find-us/', '/book/', '/privacy/'] as const;
 
 /** True when `pathname` is the link's page (trailing slashes ignored). */
 export function isCurrent(href: string, pathname: string): boolean {

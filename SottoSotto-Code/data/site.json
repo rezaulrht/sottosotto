@@ -187,10 +187,23 @@
     }
   ],
   "booking": {
-    "provider": "Hospres",
-    "phase": 1,
-    "widgetUrl": "https://app.hospres.com/YO7Z73/reserve",
-    "_note": "Phase 1: this URL in an iframe inside our own modal. Phase 2: custom UI on the Hospres API once the client provides access."
+    "_note": "Guest booking screens built in-house (D59): Hospres removed at the user's request (2026-11-15). No backend yet: availability is generated and nothing is booked (Q8).",
+    "page": "/book/",
+    "maxPartySize": 5,
+    "_maxPartySizeSource": "The current Hospres widget states the restaurant cannot accommodate parties larger than 5.",
+    "rules": {
+      "mock": true,
+      "slotMinutes": 15,
+      "lastSeatingMinutesBeforeClose": 60,
+      "bookingWindowDays": 60,
+      "minNoticeMinutes": 120,
+      "_note": "MOCK booking rules until the client confirms them (OPEN_QUESTIONS Q50). Last seating depends on Q13 (are 14:00 and 22:00 closing or last orders?)."
+    },
+    "availability": {
+      "mock": true,
+      "source": "generated",
+      "_note": "MOCK: no booking backend yet (D59, Q8). Availability is generated in the browser and nothing is booked."
+    }
   },
   "analytics": {
     "ga4MeasurementId": "G-2TMCMCTHRD",

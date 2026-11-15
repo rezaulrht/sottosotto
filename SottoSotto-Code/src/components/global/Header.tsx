@@ -24,14 +24,14 @@ export function Header() {
               <NavLinks className={styles.list} linkClassName={styles.link} />
             </nav>
             <div className={styles.mobileNav}>
-              <MobileNav bookingUrl={site.booking.widgetUrl} />
+              <MobileNav />
             </div>
           </div>
           <Link href="/" className={styles.wordmark} aria-label={`${site.name}, home`}>
             {site.name}
           </Link>
           <div className={styles.end}>
-            <BookButton href={site.booking.widgetUrl} />
+            <BookButton />
           </div>
         </div>
       </header>

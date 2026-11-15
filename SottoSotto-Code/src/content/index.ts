@@ -35,3 +35,21 @@ export function pageMetadata(key: SeoPageKey, path: string): Metadata {
     openGraph: { title: page.title, description: page.description, url: path },
   };
 }
+
+/** Everything the guest booking flow needs, from site.json and allergens.json (D59). */
+export function bookingFlowProps() {
+  const { hours, booking, contact } = site;
+  return {
+    hours: { timezone: hours.timezone, weekly: hours.weekly, closures: hours.closures },
+    rules: {
+      slotMinutes: booking.rules.slotMinutes,
+      lastSeatingMinutesBeforeClose: booking.rules.lastSeatingMinutesBeforeClose,
+      bookingWindowDays: booking.rules.bookingWindowDays,
+      minNoticeMinutes: booking.rules.minNoticeMinutes,
+    },
+    maxPartySize: booking.maxPartySize,
+    contact: { phone: contact.phone, phoneE164: contact.phoneE164, email: contact.email },
+    allergyNote: allergens.generalNote,
+    preview: booking.availability.mock === true,
+  };
+}

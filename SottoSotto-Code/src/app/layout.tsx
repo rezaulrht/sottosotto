@@ -3,9 +3,10 @@ import type { ReactNode } from 'react';
 import { Footer } from '@/components/global/Footer';
 import { Header } from '@/components/global/Header';
 import { MockBadge, showMockBadge } from '@/components/global/MockBadge';
-import { seo, site } from '@/content';
+import { bookingFlowProps, seo, site } from '@/content';
 import { siteEnv } from '@/lib/env';
 import { MotionProvider } from '@/motion/MotionProvider';
+import { BookingDialog } from '@/booking/BookingDialog';
 import { colors } from '@/lib/tokens';
 import { fontVariables } from './fonts';
 import '@/styles/globals.css';
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Footer />
         <MockBadge />
         <MotionProvider />
+        <BookingDialog note={site.copy.bookingNote} {...bookingFlowProps()} />
       </body>
     </html>
   );

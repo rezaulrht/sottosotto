@@ -30,7 +30,7 @@ export function Philosophy() {
         </div>
         <div className={styles.bookingLead}>
           <p>{copy.bookingNote}</p>
-          <BookButton href={site.booking.widgetUrl} variant="outline" />
+          <BookButton variant="outline" />
         </div>
       </div>
     </section>
@@ -153,7 +153,7 @@ export function BookingBand() {
           Reserve your table
         </h2>
         <p className={styles.lead}>{site.copy.bookingNote}</p>
-        <BookButton href={site.booking.widgetUrl} />
+        <BookButton />
       </div>
     </section>
   );

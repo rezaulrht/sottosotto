@@ -126,15 +126,16 @@ If the optional type filter is built, it covers the bar sections too (e.g. Wine 
 | 4 | Getting here | Optional: one line each for train and on foot. | `site.json` gettingHere (MOCK, optional) |
 | 5 | Careers | Current site's careers text, "Send your CV" button using careers@. | `CONTENT.md` section 6 |
 
-## Booking modal
+## Booking (D59)
 
 | | Spec |
 |---|---|
-| Desktop | Centred panel over a blurred, dimmed page. |
-| Phone | Full-screen sheet sliding up. |
-| Phase 1 | Hospres iframe inside our modal frame. We cannot style the inside of the widget. Ours: the frame, heading, animation and a "small restaurant, book ahead" note. |
-| Phase 2 (when the API arrives) | Date (custom calendar greying out Sunday and Monday) → party size → available times → name, phone, email → confirmation. |
-| Unknown | Deposit or card capture, party size limits and slot rules: unknown until the Hospres API docs arrive (Q8). |
+| Where | Dialog opened by every "Book a Table" button; the same flow on `/book/` (direct links, no JS) |
+| Desktop | Centred panel over a blurred, dimmed page |
+| Phone | Full-screen sheet sliding up |
+| Steps | Date (Monday-first calendar; Sundays, Mondays, closures and past days greyed out) → guests (1–5; "call us" for more) → available times by session → name, phone, email, optional notes (with the allergy note) → confirmation |
+| Now | Preview only: availability is made up, nothing is booked, and a notice says so (Q8) |
+| Unknown | Slot rules, deposits or card capture, amend and cancel (Q50); the backend (Q8) |
 
 ## Privacy
 
