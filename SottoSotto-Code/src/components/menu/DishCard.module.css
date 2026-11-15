@@ -10,6 +10,8 @@
 .card {
   position: relative;
   isolation: isolate;
+  /* Linked from Home (/menu/#dish-id): land below the sticky header and tabs. */
+  scroll-margin-top: calc(var(--header-h-compact) + 5rem);
   display: grid;
   gap: var(--space-2);
   align-content: start;

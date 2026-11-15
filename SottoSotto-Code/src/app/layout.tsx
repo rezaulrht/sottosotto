@@ -5,6 +5,7 @@ import { Header } from '@/components/global/Header';
 import { MockBadge, showMockBadge } from '@/components/global/MockBadge';
 import { seo, site } from '@/content';
 import { siteEnv } from '@/lib/env';
+import { MotionProvider } from '@/motion/MotionProvider';
 import { colors } from '@/lib/tokens';
 import { fontVariables } from './fonts';
 import '@/styles/globals.css';
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <Footer />
         <MockBadge />
+        <MotionProvider />
       </body>
     </html>
   );

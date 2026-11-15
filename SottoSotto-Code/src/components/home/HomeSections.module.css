@@ -1,0 +1,383 @@
+/* Home sections 2–7 (PAGES.md Home, DESIGN_SYSTEM §4). Layout reads in full without JS. */
+
+.section {
+  padding-block: var(--section-pad);
+  /* The dish cards' pools of light reach past the edges; never into a sideways scroll. */
+  overflow-x: clip;
+}
+
+.heading {
+  margin-bottom: var(--space-6);
+}
+
+.lead {
+  max-width: 40ch;
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  color: var(--bone-100);
+}
+
+.label {
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  font-weight: 300;
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--color-accent);
+}
+
+.textLink,
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-accent);
+  text-underline-offset: 0.3em;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  margin-top: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.price {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--color-accent);
+}
+
+/* ---- 2. Philosophy: large text on the concrete */
+.philosophy {
+  padding-block: var(--section-pad);
+}
+.philosophyText {
+  display: grid;
+  gap: var(--space-6);
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: var(--step-h2);
+  line-height: 1.25;
+  color: var(--bone-100);
+}
+.philosophyText p {
+  max-width: none;
+}
+@media (min-width: 64em) {
+  .philosophyText {
+    max-width: 30ch;
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+.bookingLead {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  color: var(--bone-300);
+}
+@media (min-width: 64em) {
+  .bookingLead {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+/* ---- 3. Stair descent. Default (no JS, phones, reduced motion): frames stacked. */
+.descent {
+  position: relative;
+}
+.stage {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+}
+.step {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 90svh;
+  margin: 0;
+  overflow: hidden;
+}
+/* Each step darker and warmer than the last (--dark: 0 → 0.45). */
+.step::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(36 20 10);
+  opacity: var(--dark, 0);
+  pointer-events: none;
+}
+.stepPlaceholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-6);
+  background:
+    linear-gradient(to bottom, rgb(18 17 16 / 0.2), rgb(18 17 16 / 0.7)),
+    image-set(
+        url('/textures/concrete-1440.avif') type('image/avif'),
+        url('/textures/concrete-1440.webp') type('image/webp')
+      )
+      center / cover;
+  color: var(--bone-300);
+  font-size: var(--step-small);
+  text-align: center;
+}
+.stageText {
+  position: relative;
+  z-index: 1;
+  padding-block: var(--space-7) var(--space-8);
+}
+
+/* Desktop, pinned by stair-descent: the stage fills the screen and the frames stack. */
+.descent[data-pinned] .stage {
+  display: block;
+  height: 100svh;
+  overflow: hidden;
+}
+.descent[data-pinned] .step {
+  position: absolute;
+  inset: 0;
+  max-height: none;
+  aspect-ratio: auto;
+}
+.descent[data-pinned] .stageText {
+  position: absolute;
+  inset: auto 0 0;
+  background: linear-gradient(to top, rgb(18 17 16 / 0.85), transparent);
+}
+
+@media (min-width: 48em) {
+  .step {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---- 4. Featured dishes: slightly dim, brighten on hover (small preview of the candle) */
+.dishes {
+  display: grid;
+  gap: var(--space-8) var(--gutter);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  padding: 0;
+  list-style: none;
+}
+.dish {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: var(--space-2);
+  color: inherit;
+  text-decoration: none;
+}
+.dish::before {
+  content: '';
+  position: absolute;
+  inset: -12% -10%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(242 201 133 / 0.13), transparent);
+  opacity: 0;
+  transition: opacity var(--dur-hover) var(--ease-out);
+  pointer-events: none;
+}
+.dishPhoto {
+  position: relative;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+.dishPhoto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink-950);
+  opacity: 0;
+  transition: opacity var(--dur-hover) var(--ease-out);
+  pointer-events: none;
+}
+.dishHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+.dishName {
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+.dishText {
+  color: var(--bone-300);
+}
+/* Dimmed to about 70% only where hover exists, so touch screens see full colour. */
+@media (hover: hover) and (pointer: fine) {
+  .dishPhoto::after {
+    opacity: 0.3;
+  }
+  .dish:is(:hover, :focus-visible) .dishPhoto::after {
+    opacity: 0;
+  }
+  .dish:is(:hover, :focus-visible)::before {
+    opacity: 1;
+  }
+}
+
+/* ---- 5. Wine strip: slow continuous line of names */
+.wine {
+  padding-block: var(--space-9);
+  border-block: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.wineHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.wineToggle {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: none;
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--bone-300);
+}
+.wineToggle:hover {
+  border-color: var(--color-accent);
+}
+.marquee {
+  overflow: hidden;
+}
+.marqueeInner {
+  display: flex;
+  width: max-content;
+}
+.track {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--space-7);
+  padding: 0 var(--space-7) 0 0;
+  margin: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: var(--step-h2);
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--bone-100);
+}
+.track li::after {
+  content: '·';
+  margin-left: var(--space-7);
+  color: var(--color-accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marqueeInner {
+    animation: marquee 140s linear infinite;
+  }
+  .wine:is(:hover, :focus-within, [data-paused]) .marqueeInner {
+    animation-play-state: paused;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+/* Reduced motion: one static, wrapped list. */
+@media (prefers-reduced-motion: reduce) {
+  .marqueeInner {
+    width: auto;
+    padding-inline: var(--margin);
+  }
+  .track {
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-6);
+    font-size: var(--step-h3);
+    white-space: normal;
+  }
+  .track[aria-hidden] {
+    display: none;
+  }
+  .wineToggle {
+    display: none;
+  }
+}
+
+/* ---- 6. Booking band: full-width image under a dark overlay */
+.band {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  min-height: 80svh;
+  padding-block: var(--space-10) var(--space-9);
+  overflow: hidden;
+}
+.bandMedia {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.bandMedia picture,
+.bandMedia img {
+  width: 100%;
+  height: 100%;
+}
+.bandMedia img {
+  object-fit: cover;
+}
+.bandMedia::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgb(18 17 16 / 0.85), rgb(18 17 16 / 0.35) 60%), rgb(18 17 16 / 0.35);
+}
+.bandText {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+.bandText .heading {
+  margin-bottom: 0;
+}
+
+/* ---- 7. Find us teaser */
+.findUs {
+  display: grid;
+  gap: var(--space-7);
+  align-items: start;
+}
+@media (min-width: 64em) {
+  .findUs {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+.address {
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  line-height: 1.4;
+  font-style: normal;
+}
+.mapPlaceholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border);
+  background: rgb(18 17 16 / 0.6);
+  color: var(--bone-300);
+  font-size: var(--step-small);
+  text-align: center;
+}
+.wineToggle[hidden] {
+  display: none;
+}
