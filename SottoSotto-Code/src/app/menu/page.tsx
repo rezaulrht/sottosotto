@@ -1,9 +1,10 @@
 import { AllergenToggle } from '@/components/menu/AllergenToggle';
 import { CandleLight } from '@/components/menu/CandleLight';
+import { MenuTabs } from '@/components/menu/MenuTabs';
 import { DishCard, NONE_TEXT } from '@/components/menu/DishCard';
 import { allergens, desserts, menu, pageMetadata, wine } from '@/content';
-import type { Dish, DishSection, DrinkSection } from '@/content/schemas';
-import { allergenSets } from '@/lib/allergens';
+import type { DishSection, DrinkSection } from '@/content/schemas';
+import { allergenSets, type AllergenItem } from '@/lib/allergens';
 import { formatPrice } from '@/lib/prices';
 import styles from '../pages.module.css';
 
@@ -13,8 +14,9 @@ export const metadata = pageMetadata('menu', '/menu/');
  * Menu with the candle (ARCHITECTURE §7.5, PAGES.md Menu). Every dish, side, wine and bar
  * row is a candle item: lit under the pointer (laptop), in the middle of the screen
  * (phone) or on focus; all lit under reduced motion and without JS.
- * Allergens: dishes and sides show the toggle (client data only; `null` and `estimated`
- * render nothing). Drink allergens come in M4 (Q29).
+ * Allergens: every dish, side and drink with the client's data shows the toggle; `null` and
+ * `estimated` (Q29: Bellini, Hugo Spritz, Aperol Spritz) render nothing. Wines carry no
+ * allergen data.
  */
 
 const ALLERGEN_LABELS = {
@@ -22,8 +24,9 @@ const ALLERGEN_LABELS = {
   canBeOmitted: allergens.key.canBeOmitted.label,
 };
 
-function SideAllergens({ dish }: { dish: Dish }) {
-  const sets = allergenSets(dish, allergens.categories);
+/** The allergen toggle for a side or drink row: client data only; nothing for null or estimated. */
+function RowAllergens({ item }: { item: AllergenItem }) {
+  const sets = allergenSets(item, allergens.categories);
   return sets ? (
     <div className={styles.rowDetail}>
       <AllergenToggle sets={sets} labels={ALLERGEN_LABELS} noneText={NONE_TEXT} />
@@ -45,11 +48,16 @@ function TagMarks({ tags }: { tags: Array<'v' | 'n'> }) {
   );
 }
 
-function Legend() {
+/** Shown once per section: the (v)/(n) legend (food only) and the allergen key. */
+function Legend({ tags = true }: { tags?: boolean }) {
   return (
     <p className={styles.placeholderNote}>
-      (v) {menu.tagLegend.v} · (n) {menu.tagLegend.n} · Allergens: {ALLERGEN_LABELS.contains},{' '}
-      {ALLERGEN_LABELS.canBeOmitted.toLowerCase()}
+      {tags ? (
+        <>
+          (v) {menu.tagLegend.v} · (n) {menu.tagLegend.n} ·{' '}
+        </>
+      ) : null}
+      Allergens: {ALLERGEN_LABELS.contains}, {ALLERGEN_LABELS.canBeOmitted.toLowerCase()}
     </p>
   );
 }
@@ -64,7 +72,13 @@ function DishGroups({ sections }: { sections: DishSection[] }) {
       {section.textOnly ? (
         <ul className={styles.rows}>
           {section.items.map((dish) => (
-            <li key={dish.id} id={dish.id} className={styles.row} data-candle-item="">
+            <li
+              key={dish.id}
+              id={dish.id}
+              className={styles.row}
+              data-candle-item=""
+              data-item={dish.id}
+            >
               <span>
                 {dish.name}
                 <TagMarks tags={dish.tags} />
@@ -73,7 +87,7 @@ function DishGroups({ sections }: { sections: DishSection[] }) {
               {dish.description ? (
                 <span className={styles.rowDetail}>{dish.description}</span>
               ) : null}
-              <SideAllergens dish={dish} />
+              <RowAllergens item={dish} />
             </li>
           ))}
         </ul>
@@ -108,7 +122,7 @@ function DrinkRows({ section }: { section: DrinkSection }) {
             {group.name ? <h4 className={`label ${styles.subgroup}`}>{group.name}</h4> : null}
             <ul className={styles.rows}>
               {group.items.map((item) => (
-                <li key={item.id} className={styles.row} data-candle-item="">
+                <li key={item.id} className={styles.row} data-candle-item="" data-item={item.id}>
                   <span>
                     {item.name}
                     {item.abv !== null ? <span className={styles.muted}> {item.abv}%</span> : null}
@@ -124,6 +138,7 @@ function DrinkRows({ section }: { section: DrinkSection }) {
                       );
                     })}
                   </span>
+                  <RowAllergens item={item} />
                 </li>
               ))}
             </ul>
@@ -139,7 +154,7 @@ function DrinkRows({ section }: { section: DrinkSection }) {
           .filter(Boolean)
           .join(' · ');
         return (
-          <li key={item.id} className={styles.row} data-candle-item="">
+          <li key={item.id} className={styles.row} data-candle-item="" data-item={item.id}>
             <span>{item.name}</span>
             {section.shape === 'price' ? (
               <span className={styles.price}>{formatPrice(item.price)}</span>
@@ -147,6 +162,7 @@ function DrinkRows({ section }: { section: DrinkSection }) {
               <span />
             )}
             {detail ? <span className={styles.rowDetail}>{detail}</span> : null}
+            <RowAllergens item={item} />
           </li>
         );
       })}
@@ -160,19 +176,14 @@ export default function MenuPage() {
       <div className={`container ${styles.page}`}>
         <h1 className={styles.title}>Menu</h1>
 
-        <nav aria-label="Menu sections">
-          <ul className={styles.tabs}>
-            <li>
-              <a href="#menu">Menu</a>
-            </li>
-            <li>
-              <a href="#dessert">Dessert</a>
-            </li>
-            <li>
-              <a href={`#${wine.tab.id}`}>{wine.tab.label}</a>
-            </li>
-          </ul>
-        </nav>
+        <MenuTabs
+          className={styles.tabs}
+          tabs={[
+            { id: 'menu', label: 'Menu' },
+            { id: 'dessert', label: 'Dessert' },
+            { id: wine.tab.id, label: wine.tab.label },
+          ]}
+        />
 
         <CandleLight>
           <section id="menu" className={styles.menuSection} aria-labelledby="menu-heading">
@@ -192,6 +203,7 @@ export default function MenuPage() {
           <section id={wine.tab.id} className={styles.menuSection} aria-labelledby="wine-heading">
             <h2 id="wine-heading">{wine.tab.label}</h2>
             <p className={styles.muted}>{allergens.generalNote}</p>
+            <Legend tags={false} />
             <p className={styles.placeholderNote}>
               {wine.notes.glassSizes} {wine.notes.smallGlass} {wine.notes.vat}
             </p>
@@ -210,7 +222,7 @@ export default function MenuPage() {
                 </div>
                 <ul className={styles.rows}>
                   {group.wines.map((w) => (
-                    <li key={w.id} className={styles.row} data-candle-item="">
+                    <li key={w.id} className={styles.row} data-candle-item="" data-item={w.id}>
                       <span>
                         {w.name}
                         {w.vintage ? <span className={styles.muted}> {w.vintage}</span> : null}
