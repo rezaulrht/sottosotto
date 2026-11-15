@@ -28,7 +28,7 @@ export const CSP_DIRECTIVES: Record<string, string[]> = {
   ],
   'style-src': ["'self'", "'unsafe-inline'"],
   'font-src': ["'self'"],
-  'frame-src': ['https://app.hospres.com'],
+  'frame-src': ["'none'"],
   'frame-ancestors': ["'none'"],
   'base-uri': ["'self'"],
   'form-action': ["'self'"],
@@ -54,8 +54,7 @@ export function securityHeaders(env: SiteEnv): Header[] {
     ['Strict-Transport-Security', 'max-age=31536000'],
     ['X-Content-Type-Options', 'nosniff'],
     ['Referrer-Policy', 'strict-origin-when-cross-origin'],
-    // `payment` to be tested with the Hospres iframe in M2/M7 (deposits may be taken there).
-    ['Permissions-Policy', 'camera=(), microphone=(), geolocation=()'],
+    ['Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()'],
     ['X-Frame-Options', 'DENY'],
   ];
   if (!enforce) headers.push(['X-Robots-Tag', 'noindex, nofollow']);

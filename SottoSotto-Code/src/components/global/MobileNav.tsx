@@ -10,7 +10,7 @@ import styles from './MobileNav.module.css';
  * Full-screen overlay menu for small screens. A native modal <dialog> gives focus
  * trapping, Escape to close and an inert page. Book a Table stays in the header.
  */
-export function MobileNav({ bookingUrl }: { bookingUrl: string }) {
+export function MobileNav() {
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
@@ -47,7 +47,7 @@ export function MobileNav({ bookingUrl }: { bookingUrl: string }) {
           <nav aria-label="Main">
             <NavLinks className={styles.list} linkClassName={styles.link} onNavigate={close} />
           </nav>
-          <BookButton href={bookingUrl} />
+          <BookButton />
         </div>
       </dialog>
     </>

@@ -1,0 +1,82 @@
+/* Booking dialog: centred panel on larger screens, full-height sheet on phones (PAGES.md). */
+.dialog {
+  /* The global reset zeroes margins; auto margins are what centre a modal dialog. */
+  margin: auto;
+  width: min(40rem, calc(100% - 2 * var(--margin)));
+  max-height: min(90vh, 52rem);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: var(--ink-800);
+  color: var(--color-text);
+  overscroll-behavior: contain;
+}
+.dialog::backdrop {
+  background: rgb(12 11 10 / 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.inner {
+  padding: var(--space-4) var(--space-5) var(--space-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: var(--step-h3);
+}
+.close {
+  width: 44px;
+  height: 44px;
+  margin-right: calc(-1 * var(--space-3));
+  border: 0;
+  background: none;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.note {
+  margin-bottom: var(--space-5);
+  font-size: var(--step-small);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 47.99em) {
+  .dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    inset: 0;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dialog[open] {
+    animation: fade-in var(--dur-base) var(--ease-out);
+  }
+  @media (max-width: 47.99em) {
+    .dialog[open] {
+      animation: slide-up var(--dur-slow) var(--ease-out);
+    }
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/* Page behind the dialog does not scroll. */
+:global(html[data-booking-open]) {
+  overflow: hidden;
+}

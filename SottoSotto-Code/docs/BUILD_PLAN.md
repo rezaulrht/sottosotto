@@ -1,6 +1,6 @@
 # Build plan
 
-> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace and the Hospres phone test). M3 in progress on `m3-home`. Each milestone ends with a short review; M2 is a hard gate.
+> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens built early on `booking-ui` (D59). Each milestone ends with a short review; M2 is a hard gate.
 
 Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, axe) and updates `DECISIONS.md` / `OPEN_QUESTIONS.md` as answers arrive.
 
@@ -16,7 +16,7 @@ Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, 
 | Data | Zod schemas for all 6 files (+ new `seo.json`, flagged mock); loaders; cross-file checks |
 | Mock guard | `content-report.ts`; production build fails while flagged values remain; `MockBadge` |
 | Images | `images.ts` (sharp) → AVIF/WebP + manifest for the 27 assigned dish photos; concrete texture and grain placeholders |
-| Layout | `BaseLayout`, `Header` (incl. scroll state), `MobileNav`, `Footer`, `BookButton` as plain links to Hospres (the no-JS fallback; modal comes in M7) |
+| Layout | `BaseLayout`, `Header` (incl. scroll state), `MobileNav`, `Footer`, `BookButton` as plain links (now to `/book/`, D59) |
 | Hours | `lib/hours.ts` + `HoursChip`, with the BST and closure unit tests |
 | Routes | `/`, `/menu`, `/venue`, `/find-us`, `/privacy`, `/404` with headings and placeholder sections |
 | Headers | `config/headers.ts` + `emit-headers.ts` skeleton |
@@ -52,7 +52,7 @@ Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, 
 **Done when:**
 - Every section works in all three motion modes (desktop, mobile, reduced); no pinning on mobile.
 - Lenis + ScrollTrigger: no jumps on resize, back/forward cache restores correctly, keyboard scrolling works.
-- With JS disabled, all content is visible and Book links go to Hospres.
+- With JS disabled, all content is visible and Book links go to the booking page (`/book/`, D59).
 - Home first-load JS ≤ 160 KB gzip (incl. React/Next runtime); LCP < 2.5 s, CLS < 0.1 on mobile 4G (Lighthouse).
 - Featured dishes follow Q19, or the proposal in PAGES.md marked for review.
 
@@ -88,11 +88,11 @@ Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, 
 
 ## M7. Booking modal, consent, privacy
 
-**Deliverable:** the modal on every Book button, the cookie banner with GA4, and the Privacy page.
+**Deliverable:** the cookie banner with GA4 and the Privacy page. The booking dialog and guest flow were built early (D59, 2026-11-15); M7 finishes them once the backend exists (Q8).
 
 **Done when:**
-- Modal: opens from every Book button; focus moves in and returns to the opener; Escape and backdrop click close it; scroll is locked and Lenis stopped; desktop panel and phone sheet both work; the Hospres iframe is not requested until the first open; a 10 s timeout shows the link fallback.
-- The provider interface exists with the Hospres iframe provider; a test swaps in a dummy provider without touching other files (proves the Phase 2 seam).
+- Booking (done early, D59): opens from every Book button; focus moves in and returns to the opener; Escape and backdrop click close it; scroll is locked; desktop panel and phone sheet work; the flow runs date → guests → time → details → confirmation against the `BookingProvider` seam (mock today).
+- Booking (still to do): a real provider once the backend is chosen (Q8) and the rules are confirmed (Q50); the mock flags removed so production can build.
 - No request to Google is made before "Accept" (Playwright checks network); "Reject" keeps it that way; "Cookie settings" reopens the banner; withdrawing consent removes `_ga*` cookies.
 - Privacy page shows the policy text unchanged (D25) with no effects.
 
@@ -104,7 +104,7 @@ Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, 
 |---|---|
 | SEO | Titles and descriptions per page from `seo.json`; OG images; sitemap; robots per environment; JSON-LD validates in Google's Rich Results Test and contains no mock values (unit test) |
 | Redirects | Old PDF links and `?p=` links land on the right pages |
-| Security | Headers emitted for the chosen host; CSP enforced with hashes and no console violations (GA4 after consent, Hospres iframe) |
+| Security | Headers emitted for the chosen host; CSP enforced with hashes and no console violations (GA4 after consent) |
 | Accessibility | WCAG 2.2 AA pass: axe clean, manual keyboard pass, screen reader pass (VoiceOver iOS/macOS, NVDA), 200% zoom, reduced motion |
 | Performance | Lighthouse CI budgets pass on all routes (mobile) |
 | Browsers | Last 2 versions of Chrome, Safari (macOS and iOS on real devices), Firefox, Edge; one mid-range Android phone |

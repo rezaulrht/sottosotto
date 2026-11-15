@@ -22,6 +22,11 @@
       "description": "Address, phone, email and nearby parking for Sotto Sotto, Italian restaurant in Bath.",
       "mock": true
     },
+    "book": {
+      "title": "Book a Table",
+      "description": "Book a table at Sotto Sotto, a small Italian restaurant in Bath.",
+      "mock": true
+    },
     "privacy": {
       "title": "Privacy Policy",
       "description": "Sotto Sotto privacy policy.",

@@ -109,9 +109,16 @@ export const siteSchema = z.strictObject({
   ),
   social: z.array(z.strictObject({ platform: nonEmpty, url: httpsUrl, ...flagged })),
   booking: z.strictObject({
-    provider: z.literal('Hospres'),
-    phase: z.union([z.literal(1), z.literal(2)]),
-    widgetUrl: httpsUrl,
+    page: z.literal('/book/'),
+    maxPartySize: z.number().int().min(1).max(20),
+    rules: z.strictObject({
+      ...flagged,
+      slotMinutes: z.number().int().min(5).max(60),
+      lastSeatingMinutesBeforeClose: z.number().int().min(0).max(180),
+      bookingWindowDays: z.number().int().min(1).max(365),
+      minNoticeMinutes: z.number().int().min(0).max(2880),
+    }),
+    availability: z.strictObject({ ...flagged, source: z.literal('generated') }),
   }),
   analytics: z.strictObject({
     ga4MeasurementId: z.string().regex(/^G-[A-Z0-9]+$/),
@@ -431,6 +438,7 @@ export const seoSchema = z.strictObject({
     menu: seoPage,
     venue: seoPage,
     findUs: seoPage,
+    book: seoPage,
     privacy: seoPage,
     notFound: seoPage,
   }),

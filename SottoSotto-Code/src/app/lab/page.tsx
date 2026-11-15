@@ -27,14 +27,14 @@ const PROTOTYPES = [
     ],
   },
   {
-    href: '/lab/hospres/',
-    title: 'Hospres booking sheet',
+    href: '/book/',
+    title: 'Booking (preview)',
     checks: [
-      'Open it on an iPhone (Safari) and an Android phone (Chrome).',
-      'Does the widget fit the sheet, or does it need its own scrolling?',
-      'Does the keyboard cover the fields when you type your details?',
-      'Is there a card or deposit step, and does it work inside the sheet?',
-      'Note the sizes shown on the page and send a screenshot.',
+      'Any Book a Table button opens the booking dialog; on a phone it is a full-screen sheet.',
+      'Sundays, Mondays and holiday closures are greyed out; past days too.',
+      'Pick a date, guests (1–5) and a time; some times show as fully booked (made up).',
+      'Your details: try leaving a field empty to see the error messages.',
+      'It always says preview: nothing is sent or booked yet.',
     ],
   },
 ];

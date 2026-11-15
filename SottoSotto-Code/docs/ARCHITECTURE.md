@@ -87,7 +87,7 @@ SottoSotto-Code/
     content/            Zod schemas, loaders, typed exports, image manifest
     lib/                Hours, prices, SEO/JSON-LD, environment, tokens
     motion/             Scroll setup, effect registry, effects, candle
-    booking/            Modal controller, provider interface, Hospres iframe provider
+    booking/            Booking dialog, guest flow, rules, provider interface, mock provider (D59)
     consent/            Consent store, banner logic, GA4 loader
     styles/             tokens.css, reset, base, typography
   public/
@@ -112,7 +112,7 @@ SottoSotto-Code/
 | `app/layout.tsx` | `<head>` (metadata, fonts, JSON-LD), skip link, header, footer, modal, banner, badge | — |
 | `Header` | Nav left, logo centre, Book right; transparent over the hero, solid and smaller after scroll | Tiny (IntersectionObserver on a sentinel) |
 | `MobileNav` | Full-screen overlay menu, focus trapped, Escape closes | Small |
-| `BookButton` | `<a href={site.booking.widgetUrl} data-booking>`: without JS it opens the Hospres page; with JS it opens the modal | Delegated listener |
+| `BookButton` | Link to `/book/` with `data-booking`: without JS it opens the booking page; with JS it opens the booking dialog (D59) | None |
 | `BookingModal` | Native `<dialog>` shell + provider slot (§8) | Loaded on first open |
 | `CookieBanner` | Accept / Reject with equal weight; "Cookie settings" link in the footer reopens it | ~3 KB |
 | `Footer` | Philosophy line, hours, address, phone, info@, privacy, social (D10) | — |
@@ -280,29 +280,20 @@ How it works:
 - **Proved first** in M2 with a performance trace on a mid-range laptop and a real phone.
 - **M2 findings:** focus and open allergen toggles light a dish through attributes CandleLight sets (`data-focus`, `data-open`), not `:focus-within` / `:has()`, which re-matched the whole menu on every change (long tasks). Text colour switches without a transition; only the photo overlay and the pool of light fade (opacity). Headless traces (software rendering, busy machine) were inconclusive for the full menu; the real-laptop trace decides.
 
-## 8. Booking modal
+## 8. Booking (D59)
 
-### 8.1 Phase 1 (now)
+Hospres is not used. The guest booking screens are ours; the backend is still to come (Q8).
 
-- Every Book button is a real link to `https://app.hospres.com/YO7Z73/reserve` (`target="_blank" rel="noopener"`). That is the no-JS fallback.
-- With JS, one delegated listener catches `[data-booking]` clicks and opens the modal instead.
-- Shell: native `<dialog>` with `showModal()`, which gives focus trapping, Escape to close and an inert page. We add: focus returns to the opener, `lenis.stop()` and scroll lock, a blurred and dimmed backdrop, a centred panel on desktop and a full-height sheet sliding up on phones, the heading "Book a Table" and the note "Sotto Sotto is a very small restaurant and booking is strongly recommended."
-- The iframe is created on first open (no third-party request or cookie before the visitor asks to book) and kept for the rest of the visit. A loading state shows until the iframe's `load` event; if it hasn't loaded in 10 s, show "Open the booking page" (the same link).
-- Iframe: `title="Book a table at Sotto Sotto"`, `referrerpolicy="strict-origin-when-cross-origin"`. Height: fixed inside the panel with internal scrolling, because the widget's inner size is unknown (Q25).
+| Part | Detail |
+|---|---|
+| Entry points | Every Book a Table link points to `/book/` (works without JS: the page gives the phone number). With JS, one delegated listener catches `[data-booking]` clicks and opens the booking `<dialog>` instead. On `/book/` itself the flow is inline |
+| Dialog | Native `<dialog>` with `showModal()`: focus trap, Escape, inert page; focus returns to the opener; page scroll locked; `data-lenis-prevent`. Centred panel on desktop, full-height sheet on phones. Closes the mobile menu first when opened from it |
+| Flow | `src/booking/BookingFlow.tsx`: date → guests → time → details → confirmation, focus moved to each step's heading. "Today" is computed in the browser in Europe/London (the static HTML cannot know the date) |
+| Rules | `src/booking/rules.ts` (pure, unit-tested): calendar dates as `YYYY-MM-DD` London dates; slots from `site.json` hours every `slotMinutes`, last seating `lastSeatingMinutesBeforeClose` before each session ends, `minNoticeMinutes` for today, `bookingWindowDays` ahead; weekly closed days and closures greyed with the reason announced |
+| Provider seam | `BookingProvider { availability(date, partySize), submit(request) }` in `src/booking/types.ts`. Today `mock-provider.ts`: stable made-up availability, `submit` books nothing and returns a `PREVIEW-` reference. A real provider replaces it without touching the screens |
+| Guard | `booking.rules` and `booking.availability` are flagged mock, so a production build stays blocked until the backend and rules exist |
 
-### 8.2 Seam for Phase 2
-
-```ts
-// src/booking/types.ts — sketch
-interface BookingProvider {
-  mount(container: HTMLElement, ctx: { close(): void }): Promise<void>;
-  unmount?(): void;
-}
-```
-
-- `providers/hospres-iframe.ts` is Phase 1. `providers/hospres-api.ts` (Phase 2) renders date → party size → times → details → confirmation inside the same container.
-- The shell picks the provider from `site.json` `booking.phase`. Nothing outside `src/booking/` changes.
-- **Constraint to note now:** if the Hospres API needs a secret key, it cannot be called from a static site. Phase 2 would then need one small serverless function (Cloudflare Pages Functions / Workers, Netlify or Vercel Functions, or a route on the VPS) as a proxy. That is the only backend the plan foresees, and it depends on the API docs (Q8).
+**Backend (later, Q8).** A static site cannot store bookings. Options: a small serverless API with a database and a staff view, or another booking provider's API behind the same seam. If an API needs a secret key, it is called from a serverless function, never from the browser.
 
 ## 9. Consent, analytics and map
 
@@ -315,7 +306,7 @@ interface BookingProvider {
 | 3 | Hero video sources | After `load`, if allowed (§6.2) |
 | 4 | Consent check | On idle: if consent was given, load GA4; otherwise show the banner (small bottom bar, not an LCP candidate, does not cover the Book button) |
 | 5 | Static map image | Lazy, when near the viewport |
-| 6 | Hospres iframe | Only when the booking modal opens |
+| 6 | Booking flow | Only when a Book button is used (no third party) |
 
 ### 9.2 Consent and GA4
 
@@ -323,7 +314,7 @@ interface BookingProvider {
 - **Consent Mode v2, basic mode:** `gtag.js` is not requested at all until consent. On "Accept": set `consent default` with `analytics_storage: granted` and `ad_storage`, `ad_user_data`, `ad_personalization` all `denied`, then load GA4 `G-2TMCMCTHRD`. Google Signals and ads features stay off. On withdrawal: `consent update` to denied, delete `_ga*` cookies, stop loading GA4.
 - Advanced mode (cookieless pings before consent) is rejected: it sends data to Google before the visitor chooses, which goes against D16.
 - A library (e.g. vanilla-cookieconsent, MIT) is the fallback if more categories appear later. A commercial consent platform is not needed for one tag.
-- **Privacy policy:** used as is (D25). It mentions neither Google Analytics nor Hospres. The client should know about this mismatch (Q22).
+- **Privacy policy:** used as is (D25). It does not mention Google Analytics, and will need a line on how booking details are handled once the backend exists (Q8). The client should know about this mismatch (Q22).
 
 ### 9.3 Map options
 
@@ -345,7 +336,7 @@ interface BookingProvider {
 - Per-page `<title>`, description, canonical, Open Graph and Twitter tags from a new `data/seo.json` (added in M1, flagged mock until Q21 is answered).
 - OG images: one 1200 × 630 static image per page, produced by the image pipeline.
 - `sitemap.xml` from the route list; `robots.txt` per environment (staging: `Disallow: /` plus `X-Robots-Tag: noindex`).
-- JSON-LD `Restaurant` built from `site.json`: `name`, `url`, `telephone`, `address`, `geo`, `openingHoursSpecification` (Tu–Sa 12:00–14:00 and 17:00–22:00), `servesCuisine: "Italian"`, `menu` (/menu), `acceptsReservations` (Hospres URL), `sameAs` (social links). **Any field whose source object is `mock`, `toConfirm` or unconfirmed is left out, in every environment**, and a unit test asserts it.
+- JSON-LD `Restaurant` built from `site.json`: `name`, `url`, `telephone`, `address`, `geo`, `openingHoursSpecification` (Tu–Sa 12:00–14:00 and 17:00–22:00), `servesCuisine: "Italian"`, `menu` (/menu), `acceptsReservations` (the `/book/` page), `sameAs` (social links). **Any field whose source object is `mock`, `toConfirm` or unconfirmed is left out, in every environment**, and a unit test asserts it.
 - Old URLs: `/pdf/menu.pdf` → `/menu#menu`, `/pdf/Dessert.pdf` → `/menu#dessert`, `/pdf/winelist.pdf` → `/menu#wine` (301s in the host's redirect file). Not every static host can match query strings, so links like `/?p=menu` are handled by a tiny inline script on `/` that maps `?p=menu|venue|contactus|privacy` to the new routes.
 
 ### 10.2 Security headers
@@ -354,11 +345,11 @@ One source, `config/headers.ts`, emitted after the build by `scripts/emit-header
 
 | Header | Value (starting point) |
 |---|---|
-| `Content-Security-Policy` | `default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://app.hospres.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests` (Maps domains added only if D42 changes) |
+| `Content-Security-Policy` | `default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests` (Maps domains added only if D42 changes) |
 | `Strict-Transport-Security` | `max-age=31536000` first; add `includeSubDomains` only after checking every subdomain (e.g. webmail) serves HTTPS; `preload` later |
 | `X-Content-Type-Options` | `nosniff` |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()`; `payment` to be tested with the Hospres iframe (deposits may be taken there) |
+| `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=()` |
 | `X-Frame-Options` | `DENY` (legacy, alongside `frame-ancestors`) |
 
 - **Next.js static export puts inline bootstrap scripts in every page**, and they change on every build, so the CSP uses `script-src 'self' 'unsafe-inline' https://*.googletagmanager.com` instead of hashes. Mitigations: no `eval`; no user input is ever rendered as HTML; third-party origins stay on an allow-list; `frame-ancestors 'none'`, `object-src 'none'` and `base-uri 'self'` stay strict. Next.js also inlines some styles, so `style-src 'self' 'unsafe-inline'`.
@@ -440,9 +431,9 @@ One source, `config/headers.ts`, emitted after the build by `scripts/emit-header
 | Dish photos low-res or not real (Q5) | Soft images on large screens; misleading | Cap displayed width at the source width; raised in Q5 |
 | Mock data blocks launch | Can't go live | The production guard makes it visible early; the report is the weekly chase list |
 | Allergen information incomplete for UK guests (Q38) | Guest safety, reputational and legal exposure | Render only client data; null vs [] tested; estimated never rendered; the "tell staff" note always shown |
-| Hospres iframe: mobile size, cookies, payment step | Booking friction | Spike in M2 inside the sheet on iOS and Android; link fallback after 10 s |
-| Hospres API needs a secret (Phase 2) | Static-only no longer enough | Provider seam + one serverless proxy when needed |
-| CSP breaks GA4 or Hospres | Silent tracking or booking failure | Report-Only on staging; Playwright checks for CSP violations |
+| Booking has no backend yet (D59) | No real bookings | Preview notice on the screens; mock flags block production until Q8 and Q50 are settled |
+| Booking backend needs a server (Q8) | Static-only no longer enough | Provider seam; a serverless API (and database) only for booking |
+| CSP breaks GA4 | Silent tracking failure | Report-Only on staging; Playwright checks for CSP violations |
 | GSAP licence terms change | Legal | Pin the version, keep the licence file, review on upgrade |
 | DNS cutover breaks email | info@ and careers@ stop working | Copy all records first; test mail before and after |
 | iOS Safari scroll quirks with pinning | Jank, jumps | No pinning on mobile; real-device testing in M8 |

@@ -45,10 +45,10 @@ Full findings: `~/byteSpate/investigations/sottosotto/ledger.md`.
 | Keep | Remove | Not in this build |
 |---|---|---|
 | Almost all existing text (see `CONTENT.md`) | Award badges and award claims (Bath Good Food Awards 2012/2014; the client says they are not genuine) | Admin panel or CMS |
-| Hospres booking (phase 1) | PDF menus | Events, testimonials, shop, Instagram feed |
+| Own booking screens (D59; backend later) | PDF menus | Events, testimonials, shop, Instagram feed |
 | Bar menu and allergens (added 2026-11-14) | | |
 | GA4 (behind consent) | Universal Analytics tag | Accessibility details and private hire on the Venue page |
-| | Careers as a page or footer link | Custom booking UI (phase 2, waits for the Hospres API) |
+| | Careers as a page or footer link | Booking backend (Q8) |
 
 ## Client material received
 

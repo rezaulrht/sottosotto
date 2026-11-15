@@ -1,6 +1,6 @@
 import { BookButton } from '@/components/global/BookButton';
 import { MockImage } from '@/components/shared/MockImage';
-import { pageMetadata, site, venue } from '@/content';
+import { pageMetadata, venue } from '@/content';
 import { siteEnv } from '@/lib/env';
 import styles from '../pages.module.css';
 
@@ -84,7 +84,7 @@ export default function VenuePage() {
       <section className={styles.section} aria-labelledby="venue-book">
         <div className={`container ${styles.stack}`}>
           <h2 id="venue-book">{bookingPrompt.heading}</h2>
-          <BookButton href={site.booking.widgetUrl} label={bookingPrompt.button} />
+          <BookButton label={bookingPrompt.button} />
         </div>
       </section>
     </div>

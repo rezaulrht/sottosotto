@@ -3,7 +3,7 @@ import site from '../../data/site.json' with { type: 'json' };
 
 /*
  * M2 prototypes against the staging export: hero video rules (ARCHITECTURE §6.2),
- * candle states (§7.5), allergen toggle and the Hospres sheet (§8.1).
+ * candle states (§7.5) and the allergen toggle.
  */
 
 const hero = (page: Page) => page.locator('[data-video-state]');
@@ -63,8 +63,8 @@ test.describe('home hero', () => {
 
   test('the badge is a real booking link', async ({ page }) => {
     await page.goto('/');
-    const badge = page.locator('[data-hero]').getByRole('link', { name: /^Book a Table \(opens/ });
-    await expect(badge.last()).toHaveAttribute('href', site.booking.widgetUrl);
+    const badge = page.locator('[data-hero]').getByRole('link', { name: 'Book a Table' });
+    await expect(badge.last()).toHaveAttribute('href', site.booking.page);
   });
 });
 
@@ -137,20 +137,6 @@ test.describe('menu candle', () => {
     await expect(panel).toContainText('Gluten');
     await expect(panel).not.toContainText('allergen-free');
   });
-});
-
-test('Hospres spike opens the widget in a sheet', async ({ page }) => {
-  await page.goto('/lab/hospres/');
-  await page
-    .locator('main')
-    .getByRole('link', { name: /^Book a Table/ })
-    .click();
-  const sheet = page.getByRole('dialog', { name: 'Book a Table' });
-  await expect(sheet).toBeVisible();
-  await expect(sheet.locator('iframe')).toHaveAttribute('src', site.booking.widgetUrl);
-  await expect(page.getByTestId('spike-status')).not.toHaveText('idle');
-  await page.keyboard.press('Escape');
-  await expect(sheet).toBeHidden();
 });
 
 test.describe('menu page candle', () => {

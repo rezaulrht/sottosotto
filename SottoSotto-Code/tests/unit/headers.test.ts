@@ -16,12 +16,12 @@ describe('security headers', () => {
     expect(securityHeaders('staging')).toContainEqual(['X-Robots-Tag', 'noindex, nofollow']);
   });
 
-  it('CSP keeps the strict directives and allows only Hospres in frames', () => {
+  it('CSP keeps the strict directives and allows no frames', () => {
     const csp = contentSecurityPolicy();
     expect(csp).toContain("frame-ancestors 'none'");
     expect(csp).toContain("object-src 'none'");
     expect(csp).toContain("base-uri 'self'");
-    expect(csp).toContain('frame-src https://app.hospres.com;');
+    expect(csp).toContain("frame-src 'none'");
     expect(csp).not.toContain('unsafe-eval');
   });
 
