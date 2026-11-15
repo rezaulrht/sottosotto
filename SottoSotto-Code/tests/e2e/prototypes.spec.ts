@@ -157,10 +157,11 @@ test.describe('menu page candle', () => {
     await expect(tiramisu).not.toHaveAttribute('data-lit');
   });
 
-  test('every dish and side has its allergen toggle; no drink shows one yet', async ({ page }) => {
+  test('dishes, sides and drinks with client data have allergen toggles', async ({ page }) => {
     await page.goto('/menu/');
     await expect(page.locator('#menu details, #dessert details')).not.toHaveCount(0);
-    await expect(page.locator('#wine details')).toHaveCount(0);
+    // 13 bar items carry the client's allergen data; estimated and missing data show nothing.
+    await expect(page.locator('#wine details')).toHaveCount(13);
     await expect(page.locator('main')).not.toContainText('allergen-free');
   });
 

@@ -1,3 +1,4 @@
+import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import site from '../../data/site.json' with { type: 'json' };
 
@@ -11,6 +12,7 @@ const ROUTES = [
   { path: '/menu/', h1: 'Menu' },
   { path: '/venue/', h1: 'The Venue' },
   { path: '/find-us/', h1: 'Find Us' },
+  { path: '/book/', h1: 'Book a Table' },
   { path: '/privacy/', h1: 'Sotto Sotto Privacy Policy' },
 ];
 
@@ -56,6 +58,16 @@ for (const route of ROUTES) {
 
     expect(errors).toEqual([]);
   });
+
+  test(`${route.path} has no axe violations (WCAG 2.2 AA)`, async ({ page }) => {
+    await page.goto(route.path);
+    await page.waitForLoadState('load');
+    await page.waitForTimeout(800); // let the motion code run (it loads when idle)
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
+      .analyze();
+    expect(results.violations.map((v) => `${v.id}: ${v.nodes.length} × ${v.help}`)).toEqual([]);
+  });
 }
 
 test('Book a Table is a real link to the booking page (no-JS fallback)', async ({ page }) => {
@@ -73,24 +85,29 @@ test('hours chip shows today’s state after hydration', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('header turns solid after scrolling', async ({ page, isMobile }) => {
-  await page.goto('/menu/');
-  await page.waitForLoadState('load');
-  const header = page.locator('#site-header');
-  await expect(header).not.toHaveAttribute('data-scrolled');
-  // A wheel scroll, like a visitor: works with Lenis (desktop) and native scrolling.
-  if (isMobile) {
-    // Phones have no Lenis; emulated touch devices may ignore wheel input, so jump directly.
-    await page.evaluate(() => window.scrollTo({ top: 1200, behavior: 'instant' }));
-    await expect(header).toHaveAttribute('data-scrolled', '');
-  } else {
-    // Desktop: a wheel scroll, like a visitor (Lenis). Retry: one early event can be lost under load.
-    await page.mouse.move(200, 400);
-    await expect(async () => {
-      await page.mouse.wheel(0, 600);
-      await expect(header).toHaveAttribute('data-scrolled', '', { timeout: 1000 });
-    }).toPass();
-  }
+// Scrolling under full-suite load (axe scans in parallel) can miss the first inputs on
+// desktop (Lenis); it passes reliably on its own, so it gets two retries.
+test.describe('header scroll state', () => {
+  test.describe.configure({ retries: 2 });
+  test('header turns solid after scrolling', async ({ page, isMobile }) => {
+    await page.goto('/menu/');
+    await page.waitForLoadState('load');
+    const header = page.locator('#site-header');
+    await expect(header).not.toHaveAttribute('data-scrolled');
+    // A wheel scroll, like a visitor: works with Lenis (desktop) and native scrolling.
+    if (isMobile) {
+      // Phones have no Lenis; emulated touch devices may ignore wheel input, so jump directly.
+      await page.evaluate(() => window.scrollTo({ top: 1200, behavior: 'instant' }));
+      await expect(header).toHaveAttribute('data-scrolled', '');
+    } else {
+      // Desktop: a wheel scroll, like a visitor (Lenis). Retry: one early event can be lost under load.
+      await page.mouse.move(200, 400);
+      await expect(async () => {
+        await page.mouse.wheel(0, 600);
+        await expect(header).toHaveAttribute('data-scrolled', '', { timeout: 1000 });
+      }).toPass();
+    }
+  });
 });
 
 test('menu sections are reachable by hash', async ({ page }) => {

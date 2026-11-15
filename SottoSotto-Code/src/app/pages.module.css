@@ -130,6 +130,11 @@
 .tabs a:hover {
   color: var(--color-accent);
 }
+.tabs a[aria-current] {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.45em;
+}
 
 .menuSection {
   scroll-margin-top: calc(var(--header-h-compact) + 4rem);

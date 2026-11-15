@@ -20,6 +20,8 @@ const FINE = '(min-width: 1024px) and (pointer: fine)';
 const REDUCE = '(prefers-reduced-motion: reduce)';
 const EASE = 0.3;
 const SPARKS = 6;
+/** Keys that scroll or move focus: the candle follows the keyboard instead of the pointer. */
+const NAV_KEYS = new Set(['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' ', 'Tab']);
 
 type Mode = 'pointer' | 'centre';
 
@@ -75,8 +77,29 @@ function pointerMode(root: HTMLElement, flame: HTMLElement, spark: HTMLElement):
     light(inside ? (target?.closest<HTMLElement>(ITEM) ?? null) : null);
   };
 
+  // Keyboard scrolling (D60): rows without a focusable control would stay dim, so while the
+  // keyboard is in use the item crossing the middle of the screen is lit, as on phones.
+  // A real pointer movement hands the candle back to the mouse.
+  let keyboard: (() => void) | null = null;
+  const onKey = (e: KeyboardEvent) => {
+    if (keyboard || !NAV_KEYS.has(e.key)) return;
+    inside = false;
+    update(null);
+    keyboard = centreMode(root);
+    root.setAttribute('data-candle-input', 'keyboard');
+  };
+  const endKeyboard = () => {
+    keyboard?.();
+    keyboard = null;
+    root.removeAttribute('data-candle-input');
+  };
+
   const onMove = (e: PointerEvent) => {
     if (e.pointerType === 'touch') return;
+    if (keyboard) {
+      if (!e.movementX && !e.movementY) return; // scroll under a still mouse, not a move
+      endKeyboard();
+    }
     tx = e.clientX;
     ty = e.clientY;
     if (!inside) {
@@ -104,6 +127,7 @@ function pointerMode(root: HTMLElement, flame: HTMLElement, spark: HTMLElement):
   };
 
   root.addEventListener('pointermove', onMove, { passive: true });
+  window.addEventListener('keydown', onKey);
   root.addEventListener('pointerleave', onLeave);
   window.addEventListener('scroll', onScroll, { passive: true });
   return () => {
@@ -111,6 +135,8 @@ function pointerMode(root: HTMLElement, flame: HTMLElement, spark: HTMLElement):
     root.removeEventListener('pointermove', onMove);
     root.removeEventListener('pointerleave', onLeave);
     window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('keydown', onKey);
+    endKeyboard();
     flame.setAttribute('data-hidden', '');
     lit?.removeAttribute('data-lit');
   };

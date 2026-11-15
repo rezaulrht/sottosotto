@@ -19,7 +19,13 @@ export function DishCard({ dish }: { dish: Dish }) {
   const sets = allergenSets(dish, allergenData.categories);
   const titleId = `dish-${dish.id}`;
   return (
-    <article className={styles.card} data-candle-item="" id={dish.id} aria-labelledby={titleId}>
+    <article
+      className={styles.card}
+      data-candle-item=""
+      data-item={dish.id}
+      id={dish.id}
+      aria-labelledby={titleId}
+    >
       {image ? (
         <div className={styles.photo}>
           <Picture
