@@ -399,6 +399,15 @@ const venueImage = z.strictObject({
   src: nonEmpty.nullable(),
   alt: nonEmpty,
   caption: nonEmpty.nullable(),
+  /** For openly licensed photos that require attribution (D63). */
+  credit: z
+    .strictObject({
+      author: nonEmpty,
+      license: nonEmpty,
+      licenseUrl: httpsUrl,
+      sourceUrl: httpsUrl,
+    })
+    .optional(),
 });
 
 export const venueSchema = z.strictObject({

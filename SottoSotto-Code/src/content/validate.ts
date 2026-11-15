@@ -4,6 +4,7 @@
  * so a broken data file fails the build with a readable message.
  */
 import type { z } from 'zod';
+import { venueImageKey, venueImageRefs } from './image-jobs';
 import type { RawFiles } from './raw';
 import {
   allergensSchema,
@@ -100,6 +101,20 @@ export function validateContent(raw: RawFiles): Content {
   const videos = parse('video-manifest.json', videoManifestSchema);
 
   // ---- Cross-file checks (only on files that parsed)
+
+  if (venue && manifest) {
+    for (const ref of venueImageRefs(venue)) {
+      if (!ref.src) continue;
+      const entry = manifest[venueImageKey(ref.src)];
+      if (!entry || entry.source !== ref.src) {
+        issues.push({
+          file: 'venue.json',
+          path: `image "${ref.src}"`,
+          message: `No processed photo for "${ref.src}". Put it in the assets folder and run \`npm run images\`.`,
+        });
+      }
+    }
+  }
 
   if (site && videos) {
     for (const [name, media] of Object.entries(site.media)) {

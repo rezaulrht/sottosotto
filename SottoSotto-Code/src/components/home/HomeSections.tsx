@@ -3,9 +3,9 @@
  * without JS. Motion is declared with `data-effect` and run by MotionScope (D33).
  */
 import Link from 'next/link';
-import type { CSSProperties } from 'react';
 import { BookButton } from '@/components/global/BookButton';
 import { Picture } from '@/components/shared/Picture';
+import { StairDescent } from '@/components/shared/StairDescent';
 import { desserts, imageFor, menu, site, venue, wine } from '@/content';
 import type { Dish } from '@/content/schemas';
 import { formatPrice } from '@/lib/prices';
@@ -37,39 +37,18 @@ export function Philosophy() {
   );
 }
 
-/* ---- 3. Venue teaser: the stair descent */
-
-const MAX_DARK = 0.45;
+/* ---- 3. Venue teaser: the stair descent (shared with the Venue page) */
 
 export function VenueDescent() {
-  const steps = venue.descent.images;
   return (
-    <section className={styles.descent} aria-labelledby="home-venue" data-effect="stair-descent">
-      <div className={styles.stage} data-stage="">
-        {steps.map((img, i) => (
-          <figure
-            key={img.alt}
-            className={styles.step}
-            data-step=""
-            style={{ '--dark': (i / Math.max(1, steps.length - 1)) * MAX_DARK } as CSSProperties}
-          >
-            {/* Venue photos are still to come from the client (mock: true in venue.json). */}
-            <div className={styles.stepPlaceholder} role="img" aria-label={img.alt}>
-              <span aria-hidden="true">{img.alt}</span>
-            </div>
-            {img.caption ? <figcaption>{img.caption}</figcaption> : null}
-          </figure>
-        ))}
-        <div className={`container ${styles.stageText}`}>
-          <h2 id="home-venue" className={styles.heading}>
-            Venue
-          </h2>
-          <Link href="/venue/" className={styles.textLink}>
-            Step inside
-          </Link>
-        </div>
-      </div>
-    </section>
+    <StairDescent images={venue.descent.images} labelledBy="home-venue">
+      <h2 id="home-venue" className={styles.heading}>
+        Venue
+      </h2>
+      <Link href="/venue/" className={styles.textLink}>
+        Step inside
+      </Link>
+    </StairDescent>
   );
 }
 

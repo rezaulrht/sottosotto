@@ -1213,5 +1213,50 @@
         }
       ]
     }
+  },
+  "venue-commons-bath-somerset-01": {
+    "source": "commons/Bath, Somerset - 01.jpg",
+    "sourceHash": "3b36d90a1bacd0392627c1e3b927d1fa9679658e1192b3248b452802c5890f32",
+    "width": 2400,
+    "height": 1603,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JbACw7BuJ6pKba1wk+eiEbaAA/miHuEH2sfrSjfwmUZJMuRaENaKV+JEXFMMkpsoV6isywDvSVQFkI1dSzAHaOsC05ddFv64h08OoUof1FqnNMkoVAgw8xfOsv4IM7cDx+kbqCTBSJZHB+np2ucixLoZtdr6cvZ/AEKz9AAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-somerset-01-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-somerset-01-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-somerset-01-1200.avif"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-somerset-01-2400.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-somerset-01-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-somerset-01-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-somerset-01-1200.webp"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-somerset-01-2400.webp"
+        }
+      ]
+    }
   }
 }

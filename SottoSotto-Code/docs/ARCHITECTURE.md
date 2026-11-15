@@ -198,6 +198,8 @@ Keys starting with `_` are notes for humans; the loaders strip them.
 | Cache | Skips any file whose source hash is unchanged |
 | Git | Generated files are committed; originals stay out of git (D36) |
 
+**Adding or swapping a venue photo (D62):** put the file in the assets folder → set its `src`, `mock: false` and a real `alt` in `venue.json` → run `npm run images` (files go to `public/img/venue/`) → commit.
+
 **Adding or swapping a dish photo:** put the original in the assets folder → set the dish's `image` (and `photoMatch`) in the JSON → run `npm run images` → commit the JSON and the new files in `public/img/`.
 
 `next/image` is not used for dishes (static export cannot optimise it): the originals live outside `src` and have spaces in their names, and the manifest keeps us host- and framework-neutral.

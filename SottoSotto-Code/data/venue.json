@@ -48,10 +48,17 @@
     },
     "close": "Leave the street, take the stairs, and step inside.",
     "image": {
-      "mock": true,
-      "src": null,
-      "alt": "Placeholder: North Parade in Bath stone",
-      "caption": null
+      "mock": false,
+      "src": "commons/Bath, Somerset - 01.jpg",
+      "alt": "The River Avon in Bath, seen from North Parade Bridge",
+      "caption": null,
+      "credit": {
+        "author": "Benjamin Smith",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bath,_Somerset_-_01.jpg"
+      },
+      "_note": "Openly licensed street photo from Wikimedia Commons (D63), downloaded with the user's OK on 2026-11-15. Original in sotto sotto assets/commons/. The credit line must stay with the photo. Can be replaced by the client's own photo."
     }
   },
   "story": {

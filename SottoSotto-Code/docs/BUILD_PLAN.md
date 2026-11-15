@@ -1,6 +1,6 @@
 # Build plan
 
-> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 in progress on `m4-menu`. Each milestone ends with a short review; M2 is a hard gate.
+> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 merged 2026-11-15. M5 in progress on `m5-venue`. Each milestone ends with a short review; M2 is a hard gate.
 
 Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, axe) and updates `DECISIONS.md` / `OPEN_QUESTIONS.md` as answers arrive.
 
