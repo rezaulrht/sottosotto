@@ -241,7 +241,7 @@ The script fails if the 1080p MP4 is over 4 MB. ffmpeg is a system tool; install
 
 ### 7.2 No hidden content without JS
 
-Reveal start states (hidden lines, masked images) apply only under `html.motion-ready`, a class the motion boot adds. Without JS, before JS, or if an effect fails, content is visible. A failsafe removes the class if boot hasn't finished within 3 s.
+Reveal start states (hidden lines, masked images) are set by the effects in JS, never in CSS (D57). Without JS, before the motion code loads (it loads when the browser is idle), or if an effect fails, content is visible.
 
 ### 7.3 Cleanup
 
