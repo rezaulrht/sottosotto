@@ -5,6 +5,7 @@
  */
 import type { Metadata } from 'next';
 import { rawFiles } from './raw';
+import { venueImageKey } from './image-jobs';
 import { flaggedValues } from './report';
 import type { ManifestEntry, SeoPageKey, VideoEntry } from './schemas';
 import { validateContent } from './validate';
@@ -18,6 +19,11 @@ export const flags = flaggedValues(rawFiles);
 
 export function imageFor(key: string): ManifestEntry | undefined {
   return manifest[key];
+}
+
+/** A venue photo's manifest entry, or undefined while it is a placeholder (`src: null`). */
+export function venuePhoto(image: { src: string | null }): ManifestEntry | undefined {
+  return image.src ? manifest[venueImageKey(image.src)] : undefined;
 }
 
 /** A background video by its key in site.json `media` (e.g. "hero"). */

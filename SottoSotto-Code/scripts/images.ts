@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import desserts from '../data/desserts.json';
 import menu from '../data/menu.json';
+import venue from '../data/venue.json';
+import { imageJobs } from '../src/content/image-jobs';
 import { manifestSchema, type ImageManifest, type ManifestEntry } from '../src/content/schemas';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -33,18 +35,19 @@ const WARN_BYTES_AT_1200 = 300 * 1024;
 
 type Item = { id: string; image: string | null };
 const items: Item[] = [...menu.sections, ...desserts.sections].flatMap((s) => s.items as Item[]);
-const wanted = items.filter((i): i is Item & { image: string } => i.image !== null);
+// Dish photos and venue photos (M5): see src/content/image-jobs.ts.
+const wanted = imageJobs(items, venue);
 
 const previous: ImageManifest = manifestSchema.parse(
   JSON.parse(readFileSync(manifestPath, 'utf8')) as unknown,
 );
 const next: ImageManifest = {};
 const warnings: string[] = [];
-const missing = wanted.filter((i) => !existsSync(join(assetDir, i.image)));
+const missing = wanted.filter((j) => !existsSync(join(assetDir, j.source)));
 
 if (missing.length) {
   console.error(`✗ Source photos not found in ${assetDir}:`);
-  for (const i of missing) console.error(`  ${i.id}: ${i.image}`);
+  for (const j of missing) console.error(`  ${j.key}: ${j.source}`);
   process.exit(1);
 }
 
@@ -54,7 +57,10 @@ const outputPaths = (entry: ManifestEntry) =>
   [...entry.sources.avif, ...entry.sources.webp].map((s) => join(publicDir, s.src));
 
 let built = 0;
-for (const item of wanted) {
+for (const job of wanted) {
+  const item = { id: job.key, image: job.source };
+  const outDir = join(publicDir, 'img', job.folder);
+  mkdirSync(outDir, { recursive: true });
   const sourcePath = join(assetDir, item.image);
   const buffer = readFileSync(sourcePath);
   const sourceHash = createHash('sha256').update(buffer).digest('hex');
@@ -84,10 +90,10 @@ for (const item of wanted) {
     const resized = sharp(buffer).resize({ width, withoutEnlargement: true });
     for (const format of ['avif', 'webp'] as const) {
       const file = `${item.id}-${width}.${format}`;
-      const out = join(dishDir, file);
+      const out = join(outDir, file);
       const pipeline = resized.clone();
       await (format === 'avif' ? pipeline.avif(AVIF) : pipeline.webp(WEBP)).toFile(out);
-      sources[format].push({ width, src: `/img/dishes/${file}` });
+      sources[format].push({ width, src: `/img/${job.folder}/${file}` });
       if (width === 1200 && statSync(out).size > WARN_BYTES_AT_1200) {
         warnings.push(`${file} is ${Math.round(statSync(out).size / 1024)} KB (over 300 KB)`);
       }
@@ -109,7 +115,7 @@ for (const item of wanted) {
   console.log(`✓ ${item.id} (${widths.join(', ')})`);
 }
 
-// Remove images for dishes that no longer have one.
+// Remove images for dishes and venue photos that no longer have one.
 for (const [id, entry] of Object.entries(previous)) {
   if (!next[id]) {
     for (const p of outputPaths(entry)) rmSync(p, { force: true });
@@ -234,5 +240,5 @@ if (!existsSync(concretePath)) {
 
 for (const w of warnings) console.warn(`⚠ ${w}`);
 console.log(
-  `Images: ${wanted.length} dishes, ${built} rebuilt, ${wanted.length - built} unchanged.`,
+  `Images: ${wanted.length} photos, ${built} rebuilt, ${wanted.length - built} unchanged.`,
 );

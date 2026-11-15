@@ -81,6 +81,7 @@ Total: 27 assigned + 8 spare = 35.
 | Logo in vector format (SVG/AI/EPS) | Header, footer, favicon, social image | Placeholder **(MOCK)**. The current site has only a 300 × 115 PNG |
 | Brand colours and fonts | Whole site | Placeholders **(MOCK)** from `DESIGN_SYSTEM.md` |
 | Bar menu images | — | Not needed: the Wine tab, bar menu included, is text only |
+| Street photo (Venue 3a) | Venue "The street" | `commons/Bath, Somerset - 01.jpg` from Wikimedia Commons, Benjamin Smith, CC BY-SA 4.0; credit line required (D63) |
 | Concrete texture | Site background | From the current site: `sottosottobackground2.jpg` (2879 × 1391), kept in `sotto sotto assets/old-site/`; web copy `public/textures/concrete-1440.*` (D55) |
 | Social share image | Link previews | To be made once photos and logo arrive |
 
