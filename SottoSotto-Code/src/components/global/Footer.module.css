@@ -114,3 +114,22 @@
     padding-right: var(--space-7);
   }
 }
+
+/* "Cookie settings": a button that reads as the links beside it. */
+.textButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+.textButton:hover {
+  color: var(--color-accent);
+}

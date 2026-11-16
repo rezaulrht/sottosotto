@@ -52,6 +52,15 @@ export const siteSchema = z.strictObject({
       applyText: nonEmpty,
       button: nonEmpty,
     }),
+    cookieBanner: z.strictObject({
+      toConfirm: z.boolean().optional(),
+      heading: nonEmpty,
+      text: nonEmpty,
+      accept: nonEmpty,
+      reject: nonEmpty,
+      privacyLink: nonEmpty,
+      settings: nonEmpty,
+    }),
   }),
   hours: z.strictObject({
     timezone: z.literal('Europe/London'),
