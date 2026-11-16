@@ -28,10 +28,24 @@ describe('image jobs (M5)', () => {
   it('builds every dish photo and only the venue photos that have a src', () => {
     const jobs = imageJobs(dishes, venue);
     expect(jobs.filter((j) => j.folder === 'dishes')).toHaveLength(27);
-    // Today only the street photo (D63); the rest are placeholders.
-    expect(jobs.filter((j) => j.folder === 'venue').map((j) => j.source)).toEqual([
-      venue.setting.image.src,
-    ]);
+    // The street photo (D63) and the 13 photos from the current website (D69).
+    const withSrc = [
+      venue.opening.image,
+      ...venue.descent.images,
+      venue.setting.image,
+      venue.story.image,
+      ...venue.rooms.images,
+      ...venue.details.images,
+    ]
+      .map((i) => i.src)
+      .filter((s): s is string => s !== null);
+    expect(withSrc).toHaveLength(14);
+    expect(
+      jobs
+        .filter((j) => j.folder === 'venue')
+        .map((j) => j.source)
+        .sort(),
+    ).toEqual([...new Set(withSrc)].sort());
   });
 
   it('adds a venue job, once, as soon as a src is set', () => {

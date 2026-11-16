@@ -84,7 +84,7 @@ export function MotionProvider() {
     const lenis = lenisRef.current;
     if (lenis && !window.location.hash) lenis.scrollTo(0, { immediate: true, force: true });
     // Re-measuring ScrollTriggers can restore the previous page's scroll position, which
-    // undoes Next.js' jump to a hash (e.g. a featured dish → /menu/#tiramisu). Jump again.
+    // undoes Next.js' jump to a hash (e.g. Home's menu index → /menu/#dessert). Jump again.
     // Only after in-app navigation: on a fresh load the browser's own hash jump is right.
     const navigated = !firstRouteRef.current;
     firstRouteRef.current = false;

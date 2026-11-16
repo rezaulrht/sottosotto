@@ -6,14 +6,7 @@ import site from '../../data/site.json' with { type: 'json' };
  * phones, no hidden content without JS, resize and back/forward without breakage.
  */
 
-const SECTIONS = [
-  'Our Food Is Our Culture',
-  'Venue',
-  'Menu',
-  'From the cellar',
-  'Reserve your table',
-  'Find Us',
-];
+const SECTIONS = ['Our Food Is Our Culture', 'Venue', 'Menu', 'Wine list', 'Reserve your table'];
 
 function collectErrors(page: Page): string[] {
   const errors: string[] = [];
@@ -161,11 +154,48 @@ test('the wine strip has a pause button', async ({ page }) => {
   await expect(strip.locator('ul[aria-hidden="true"]')).toHaveCount(1);
 });
 
-test('featured dishes link to their place on the menu', async ({ page }) => {
+test('the menu index lists the courses and links into the menu', async ({ page }) => {
   await page.goto('/');
-  const card = page.locator('a[href="/menu/#tiramisu"]');
-  await expect(card).toBeVisible();
-  await card.click();
-  await expect(page).toHaveURL(/\/menu\/#tiramisu$/);
-  await expect(page.locator('#tiramisu')).toBeInViewport();
+  const index = page.locator('[aria-labelledby="home-menu"]');
+  for (const title of ['A per cominciare', 'I farinacei', 'Le specialità', 'Peccati di gola']) {
+    await expect(index.getByRole('link', { name: new RegExp(title) })).toHaveAttribute(
+      'href',
+      /\/menu\/#(menu|dessert)$/,
+    );
+  }
+  await expect(index.getByRole('link', { name: /^05 Wine|Wine/ }).first()).toHaveAttribute(
+    'href',
+    '/menu/#wine',
+  );
+  // A course, not a handful of single dishes, and no Find Us section on Home.
+  await expect(index.locator('a[href^="/menu/#"][href$="tiramisu"]')).toHaveCount(0);
+  await expect(page.locator('#home-find')).toHaveCount(0);
+  await index.getByRole('link', { name: /I farinacei/ }).click();
+  await expect(page).toHaveURL(/\/menu\/#menu$/);
+});
+
+test('phone: the venue heading comes before its photos, which swipe sideways', async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, 'Phone only');
+  await page.goto('/');
+  const venue = page.locator('[aria-labelledby="home-venue"]');
+  // Layout boxes (offsetTop/Left), not the fade-in transform.
+  const box = (el: HTMLElement) => ({ top: el.offsetTop, left: el.offsetLeft });
+  const heading = await venue.getByRole('heading', { name: 'Venue' }).evaluate(box);
+  const [first, second] = await venue
+    .locator('[data-step]')
+    .evaluateAll((els) =>
+      els
+        .slice(0, 2)
+        .map((e) => ({ top: (e as HTMLElement).offsetTop, left: (e as HTMLElement).offsetLeft })),
+    );
+  expect(heading.top).toBeLessThan(first!.top);
+  expect(second!.top).toBe(first!.top);
+  expect(second!.left).toBeGreaterThan(first!.left);
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(0);
 });

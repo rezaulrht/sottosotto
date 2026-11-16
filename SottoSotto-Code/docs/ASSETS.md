@@ -75,7 +75,7 @@ Total: 27 assigned + 8 spare = 35.
 | Asset | Needed for | Until it arrives |
 |---|---|---|
 | 4 side-dish photos | Menu: I contorni | Text-only (D14) |
-| Venue photos (entrance, stairs, North Parade, rooms, details, restaurant) | Venue page, Home venue teaser | Placeholders **(MOCK)**, one slot each in `data/venue.json` |
+| Venue photos (entrance, stairs, rooms, details, restaurant) | Venue page, Home venue teaser | 13 photos from the current website's slideshows, downloaded 2026-11-16 (user's request) into `sotto sotto assets/old-site/photos/`; 500 × 350 px; flagged `toConfirm` in `data/venue.json` (D69, Q6). Also downloaded and unused: 12 old dish photos (not today's menu), the entrance banner (text baked in) and the old logo `sottosotto.jpg` (600 × 219) |
 | Hero video | Home hero | Placeholder clip and poster **(MOCK)** (D9; `site.json` `media.heroVideo`) |
 | Booking-section video (optional) | Home booking band | Placeholder clip and poster **(MOCK)** (`site.json` `media.bookingVideo`) |
 | Logo in vector format (SVG/AI/EPS) | Header, footer, favicon, social image | Placeholder **(MOCK)**. The current site has only a 300 × 115 PNG |
