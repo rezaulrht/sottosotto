@@ -31,6 +31,14 @@ export function videoFor(key: string | null): VideoEntry | undefined {
   return key === null ? undefined : videos[key];
 }
 
+/** Shared Open Graph image, made by `npm run og` (1200 × 630). */
+const OG_IMAGE = {
+  url: '/og/default.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Cicchetti della casa at Sotto Sotto',
+};
+
 /** Per-route title and description from seo.json (D43). */
 export function pageMetadata(key: SeoPageKey, path: string): Metadata {
   const page = seo.pages[key];
@@ -38,7 +46,17 @@ export function pageMetadata(key: SeoPageKey, path: string): Metadata {
     title: key === 'home' ? { absolute: page.title } : page.title,
     description: page.description,
     alternates: { canonical: path },
-    openGraph: { title: page.title, description: page.description, url: path },
+    // Pages replace the layout's openGraph object, so the shared fields are repeated here.
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      url: path,
+      siteName: site.name,
+      locale: 'en_GB',
+      type: 'website',
+      images: [OG_IMAGE],
+    },
+    twitter: { card: 'summary_large_image', images: [OG_IMAGE.url] },
   };
 }
 

@@ -26,6 +26,8 @@ jobs:
       - run: npm run check
       - name: Build (staging)
         run: npm run build:staging
+      - name: First-load JS budgets
+        run: npm run budget
       - name: Production build must refuse mock data
         run: |
           if npm run build:production; then

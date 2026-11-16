@@ -1,10 +1,13 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { BOOK_PATH } from '@/lib/nav';
-import { BookingFlow, type BookingFlowProps } from './BookingFlow';
+import type { BookingFlowProps } from './BookingFlow';
 import styles from './BookingDialog.module.css';
+
+// Loaded on first open, so pages that never open the dialog skip its code (M8 JS budget).
+const BookingFlow = lazy(() => import('./BookingFlow').then((m) => ({ default: m.BookingFlow })));
 
 interface Props extends BookingFlowProps {
   /** "Sotto Sotto is a very small restaurant and booking is strongly recommended." */
@@ -77,7 +80,11 @@ export function BookingDialog({ note, ...flow }: Props) {
           </button>
         </div>
         <p className={styles.note}>{note}</p>
-        {mounted ? <BookingFlow {...flow} headingLevel={3} /> : null}
+        {mounted ? (
+          <Suspense fallback={<p className="sr-only">Loading…</p>}>
+            <BookingFlow {...flow} headingLevel={3} />
+          </Suspense>
+        ) : null}
       </div>
     </dialog>
   );
