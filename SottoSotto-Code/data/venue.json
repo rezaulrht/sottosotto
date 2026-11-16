@@ -2,37 +2,47 @@
   "_about": "Venue page content. All photos are MOCK placeholders until the client supplies them. Copy and its status: docs/CONTENT.md section 4.",
   "opening": {
     "image": {
-      "mock": true,
-      "src": null,
-      "alt": "Placeholder: the entrance or the stairs",
-      "caption": null
+      "mock": false,
+      "toConfirm": true,
+      "src": "old-site/photos/new-6.jpg",
+      "alt": "A long stone-walled corridor with a wooden floor, lit by wall lights",
+      "caption": null,
+      "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
     }
   },
   "descent": {
     "images": [
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: descent step 1",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-2.jpg",
+        "alt": "A candelabra with lit candles against a rough stone wall",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: descent step 2",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-9.jpg",
+        "alt": "Lit candelabras along a vaulted stone room",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: descent step 3",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/sotto_sotto-10.jpg",
+        "alt": "Candles on the stone walls of the vault",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: descent step 4",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-11.jpg",
+        "alt": "The bar under the lit stone vault, with stools and tables",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       }
     ]
   },
@@ -66,59 +76,75 @@
     "heading": "Our story",
     "text": "(MOCK) Placeholder: who founded Sotto Sotto and when it opened. To come from the client.",
     "image": {
-      "mock": true,
-      "src": null,
-      "alt": "Placeholder: the restaurant",
-      "caption": null
+      "mock": false,
+      "toConfirm": true,
+      "src": "old-site/photos/new-14.jpg",
+      "alt": "A chef plating a dessert in the kitchen",
+      "caption": null,
+      "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
     }
   },
   "rooms": {
     "images": [
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: room 1",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-16.jpg",
+        "alt": "The vaulted stone dining room, full of guests",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: room 2",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-18.jpg",
+        "alt": "Guests at tables against the stone walls",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: room 3",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-8.jpg",
+        "alt": "Bottles on the shelves behind the bar",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       }
     ]
   },
   "details": {
     "images": [
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: stone",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-12.jpg",
+        "alt": "Sotto Sotto cards in a brass holder",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: table setting",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-17.jpg",
+        "alt": "A table set with glasses, a candle and a plated dish",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: wine shelves",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-4.jpg",
+        "alt": "A flaming cocktail in a martini glass",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       },
       {
-        "mock": true,
-        "src": null,
-        "alt": "Placeholder: candle",
-        "caption": null
+        "mock": false,
+        "toConfirm": true,
+        "src": "old-site/photos/new-15.jpg",
+        "alt": "A panna cotta with Sotto Sotto written in chocolate on the plate",
+        "caption": null,
+        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
       }
     ]
   },

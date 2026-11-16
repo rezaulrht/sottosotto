@@ -23,13 +23,19 @@ test('the North Parade sentence is exactly as in venue.json and flagged for veri
   });
 });
 
-test('the street photo is credited; the other photos are marked placeholders', async ({ page }) => {
+test('the street photo is credited; the photos from the old site are real and flagged', async ({
+  page,
+}) => {
   await page.goto('/venue/');
-  // The street photo is a real, openly licensed photo (D63); the rest are placeholders.
-  const total =
-    1 + venue.descent.images.length + 1 + venue.rooms.images.length + venue.details.images.length;
-  await expect(page.locator('main [data-placeholder]')).toHaveCount(total);
-  await expect(page.getByRole('img', { name: 'Placeholder: room 1' })).toBeAttached();
+  // No placeholders left: the venue photos come from the current website (D69).
+  await expect(page.locator('main [data-placeholder]')).toHaveCount(0);
+  await expect(page.getByRole('img', { name: venue.rooms.images[0]!.alt })).toBeAttached();
+  const { flags } = JSON.parse(readFileSync('content-report.json', 'utf8')) as {
+    flags: Array<{ file: string; path: string; reasons: string[] }>;
+  };
+  const photos = flags.filter((f) => f.file === 'venue.json' && /image/.test(f.path));
+  expect(photos).toHaveLength(13);
+  expect(photos.every((f) => f.reasons.includes('toConfirm'))).toBe(true);
   const street = page.getByRole('img', { name: venue.setting.image.alt });
   await expect(street).toBeAttached();
   await expect(

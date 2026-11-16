@@ -4,13 +4,14 @@
 
 The site cannot go live until both lists are empty: the production build refuses to run while any value below is flagged. Staging shows the same count in the corner badge (**44** values today).
 
-## 1. Questions that block launch (24)
+## 1. Questions that block launch (25)
 
 | # | Question |
 |---|---|
 | Q1 | What are the exact street address and map pin, phone number, info@ and careers@ emails? The address is a mock ("10 North Parade"); the current site shows both "10 N Parade" and "12a North Parade". Phone and emails are placeholders from the current site. |
 | Q4 | Check the 9 "likely" photo matches by eye (list in `ASSETS.md`). |
 | Q5 | Are the 35 dish images real photographs of Sotto Sotto's dishes? Are larger originals available (they are about 1535 px wide; the spec asks for 3000 px)? |
+| Q6 | Venue photos. We now use 13 photos from your current website (corridor, candles, vault, bar, dining room, details; D69), but they are only 500 × 350 px and look soft at full screen. Are they still current, and can you send the originals or new photos? |
 | Q7 | Hero video, and the optional second video for the booking band. Both are MOCK placeholders. |
 | Q8 | Booking backend (D59): Hospres is no longer used, so where are bookings stored and how does staff see, change and cancel them (our own backend, or another booking provider with an API)? Until this is decided the guest screens are a preview and nothing is booked; the production build stays blocked. |
 | Q10 | Which social accounts are current? Facebook and Twitter links are mock (from the old site, not checked). Is there an Instagram account to link (link only, no feed)? |
@@ -71,21 +72,21 @@ The site cannot go live until both lists are empty: the production build refuses
 
 | Where | What | Why |
 |---|---|---|
-| `opening.image` | Placeholder: the entrance or the stairs | placeholder |
-| `descent.images[0]` | Placeholder: descent step 1 | placeholder |
-| `descent.images[1]` | Placeholder: descent step 2 | placeholder |
-| `descent.images[2]` | Placeholder: descent step 3 | placeholder |
-| `descent.images[3]` | Placeholder: descent step 4 | placeholder |
+| `opening.image` | A long stone-walled corridor with a wooden floor, lit by wall lights | to confirm |
+| `descent.images[0]` | A candelabra with lit candles against a rough stone wall | to confirm |
+| `descent.images[1]` | Lit candelabras along a vaulted stone room | to confirm |
+| `descent.images[2]` | Candles on the stone walls of the vault | to confirm |
+| `descent.images[3]` | The bar under the lit stone vault, with stools and tables | to confirm |
 | `setting.fact` |  | to verify |
 | `story` |  | placeholder |
-| `story.image` | Placeholder: the restaurant | placeholder |
-| `rooms.images[0]` | Placeholder: room 1 | placeholder |
-| `rooms.images[1]` | Placeholder: room 2 | placeholder |
-| `rooms.images[2]` | Placeholder: room 3 | placeholder |
-| `details.images[0]` | Placeholder: stone | placeholder |
-| `details.images[1]` | Placeholder: table setting | placeholder |
-| `details.images[2]` | Placeholder: wine shelves | placeholder |
-| `details.images[3]` | Placeholder: candle | placeholder |
+| `story.image` | A chef plating a dessert in the kitchen | to confirm |
+| `rooms.images[0]` | The vaulted stone dining room, full of guests | to confirm |
+| `rooms.images[1]` | Guests at tables against the stone walls | to confirm |
+| `rooms.images[2]` | Bottles on the shelves behind the bar | to confirm |
+| `details.images[0]` | Sotto Sotto cards in a brass holder | to confirm |
+| `details.images[1]` | A table set with glasses, a candle and a plated dish | to confirm |
+| `details.images[2]` | A flaming cocktail in a martini glass | to confirm |
+| `details.images[3]` | A panna cotta with Sotto Sotto written in chocolate on the plate | to confirm |
 
 ### `data/seo.json` (7)
 

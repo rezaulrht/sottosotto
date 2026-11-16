@@ -29,12 +29,12 @@ Route names are a proposal. Copy for every section is in `CONTENT.md`; business 
 | # | Section | Spec | Content source |
 |---|---|---|---|
 | 1 | Hero | Full-screen muted looping video, dark overlay (about 50–60% opacity), faint grain on top. Short headline with the name and "Italian Restaurant in Bath". Slowly rotating circular "Book a table" badge that opens the modal. Live hours chip. Poster image loads first and replaces the video on slow connections or reduced motion. | `site.json` name, tagline, hours. Video and poster: placeholder. |
-| 2 | Philosophy statement | Existing text set large on the concrete, revealing word by word on scroll. "Booking is strongly recommended" leads into a booking button. | `site.json` `copy.philosophyFull`, `copy.bookingNote` |
-| 3 | Venue teaser | Pinned section. Venue photos slide past step by step as you scroll, getting darker and warmer, like descending the stairs. Ends with a "Step inside" link to Venue. | Venue photos: placeholder |
-| 4 | Featured menu | 4–6 signature dishes as image cards, slightly dimmed, brightening on hover (a small preview of the menu candle effect). Links to the Menu, Dessert and Wine sections. | `menu.json`, `desserts.json`. Dish choice: see below. |
-| 5 | Wine strip ("From the cellar") | A slow scrolling line of wine names. Text only. | `wine.json` names |
+| 2 | Philosophy | Editorial spread (D68): the heading and a dish photo on one side; the first paragraph set as a statement with an amber rule, the other two as reading text, with 'Sapori' set in italic amber. "Booking is strongly recommended" leads into a booking button. | `site.json` `copy.philosophyFull`, `copy.bookingNote` |
+| 3 | Venue teaser | Pinned section. Venue photos slide past step by step as you scroll, getting darker and warmer, like descending the stairs. Ends with a "Step inside" link to Venue. Phones (D68): heading and link first, then the photos as a sideways swipe row. | Venue photos: placeholder |
+| 4 | Menu at a glance | One row per course (D68): Italian name, English name and the first three dishes; the course's first dish photo appears on hover on desktop and as a thumbnail on phones. Food courses (sides left out), Desserts & Cheese, and Wine with the wine groups and first bar sections. Each row links to its menu tab. | `menu.json`, `desserts.json`, `wine.json` |
+| 5 | Wine strip ("Wine list") | A slow scrolling line of wine names. Text only. | `wine.json` names; heading from the wine tab label |
 | 6 | Booking band | Full-width image or second video with "Reserve your table" and a note that the restaurant is small. | `copy.bookingNote`. Media: placeholder. |
-| 7 | Find us teaser | Address, a dark-styled map snippet, a "Parking nearby" link to Find Us. | `site.json` address **(MOCK)** |
+| 7 | ~~Find us teaser~~ | Removed from Home (D68). Find Us stays in the main navigation and the footer. | — |
 | 8 | Footer | Global footer. | `site.json` |
 
 **Hours chip states** (computed from `site.json` in the Europe/London time zone):
@@ -45,7 +45,7 @@ Route names are a proposal. Copy for every section is in `CONTENT.md`; business 
 | Closed day | "Closed today, we reopen Tuesday" |
 | Seasonal closure | Wording to be agreed (depends on `OPEN_QUESTIONS.md` Q14) |
 
-**Featured dishes (proposal, client to choose — Q19).** Candidates taken only from dishes with a "clear" photo match: Cicchetti della casa, Linguine con gamberi, Fettucce al ragù di manzo, Filetto di manzo in crosta di pistacchi, Polenta grigliata, Tiramisu.
+**Featured dishes:** replaced by the menu at a glance (D68); no dish choice is needed from the client.
 
 **Unplaced copy.** The current home page quote ("Situated just a few steps away from the Roman Baths…") has no slot in this spec. Proposal: a sub-line under the hero headline or the lead-in to the Find us teaser.
 

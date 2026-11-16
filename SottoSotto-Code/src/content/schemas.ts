@@ -405,6 +405,8 @@ export const wineSchema = z.strictObject({
 
 const venueImage = z.strictObject({
   mock: z.boolean(),
+  /** A real photo the client has not signed off yet (e.g. taken from the current site). */
+  toConfirm: z.boolean().optional(),
   src: nonEmpty.nullable(),
   alt: nonEmpty,
   caption: nonEmpty.nullable(),
