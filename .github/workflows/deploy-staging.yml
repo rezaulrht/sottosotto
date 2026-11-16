@@ -1,0 +1,45 @@
+# Staging deploy (M9, ARCHITECTURE §13): every push to `staging` builds the static export
+# with SITE_ENV=staging (noindex, robots disallow, CSP report-only, mock badge) and uploads
+# it to Cloudflare Pages. Off until the hosting account exists (OPEN_QUESTIONS Q41): set the
+# repository variable STAGING_DEPLOY=on plus the variable and secrets listed in
+# SottoSotto-Code/docs/LAUNCH_CHECKLIST.md. Access control is a Cloudflare Access policy.
+name: Deploy staging
+
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: SottoSotto-Code
+
+jobs:
+  deploy:
+    if: ${{ vars.STAGING_DEPLOY == 'on' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: SottoSotto-Code/.nvmrc
+          cache: npm
+          cache-dependency-path: SottoSotto-Code/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build:staging
+      - run: npm run budget
+      - name: Upload to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: SottoSotto-Code
+          command: pages deploy out --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=staging
