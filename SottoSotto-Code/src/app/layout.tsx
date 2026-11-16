@@ -7,6 +7,7 @@ import { bookingFlowProps, seo, site } from '@/content';
 import { siteEnv } from '@/lib/env';
 import { MotionProvider } from '@/motion/MotionProvider';
 import { BookingDialog } from '@/booking/BookingDialog';
+import { CookieBanner } from '@/consent/CookieBanner';
 import { colors } from '@/lib/tokens';
 import { fontVariables } from './fonts';
 import '@/styles/globals.css';
@@ -44,6 +45,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <MockBadge />
         <MotionProvider />
         <BookingDialog note={site.copy.bookingNote} {...bookingFlowProps()} />
+        <CookieBanner
+          copy={site.copy.cookieBanner}
+          measurementId={site.analytics.ga4MeasurementId}
+        />
       </body>
     </html>
   );

@@ -20,9 +20,21 @@
     "careers": {
       "_source": "Current site index.html lines 383-386 (docs/CONTENT.md section 6). applyText is followed by contact.careersEmail as a link. The button label is new.",
       "heading": "Careers at Sotto Sotto",
-      "paragraphs": ["We are always looking for dedicated professionals to join our team."],
+      "paragraphs": [
+        "We are always looking for dedicated professionals to join our team."
+      ],
       "applyText": "If you are interested in working at Sotto Sotto please apply by sending a brief covering letter, CV and photograph to",
       "button": "Send your CV"
+    },
+    "cookieBanner": {
+      "toConfirm": true,
+      "_note": "NEW interface copy for the cookie banner (D40, M7). Not from the current site; the client must approve it (OPEN_QUESTIONS Q52). Labels follow ARCHITECTURE §9.2.",
+      "heading": "Cookies",
+      "text": "We would like to use Google Analytics cookies to understand how visitors use this site. They are only set if you accept, and you can change your mind at any time from Cookie settings at the foot of every page.",
+      "accept": "Accept analytics",
+      "reject": "Reject",
+      "privacyLink": "Privacy Policy",
+      "settings": "Cookie settings"
     }
   },
   "hours": {

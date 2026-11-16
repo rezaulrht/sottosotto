@@ -10,6 +10,22 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:3100',
     trace: 'on-first-retry',
+    // A stored "Reject" keeps the cookie banner out of other specs' way;
+    // tests/e2e/consent.spec.ts starts without it.
+    storageState: {
+      cookies: [],
+      origins: [
+        {
+          origin: 'http://localhost:3100',
+          localStorage: [
+            {
+              name: 'consent.v1',
+              value: JSON.stringify({ analytics: false, version: 1, date: '2026-11-16' }),
+            },
+          ],
+        },
+      ],
+    },
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },

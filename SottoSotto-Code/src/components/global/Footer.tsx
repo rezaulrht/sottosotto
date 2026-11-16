@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '@/content';
+import { CookieSettingsButton } from '@/consent/CookieSettingsButton';
 import { capitalise, weeklySummary } from '@/lib/hours';
 import styles from './Footer.module.css';
 
@@ -72,6 +73,12 @@ export function Footer() {
           <ul className={styles.inline}>
             <li>
               <Link href="/privacy/">Privacy Policy</Link>
+            </li>
+            <li>
+              <CookieSettingsButton
+                label={copy.cookieBanner.settings}
+                className={styles.textButton}
+              />
             </li>
           </ul>
         </div>
