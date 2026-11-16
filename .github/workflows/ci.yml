@@ -24,6 +24,8 @@ jobs:
           cache-dependency-path: SottoSotto-Code/package-lock.json
       - run: npm ci
       - run: npm run check
+      - name: Client review list is current
+        run: npm run review-list -- --check
       - name: Build (staging)
         run: npm run build:staging
       - name: First-load JS budgets
