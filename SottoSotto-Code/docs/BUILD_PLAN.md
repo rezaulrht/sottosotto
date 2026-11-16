@@ -1,6 +1,6 @@
 # Build plan
 
-> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 merged 2026-11-15. M5 merged 2026-11-15. M6 merged 2026-11-16. M7 in progress on `m7-consent`. Each milestone ends with a short review; M2 is a hard gate.
+> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 merged 2026-11-15. M5 merged 2026-11-15. M6 merged 2026-11-16. M7 merged 2026-11-16. M8 in progress on `m8-hardening`: automated parts done; real-device, screen-reader and Lighthouse runs listed under M8. Each milestone ends with a short review; M2 is a hard gate.
 
 Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, axe) and updates `DECISIONS.md` / `OPEN_QUESTIONS.md` as answers arrive.
 
@@ -108,6 +108,8 @@ Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, 
 | Accessibility | WCAG 2.2 AA pass: axe clean, manual keyboard pass, screen reader pass (VoiceOver iOS/macOS, NVDA), 200% zoom, reduced motion |
 | Performance | Lighthouse CI budgets pass on all routes (mobile) |
 | Browsers | Last 2 versions of Chrome, Safari (macOS and iOS on real devices), Firefox, Edge; one mid-range Android phone |
+
+**M8 status (2026-11-16).** Automated and passing in CI: SEO tags, OG image, sitemap, robots per environment, JSON-LD without mock values, `?p=` and PDF redirects, CSP enforced with no violations (GA4 after consent included), axe on every route, keyboard paths in Playwright, reduced motion, JS budgets. Still to run by hand: Google Rich Results Test on the staging URL, VoiceOver (iOS/macOS) and NVDA passes, 200% zoom, Lighthouse mobile scores (not run from this machine), Safari/Firefox/Edge and the real-device checks. These go on the M9 review list.
 
 ## M9. Staging and client review
 
