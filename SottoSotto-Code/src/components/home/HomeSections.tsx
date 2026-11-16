@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { BookButton } from '@/components/global/BookButton';
 import { Picture } from '@/components/shared/Picture';
 import { StairDescent } from '@/components/shared/StairDescent';
+import { StaticMap } from '@/components/find-us/StaticMap';
 import { desserts, imageFor, menu, site, venue, wine } from '@/content';
 import type { Dish } from '@/content/schemas';
 import { formatPrice } from '@/lib/prices';
@@ -165,14 +166,7 @@ export function FindUsTeaser() {
             </li>
           </ul>
         </div>
-        {/* The dark static map arrives in M6 (D42), once the pin is confirmed (Q1). */}
-        <div
-          className={styles.mapPlaceholder}
-          role="img"
-          aria-label="Map of North Parade, Bath (placeholder)"
-        >
-          <span aria-hidden="true">Map placeholder · North Parade, Bath</span>
-        </div>
+        <StaticMap />
       </div>
     </section>
   );

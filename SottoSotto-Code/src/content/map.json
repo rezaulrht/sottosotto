@@ -1,0 +1,75 @@
+{
+  "bbox": {
+    "south": 51.3762,
+    "west": -2.3645,
+    "north": 51.3852,
+    "east": -2.3501
+  },
+  "width": 1600,
+  "height": 1602,
+  "labels": [
+    {
+      "text": "North Parade",
+      "left": 52.6,
+      "top": 48.7,
+      "angle": 0
+    },
+    {
+      "text": "Manvers Street",
+      "left": 51.7,
+      "top": 68.7,
+      "angle": 88
+    },
+    {
+      "text": "Orange Grove",
+      "left": 43.5,
+      "top": 39.6,
+      "angle": 72
+    },
+    {
+      "text": "North Parade Road",
+      "left": 84.9,
+      "top": 47.6,
+      "angle": -2
+    },
+    {
+      "text": "Parade Gardens",
+      "left": 52,
+      "top": 39.3,
+      "angle": 0
+    },
+    {
+      "text": "Pierrepont Street",
+      "left": 51.1,
+      "top": 51.7,
+      "angle": 88
+    },
+    {
+      "text": "Pulteney Bridge",
+      "left": 45.8,
+      "top": 24.1,
+      "angle": -30
+    },
+    {
+      "text": "River Avon",
+      "left": 42.2,
+      "top": 15.9,
+      "angle": 80
+    },
+    {
+      "text": "Grand Parade",
+      "left": 49.5,
+      "top": 35.5,
+      "angle": -59
+    },
+    {
+      "text": "Bath Abbey",
+      "left": 40,
+      "top": 42.2,
+      "angle": 0
+    }
+  ],
+  "attribution": "© OpenStreetMap contributors",
+  "attributionUrl": "https://www.openstreetmap.org/copyright",
+  "source": "OpenStreetMap via the Overpass API, extract of 2026-11-16"
+}

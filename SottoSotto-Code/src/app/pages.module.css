@@ -310,3 +310,9 @@
   max-width: 40rem;
   margin-top: var(--space-7);
 }
+
+/* Find Us map */
+.findMap {
+  width: 100%;
+  max-width: 40rem;
+}

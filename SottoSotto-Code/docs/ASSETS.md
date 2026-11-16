@@ -82,6 +82,7 @@ Total: 27 assigned + 8 spare = 35.
 | Brand colours and fonts | Whole site | Placeholders **(MOCK)** from `DESIGN_SYSTEM.md` |
 | Bar menu images | — | Not needed: the Wine tab, bar menu included, is text only |
 | Street photo (Venue 3a) | Venue "The street" | `commons/Bath, Somerset - 01.jpg` from Wikimedia Commons, Benjamin Smith, CC BY-SA 4.0; credit line required (D63) |
+| Find Us map | Find Us, Home teaser | Drawn by `npm run map` from an OpenStreetMap extract (Overpass API, 2026-11-16, ODbL, "© OpenStreetMap contributors"). The raw extract is in `.cache/map/osm.json` (not in git); to refresh it, re-run the Overpass query in `scripts/map.ts`'s box (D64) |
 | Concrete texture | Site background | From the current site: `sottosottobackground2.jpg` (2879 × 1391), kept in `sotto sotto assets/old-site/`; web copy `public/textures/concrete-1440.*` (D55) |
 | Social share image | Link previews | To be made once photos and logo arrive |
 

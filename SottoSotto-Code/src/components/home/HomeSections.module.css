@@ -295,17 +295,6 @@
   line-height: 1.4;
   font-style: normal;
 }
-.mapPlaceholder {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 10;
-  padding: var(--space-5);
-  border: 1px dashed var(--color-border);
-  background: rgb(18 17 16 / 0.6);
-  color: var(--bone-300);
-  font-size: var(--step-small);
-  text-align: center;
-}
 .wineToggle[hidden] {
   display: none;
 }
