@@ -12,6 +12,7 @@
     "content:guard": "tsx scripts/content-report.ts --guard",
     "images": "tsx scripts/images.ts",
     "video": "bash scripts/video.sh",
+    "map": "tsx scripts/map.ts",
     "contrast": "tsx scripts/check-contrast.ts",
     "build": "npm run content:guard && next build && tsx scripts/emit-headers.ts",
     "build:staging": "SITE_ENV=staging npm run build",
