@@ -252,6 +252,12 @@
       "src": null,
       "poster": null,
       "_note": "Optional. Placeholder until supplied."
+    },
+    "findUsVideo": {
+      "mock": false,
+      "src": "findus",
+      "poster": "findus",
+      "_note": "The client's drone clip (intro drone.mov, sent 2026-11-18): Duke Street and the Sotto Sotto sign, over the Roman Baths and the Abbey, ending above North Parade. Opens Find Us (D71). Encoded by npm run video with CLIP_NAME=findus; source kept in sotto sotto assets/video/. Its audio track was silent and is dropped."
     }
   },
   "allergensFile": "allergens.json"

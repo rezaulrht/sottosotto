@@ -9,6 +9,12 @@
 #   HERO_SRC=path/to/clip.mov npm run video
 #   FFMPEG=/path/to/ffmpeg npm run video   # if ffmpeg is not on PATH
 #
+# Other clips (D71): CLIP_NAME names the outputs and the manifest key; CLIP_SRC is the
+# source; CLIP_FPS keeps its frame rate; POSTER_AT picks the poster frame (seconds);
+# MAX_MP4_MB caps the 1080p MP4; X264_CRF / VP9_CRF trade quality for size.
+#   CLIP_NAME=findus CLIP_SRC="../sotto sotto assets/video/intro-drone.mov" CLIP_FPS=24 \
+#     POSTER_AT=6 MAX_MP4_MB=6 X264_CRF=35 VP9_CRF=48 npm run video
+#
 # Quality tuned in M2: x264 CRF 31 (film), VP9 CRF 38; 1080p MP4 must stay under 4 MB.
 # Outputs (committed): public/video/hero-{1080,720}.{mp4,webm}, plus the poster through
 # scripts/video-poster.ts (AVIF/WebP + src/content/video-manifest.json).
@@ -19,7 +25,9 @@ FFMPEG="${FFMPEG:-ffmpeg}"
 ASSET_SRC="${ASSET_SRC:-../sotto sotto assets}"
 OUT=public/video
 WORK=.cache/video
-MAX_MP4_BYTES=$((4 * 1024 * 1024))
+NAME="${CLIP_NAME:-hero}"
+HERO_SRC="${CLIP_SRC:-${HERO_SRC:-}}"
+MAX_MP4_BYTES=$((${MAX_MP4_MB:-4} * 1024 * 1024))
 
 command -v "$FFMPEG" >/dev/null || {
   echo "✗ ffmpeg not found. Install it (apt install ffmpeg) or set FFMPEG=/path/to/ffmpeg." >&2
@@ -27,7 +35,7 @@ command -v "$FFMPEG" >/dev/null || {
 }
 mkdir -p "$OUT" "$WORK"
 
-FPS=30
+FPS=${CLIP_FPS:-30}
 CLIP=6     # seconds each photo is on screen
 FADE=1.5   # crossfade length
 STEP=$(awk "BEGIN{print $CLIP-$FADE}")
@@ -92,30 +100,30 @@ fi
 echo "→ Encoding"
 x264() { # $1 height, $2 out
   "$FFMPEG" -y -loglevel error -i "$WORK/master.mp4" -an -vf "scale=-2:$1:flags=lanczos" \
-    -c:v libx264 -crf 31 -preset slow -tune film -profile:v high -pix_fmt yuv420p -g $((FPS * 2)) \
+    -c:v libx264 -crf "${X264_CRF:-31}" -preset slow -tune film -profile:v high -pix_fmt yuv420p -g $((FPS * 2)) \
     -movflags +faststart "$2"
 }
 vp9() { # $1 height, $2 out
   "$FFMPEG" -y -loglevel error -i "$WORK/master.mp4" -an -vf "scale=-2:$1:flags=lanczos" \
-    -c:v libvpx-vp9 -crf 38 -b:v 0 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p \
+    -c:v libvpx-vp9 -crf "${VP9_CRF:-38}" -b:v 0 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p \
     -g $((FPS * 2)) "$2"
 }
-x264 1080 "$OUT/hero-1080.mp4"
-x264 720 "$OUT/hero-720.mp4"
-vp9 1080 "$OUT/hero-1080.webm"
-vp9 720 "$OUT/hero-720.webm"
+x264 1080 "$OUT/$NAME-1080.mp4"
+x264 720 "$OUT/$NAME-720.mp4"
+vp9 1080 "$OUT/$NAME-1080.webm"
+vp9 720 "$OUT/$NAME-720.webm"
 
-echo "→ Poster (first frame of the loop)"
-"$FFMPEG" -y -loglevel error -i "$WORK/master.mp4" -frames:v 1 "$WORK/hero-poster.png"
-npx tsx scripts/video-poster.ts "$WORK/hero-poster.png"
+echo "→ Poster (frame at ${POSTER_AT:-0} s)"
+"$FFMPEG" -y -loglevel error -ss "${POSTER_AT:-0}" -i "$WORK/master.mp4" -frames:v 1 "$WORK/$NAME-poster.png"
+npx tsx scripts/video-poster.ts "$WORK/$NAME-poster.png" "$NAME"
 
 bytes() { stat -c %s "$1" 2>/dev/null || stat -f %z "$1"; }
-for f in "$OUT"/hero-*.mp4 "$OUT"/hero-*.webm; do
+for f in "$OUT"/"$NAME"-*.mp4 "$OUT"/"$NAME"-*.webm; do
   printf '  %-28s %6d KB\n' "$f" $(($(bytes "$f") / 1024))
 done
-size=$(bytes "$OUT/hero-1080.mp4")
+size=$(bytes "$OUT/$NAME-1080.mp4")
 if ((size > MAX_MP4_BYTES)); then
-  echo "✗ hero-1080.mp4 is over 4 MB ($((size / 1024)) KB). Raise the CRF or shorten the loop." >&2
+  echo "✗ $NAME-1080.mp4 is over ${MAX_MP4_MB:-4} MB ($((size / 1024)) KB). Raise the CRF or shorten the loop." >&2
   exit 1
 fi
-echo "✓ Hero video done"
+echo "✓ $NAME video done"

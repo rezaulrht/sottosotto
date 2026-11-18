@@ -8,6 +8,10 @@ import styles from './VideoBackground.module.css';
 
 interface Props {
   video: VideoEntry;
+  /** Session key that remembers the pause choice; one per clip (D71). */
+  pauseKey?: string;
+  /** `light`: a thinner overlay for daylight footage (the Find Us drone clip, D71). */
+  tone?: 'dark' | 'light';
 }
 
 type State = 'poster' | 'loading' | 'playing' | 'paused';
@@ -19,20 +23,20 @@ interface NetworkInformation {
   removeEventListener?: (type: 'change', fn: () => void) => void;
 }
 
-const PAUSE_KEY = 'sotto.heroMotion';
+const HERO_PAUSE_KEY = 'sotto.heroMotion';
 
-function readPaused(): boolean {
+function readPaused(key: string): boolean {
   try {
-    return sessionStorage.getItem(PAUSE_KEY) === 'paused';
+    return sessionStorage.getItem(key) === 'paused';
   } catch {
     return false;
   }
 }
 
-function writePaused(paused: boolean) {
+function writePaused(key: string, paused: boolean) {
   try {
-    if (paused) sessionStorage.setItem(PAUSE_KEY, 'paused');
-    else sessionStorage.removeItem(PAUSE_KEY);
+    if (paused) sessionStorage.setItem(key, 'paused');
+    else sessionStorage.removeItem(key);
   } catch {
     // Storage blocked: the choice lasts for this page view only.
   }
@@ -45,7 +49,7 @@ function writePaused(paused: boolean) {
  * button (WCAG 2.2.2) stops the video and every other hero motion (the rotating badge),
  * and the choice is kept for the session.
  */
-export function VideoBackground({ video }: Props) {
+export function VideoBackground({ video, pauseKey = HERO_PAUSE_KEY, tone = 'dark' }: Props) {
   const mediaRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const toggleRef = useRef<() => void>(() => {});
@@ -66,7 +70,7 @@ export function VideoBackground({ video }: Props) {
     let loaded = document.readyState === 'complete';
     let onScreen = true;
     let sourcesAdded = false;
-    let userPaused = readPaused();
+    let userPaused = readPaused(pauseKey);
 
     const addSources = () => {
       const height = pickHeight(
@@ -116,7 +120,7 @@ export function VideoBackground({ video }: Props) {
 
     toggleRef.current = () => {
       userPaused = !userPaused;
-      writePaused(userPaused);
+      writePaused(pauseKey, userPaused);
       sync();
     };
 
@@ -151,7 +155,7 @@ export function VideoBackground({ video }: Props) {
       io.disconnect();
       el.pause();
     };
-  }, [video]);
+  }, [video, pauseKey]);
 
   // The button controls all hero motion, so it is offered whenever motion is allowed,
   // including Save-Data and slow connections (the badge still turns there).
@@ -165,6 +169,7 @@ export function VideoBackground({ video }: Props) {
         data-video-state={state}
         data-poster-reason={reason ?? undefined}
         data-video-shown={shown ? '' : undefined}
+        data-tone={tone}
       >
         <Picture image={video.poster} alt="" sizes="100vw" priority className={styles.poster} />
         <video

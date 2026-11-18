@@ -63,3 +63,30 @@ test('"Send your CV" opens a mail to careers@ (to confirm)', async ({ page }) =>
     reasons: ['toConfirm'],
   });
 });
+
+test('the drone clip opens the page, above the map, with a pause button', async ({ page }) => {
+  await page.goto('/find-us/');
+  const hero = page.locator('[aria-labelledby="find-title"]');
+  await expect(hero.locator('video')).toHaveCount(1);
+  const poster = hero.locator('picture img').first();
+  await expect(poster).toBeVisible();
+  const map = page.getByRole('img', { name: /Map of the streets around North Parade/ });
+  const [p, m] = await Promise.all([poster.boundingBox(), map.boundingBox()]);
+  expect(p!.y).toBeLessThan(m!.y);
+  await expect(hero.getByRole('button', { name: 'Pause background motion' })).toBeVisible();
+});
+
+test.describe('reduced motion', () => {
+  test.use({ reducedMotion: 'reduce' });
+
+  test('Find Us shows the poster only and never requests the video', async ({ page }) => {
+    const videos: string[] = [];
+    page.on('request', (r) => {
+      if (r.url().includes('/video/findus-') && /\.(mp4|webm)$/.test(r.url())) videos.push(r.url());
+    });
+    await page.goto('/find-us/');
+    await page.waitForLoadState('networkidle');
+    await expect(page.locator('[aria-labelledby="find-title"] picture img').first()).toBeVisible();
+    expect(videos).toEqual([]);
+  });
+});

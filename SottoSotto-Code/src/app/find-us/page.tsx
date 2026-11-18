@@ -1,6 +1,7 @@
 import buttons from '@/components/global/BookButton.module.css';
 import { StaticMap } from '@/components/find-us/StaticMap';
-import { pageMetadata, site } from '@/content';
+import { VideoBackground } from '@/components/home/VideoBackground';
+import { pageMetadata, site, videoFor } from '@/content';
 import { isProduction } from '@/lib/env';
 import { directionsUrl } from '@/lib/prices';
 import { MotionScope } from '@/motion/MotionScope';
@@ -9,7 +10,8 @@ import styles from '../pages.module.css';
 export const metadata = pageMetadata('findUs', '/find-us/');
 
 /*
- * Find Us (PAGES.md, M6): self-hosted dark map with the pin and "Get directions" (D42),
+ * Find Us (PAGES.md, M6): opens with the client's drone clip (D71), which ends looking down
+ * on North Parade, just above the self-hosted dark map with the pin and "Get directions" (D42),
  * contact block, parking cards, optional getting-here lines (hidden in production while
  * mock) and careers. Address, pin and walking times are MOCK until confirmed (Q1, Q30).
  */
@@ -18,12 +20,20 @@ export default function FindUsPage() {
   const { address, contact, copy, geo, parking } = site;
   // Getting here is optional and hidden in production while its entries are mock (ARCHITECTURE §4.2).
   const gettingHere = site.gettingHere.filter((g) => !(g.mock && isProduction()));
+  const drone = videoFor(site.media.findUsVideo.src);
   return (
     <MotionScope>
       <div className={styles.page}>
-        <section className={styles.section} aria-labelledby="find-title">
-          <div className={`container ${styles.stack}`}>
+        <section className={styles.findHero} aria-labelledby="find-title">
+          {drone ? (
+            <VideoBackground video={drone} pauseKey="sotto.findUsMotion" tone="light" />
+          ) : null}
+          <div className={`container ${styles.findHeroText}`}>
             <h1 id="find-title">Find Us</h1>
+          </div>
+        </section>
+        <section className={styles.section} aria-label="Map and directions">
+          <div className={`container ${styles.stack}`}>
             <StaticMap className={styles.findMap} />
             <a
               href={directionsUrl(geo.lat, geo.lng)}

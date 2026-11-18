@@ -316,3 +316,22 @@
   width: 100%;
   max-width: 40rem;
 }
+
+/* Find Us: the client's drone clip opens the page (D71); the title sits low on it. */
+.findHero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  min-height: 70svh;
+}
+.findHeroText {
+  position: relative;
+  z-index: 1;
+  /* Leave room for the pause button at the bottom left. */
+  padding-bottom: calc(var(--space-5) + 44px + var(--space-5));
+}
+/* The clip runs under the fixed header, like the Home hero. */
+.page:has(> .findHero) {
+  padding-top: 0;
+}

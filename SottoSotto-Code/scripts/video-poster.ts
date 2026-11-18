@@ -11,9 +11,9 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import { videoManifestSchema, type VideoManifest } from '../src/content/schemas';
 
-const [posterPng] = process.argv.slice(2);
+const [posterPng, key = 'hero'] = process.argv.slice(2);
 if (!posterPng) {
-  console.error('Usage: tsx scripts/video-poster.ts <poster.png>');
+  console.error('Usage: tsx scripts/video-poster.ts <poster.png> [key]');
   process.exit(1);
 }
 
@@ -30,7 +30,7 @@ const avif: Array<{ src: string; width: number }> = [];
 const webp: Array<{ src: string; width: number }> = [];
 const warnings: string[] = [];
 for (const w of WIDTHS) {
-  const base = `hero-poster-${w}`;
+  const base = `${key}-poster-${w}`;
   await sharp(posterPng)
     .resize(w)
     .avif({ quality: 50, effort: 6 })
@@ -48,17 +48,22 @@ for (const w of WIDTHS) {
 }
 const lqip = await sharp(posterPng).resize(24).blur(1).webp({ quality: 40 }).toBuffer();
 
-const files = readdirSync(videoDir).filter((f) => /^hero-\d+\.(mp4|webm)$/.test(f));
+const files = readdirSync(videoDir).filter((f) => new RegExp(`^${key}-\\d+\\.(mp4|webm)$`).test(f));
 const sources = (ext: 'mp4' | 'webm') =>
   files
     .filter((f) => f.endsWith(`.${ext}`))
     .map((f) => ({ src: `/video/${f}`, height: Number(/\d+/.exec(f)![0]) }))
     .sort((a, b) => b.height - a.height);
 
+// Other clips already in the manifest are kept.
+const previous: VideoManifest = videoManifestSchema.parse(
+  JSON.parse(readFileSync(manifestPath, 'utf8')) as unknown,
+);
 const manifest: VideoManifest = videoManifestSchema.parse({
-  hero: {
+  ...previous,
+  [key]: {
     poster: {
-      source: 'hero-video',
+      source: `${key}-video`,
       width,
       height,
       lqip: `data:image/webp;base64,${lqip.toString('base64')}`,

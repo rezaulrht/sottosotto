@@ -57,5 +57,64 @@
         "height": 720
       }
     ]
+  },
+  "findus": {
+    "poster": {
+      "source": "findus-video",
+      "sourceHash": "07650fc04e448d05a7a7051be2387abab1c6a1d8a19f52604fa58b652d18b7c1",
+      "width": 1920,
+      "height": 1080,
+      "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JQBOgAj9FXrJbQ2yZQAD+jZ5gVrhe4J9ODGUVCVCHdQxXOZK9ZRQenwJIpQAoc4xWHtgsbpY8AMV3Eu+xjHvUPopB9AX3tCwC8qx53hc6yHJiA+tAAA==",
+      "sources": {
+        "avif": [
+          {
+            "width": 640,
+            "src": "/video/findus-poster-640.avif"
+          },
+          {
+            "width": 1280,
+            "src": "/video/findus-poster-1280.avif"
+          },
+          {
+            "width": 1920,
+            "src": "/video/findus-poster-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "width": 640,
+            "src": "/video/findus-poster-640.webp"
+          },
+          {
+            "width": 1280,
+            "src": "/video/findus-poster-1280.webp"
+          },
+          {
+            "width": 1920,
+            "src": "/video/findus-poster-1920.webp"
+          }
+        ]
+      }
+    },
+    "webm": [
+      {
+        "src": "/video/findus-1080.webm",
+        "height": 1080
+      },
+      {
+        "src": "/video/findus-720.webm",
+        "height": 720
+      }
+    ],
+    "mp4": [
+      {
+        "src": "/video/findus-1080.mp4",
+        "height": 1080
+      },
+      {
+        "src": "/video/findus-720.mp4",
+        "height": 720
+      }
+    ]
   }
 }

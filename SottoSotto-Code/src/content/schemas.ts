@@ -156,6 +156,11 @@ export const siteSchema = z.strictObject({
       src: nonEmpty.nullable(),
       poster: nonEmpty.nullable(),
     }),
+    findUsVideo: z.strictObject({
+      mock: z.boolean().optional(),
+      src: nonEmpty.nullable(),
+      poster: nonEmpty.nullable(),
+    }),
   }),
   allergensFile: z.literal('allergens.json'),
 });
