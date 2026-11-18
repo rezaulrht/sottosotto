@@ -132,3 +132,23 @@ test('axe: no violations on Home with the reader open', async ({ page }) => {
     .analyze();
   expect(results.violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
 });
+
+test('phone: closing the reader after a tap keeps the list hidden and the page still', async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, 'Phone only');
+  await page.goto('/');
+  await expect(reader(page)).toHaveAttribute('data-ready', '');
+  const pageLink = section(page).locator('a[data-press-page][data-press-open="telegraph-2015"]');
+  await pageLink.scrollIntoViewIfNeeded();
+  const before = await page.evaluate(() => window.scrollY);
+  await pageLink.click({ force: true });
+  await expect(reader(page)).toBeVisible();
+  await reader(page).getByRole('button', { name: 'Close' }).click();
+  await expect(reader(page)).toBeHidden();
+  const listHeight = await list(page).evaluate((el) => el.getBoundingClientRect().height);
+  expect(listHeight).toBeLessThanOrEqual(1);
+  const after = await page.evaluate(() => window.scrollY);
+  expect(Math.abs(after - before)).toBeLessThanOrEqual(2);
+});

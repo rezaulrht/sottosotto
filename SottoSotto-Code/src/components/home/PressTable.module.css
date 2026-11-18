@@ -72,7 +72,7 @@ a.page {
 
 /* Phones: a sideways swipe row (not a stack: 9 full pages would make Home 9 screens
    longer), each page with its headline under it; the list stays for screen readers and
-   keyboards (shown when it takes focus). */
+   keyboards (shown when it takes keyboard focus). */
 @media (max-width: 47.99em) {
   .list {
     position: absolute;
@@ -82,7 +82,8 @@ a.page {
     clip-path: inset(50%);
     white-space: nowrap;
   }
-  .list:focus-within {
+  /* Revealed for keyboard focus only, not for focus returned after a tap. */
+  .list:has(:focus-visible) {
     position: static;
     width: auto;
     height: auto;

@@ -25,6 +25,8 @@ export interface ReaderItem {
 export function PressReader({ items }: { items: ReaderItem[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
+  // Opened by a pointer (detail > 0) rather than the keyboard: return focus without scrolling.
+  const byPointerRef = useRef(false);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export function PressReader({ items }: { items: ReaderItem[] }) {
         document.querySelector<HTMLElement>(
           `[data-press-list] [data-press-open="${items[at]!.id}"]`,
         ) ?? (link as HTMLElement);
+      byPointerRef.current = e.detail > 0;
       setIndex(at);
       dialog.showModal();
       document.documentElement.toggleAttribute('data-press-reader-open', true);
@@ -63,7 +66,7 @@ export function PressReader({ items }: { items: ReaderItem[] }) {
       aria-describedby="press-reader-headline"
       onClose={() => {
         document.documentElement.toggleAttribute('data-press-reader-open', false);
-        openerRef.current?.focus();
+        openerRef.current?.focus({ preventScroll: byPointerRef.current });
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) e.currentTarget.close(); // the backdrop
