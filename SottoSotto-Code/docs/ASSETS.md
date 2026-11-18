@@ -111,3 +111,11 @@ Budgets are in `DESIGN_SYSTEM.md` section 5: hero video about 3–4 MB (1080p, M
 | Car park list, North Parade summary | Transcribed in the project brief | No |
 
 No new photos or video came with this update. The dish-to-photo map in section 1 is unchanged: the November menu has the same dishes as before.
+
+## Client media (2026-11-18)
+
+| Asset | Where | Notes |
+|---|---|---|
+| 9 press pages (`magazine pic.zip`) | Home press (D70) | Originals in `sotto sotto assets/press/`; built to `public/img/press/` by `npm run images`; appear digitally restored, FOUR Bath garbled (Q54) |
+| Drone clip (`intro drone.mov`, 18.7 s, 4K HEVC) | Find Us (D71) | Original in `sotto sotto assets/video/intro-drone.mov`; `public/video/findus-{1080,720}.{mp4,webm}` and poster via `npm run video` with CLIP_NAME=findus |
+| Newspaper film (`Sotto_Sotto_Newspaper_Film_Reimagined.html`) | Style reference only | Not shipped; its look, headlines, headline positions and wording are reused (D70) |

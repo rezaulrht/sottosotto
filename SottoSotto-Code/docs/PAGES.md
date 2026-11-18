@@ -31,7 +31,8 @@ Route names are a proposal. Copy for every section is in `CONTENT.md`; business 
 | 1 | Hero | Full-screen muted looping video, dark overlay (about 50–60% opacity), faint grain on top. Short headline with the name and "Italian Restaurant in Bath". Slowly rotating circular "Book a table" badge that opens the modal. Live hours chip. Poster image loads first and replaces the video on slow connections or reduced motion. | `site.json` name, tagline, hours. Video and poster: placeholder. |
 | 2 | Philosophy | Editorial spread (D68): the heading and a dish photo on one side; the first paragraph set as a statement with an amber rule, the other two as reading text, with 'Sapori' set in italic amber. "Booking is strongly recommended" leads into a booking button. | `site.json` `copy.philosophyFull`, `copy.bookingNote` |
 | 3 | Venue teaser | Pinned section. Venue photos slide past step by step as you scroll, getting darker and warmer, like descending the stairs. Ends with a "Step inside" link to Venue. Phones (D68): heading and link first, then the photos as a sideways swipe row. | Venue photos: placeholder |
-| 4 | Menu at a glance | One row per course (D68): Italian name, English name and the first three dishes; the course's first dish photo appears on hover on desktop and as a thumbnail on phones. Food courses (sides left out), Desserts & Cheese, and Wine with the wine groups and first bar sections. Each row links to its menu tab. | `menu.json`, `desserts.json`, `wine.json` |
+| 4 | Press | Papers on a dark table beside the headline list (D70): the 9 client pages drop in once in view; a reader opens each large with an amber ring on its headline. Phones: a swipe row. | `press.json` (toConfirm), `site.json` `copy.press` |
+| 4b | Menu | One line of course tags to the Menu page and "See the menu" (D72). | `menu.json`, `desserts.json`, `wine.json` |
 | 5 | Wine strip ("Wine list") | A slow scrolling line of wine names. Text only. | `wine.json` names; heading from the wine tab label |
 | 6 | Booking band | Full-width image or second video with "Reserve your table" and a note that the restaurant is small. | `copy.bookingNote`. Media: placeholder. |
 | 7 | ~~Find us teaser~~ | Removed from Home (D68). Find Us stays in the main navigation and the footer. | — |
@@ -120,6 +121,7 @@ If the optional type filter is built, it covers the bar sections too (e.g. Wine 
 
 | # | Section | Spec | Data |
 |---|---|---|---|
+| 0 | Drone clip | The client's drone clip opens the page, full width, with the title low on it and a pause button; ends above North Parade, right over the map (D71). | `site.json` `media.findUsVideo` |
 | 1 | Map | Google Map styled dark to match the site, custom pin, "Get directions" button. | `site.json` geo (MOCK) |
 | 2 | Contact | Address, phone and info@ email in large type. | `site.json` address (MOCK), contact |
 | 3 | Parking | Three cards: car park name, address, walking time, note. Not shown on the map. A card with no address (Bath Cricket Club) shows name and walking time only. | `site.json` parking: names and addresses real; walking times **(MOCK)** |

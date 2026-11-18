@@ -32,7 +32,7 @@ Rebuild of sottosotto.co.uk for Sotto Sotto, a small Italian restaurant on North
 3. **Menu content is final.** Do not change dish names, descriptions, prices or the (v)/(n) tags. Never infer a dietary tag.
 4. **Data files are the single source.** Hours, address, phone, emails and menu items are read from `data/`. Do not hardcode them in pages or components.
 4a. **Allergens are the client's, exactly.** Use only the 14 categories in `data/allergens.json`, in that order. Never add, infer or rename an allergen. `allergens: null` means no data and must never be shown as "none". Items with `allergenSource: "estimated"` are not the client's data.
-5. **No award badges or award claims** (Bath Good Food Awards). The client says they are not genuine.
+5. **No award badges or award claims of our own.** The client once said the Bath Good Food Awards were not genuine (D15), then sent press pages that show awards (2026-11-18). Those press pages may be shown as printed (D70) while the client confirms them in writing (Q53); never write an award claim in our own copy.
 6. **No analytics before consent.** GA4 loads only after the visitor agrees. The old Universal Analytics tag is not carried over.
 7. **Motion always has a static fallback.** Respect `prefers-reduced-motion` on every effect.
 8. **Reference site is inspiration only** (fidalgo.qodeinteractive.com). Do not copy its code, layout or assets.

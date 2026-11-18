@@ -10,7 +10,7 @@ Last updated 2026-11-14 (Update 1). Answered and removed: Q19 (signature dishes:
 
 | # | Question | Why it matters | Blocks |
 |---|---|---|---|
-| Q1 | What are the exact street address and map pin, phone number, info@ and careers@ emails? The address is a mock ("10 North Parade"); the current site shows both "10 N Parade" and "12a North Parade". Phone and emails are placeholders from the current site. | Footer, Find Us, map, careers, search listings | Launch |
+| Q1 | What are the exact street address and map pin, phone number, info@ and careers@ emails? The address is a mock ("10 North Parade"); the current site shows both "10 N Parade" and "12a North Parade". Phone and emails are placeholders from the current site. The press pages you sent (2012–2015) give 10 North Parade, Bath BA2 4AL and 01225 330236. | Footer, Find Us, map, careers, search listings | Launch |
 | Q13 | Are 14:00 and 22:00 last orders or closing times? The old meta text said "last orders 2pm and 10pm" with closing at 2.30 and 10.30. | Wording of hours and the "Open today" chip | Launch |
 | Q14 | Holiday closures. The Christmas Day and 1–14 January closures are mock placeholders from the old footer. What are the real ones (bank holidays too)? | Hours chip must not say "Open today" on a closed day | Launch |
 | Q10 | Which social accounts are current? Facebook and Twitter links are mock (from the old site, not checked). Is there an Instagram account to link (link only, no feed)? | Footer links | Launch |
@@ -18,7 +18,7 @@ Last updated 2026-11-14 (Update 1). Answered and removed: Q19 (signature dishes:
 | Q15 | What is the 125 ml price for still wines by the glass? The list says 125 ml is available but gives no price. | Wine list | No (can show the note only) |
 | Q27 | Are the dessert and cheese prices still right? They come from the old website PDF; they are not on the November 2026 menu. | Prices shown on the Dessert section | Launch |
 | Q30 | Real walking times from the restaurant to the three car parks (current values are mock estimates), and the address of the Bath Cricket Club Public Car Park. Also: do you want the optional "Getting here" lines (train, on foot), and what should they say? Both are mock. | Find Us parking cards | Launch |
-| Q34 | The restaurant's own story: who founded it and when it opened. A MOCK placeholder is in `data/venue.json`. | Venue page "Our story" | Launch |
+| Q34 | The restaurant's own story: who founded it and when it opened. A MOCK placeholder is in `data/venue.json`. The Bath Chronicle page the client sent (26 January 2012) says Sotto Sotto opened then, founded by Antonio Abategiovanni, chef Giuseppe D'Elisa and Carlo Battaglia: is that right, and can we use it? | Venue page "Our story" | Launch |
 
 ## Client: menu and allergens
 
@@ -56,6 +56,9 @@ Last updated 2026-11-14 (Update 1). Answered and removed: Q19 (signature dishes:
 | Q50 | Booking rules for the new booking screens: time between slots (now 15 min), last seating before each session ends (now 60 min; see Q13), how far ahead guests can book (now 60 days), minimum notice (now 2 hours), deposits or card details, and how guests amend or cancel. All MOCK in `site.json` `booking.rules`. The limit of 5 guests comes from the current Hospres widget. | Booking flow | Launch |
 | Q51 | The restaurant uses Hospres for its bookings today. Does the client agree to stop using it on the website (D59)? Existing bookings and the staff's workflow are in Hospres. | Booking, staff workflow | Launch |
 | Q52 | Cookie banner wording (new, in `site.json` `copy.cookieBanner`, flagged to confirm): heading "Cookies", the sentence explaining Google Analytics, and the labels "Accept analytics", "Reject" and "Cookie settings". Please approve or edit. | The banner is shown to every new visitor | Launch |
+| Q53 | Two of the press pages you sent show awards (FOUR Bath: "Best Italian, Winner", Great Food Awards 2012; InBath: Best Italian Restaurant at the Bath Good Food Awards). Earlier you told us those awards were not genuine. Please confirm in writing that we may show these pages. | Home press section | Launch |
+| Q54 | The press pages look digitally restored, and the FOUR Bath page's small text is garbled. Can you send the original scans or photos of the cuttings? | Home press section | Launch |
+| Q55 | Dates and publication names missing on four press pages: the Bath Life review (pages 38–39), InBath (May/June, which year?), Beautiful Bath, and the restaurant guide listing (which publication?). | Home press section | No |
 | Q8 | Booking backend (D59): Hospres is no longer used, so where are bookings stored and how does staff see, change and cancel them (our own backend, or another booking provider with an API)? Until this is decided the guest screens are a preview and nothing is booked; the production build stays blocked. | Taking real bookings | Launch |
 | Q11 | Access to the GA4 property `G-2TMCMCTHRD` (who owns it, admin access for us) and to Google Business Profile. | Analytics, consistent address and hours on Google | Launch |
 | Q41 | Hosting account: who owns and pays for it (client or agency)? Recommendation is Cloudflare Pages (free tier allows commercial use). | Deploys, staging, ownership at hand-over | Build (staging, M9) |

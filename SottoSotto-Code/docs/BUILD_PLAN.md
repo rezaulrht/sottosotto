@@ -1,6 +1,6 @@
 # Build plan
 
-> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 merged 2026-11-15. M5 merged 2026-11-15. M6 merged 2026-11-16. M7 merged 2026-11-16. M8 on `m8-hardening` (PR #8): automated parts done; manual runs moved to the M9 review list. M9 in progress on `m9-staging`: review list and launch checklist done; the staging deploy waits for the hosting account (Q41). Each milestone ends with a short review; M2 is a hard gate.
+> **Status: approved 2026-11-14.** Stack: Next.js static export (D30). M1 and M2 merged 2026-11-14 (M2 sign-off waits on the real-laptop candle trace; the Hospres test is dropped, D59). M3 merged 2026-11-15. Booking screens merged 2026-11-15 (D59). M4 merged 2026-11-15. M5 merged 2026-11-15. M6 merged 2026-11-16. M7 merged 2026-11-16. Press, drone clip and Menu tags (D70–D72) on `press-drone`, 2026-11-18. M8 on `m8-hardening` (PR #8): automated parts done; manual runs moved to the M9 review list. M9 in progress on `m9-staging`: review list and launch checklist done; the staging deploy waits for the hosting account (Q41). Each milestone ends with a short review; M2 is a hard gate.
 
 Every milestone keeps CI green (types, lint, Zod, unit tests, Playwright smoke, axe) and updates `DECISIONS.md` / `OPEN_QUESTIONS.md` as answers arrive.
 
