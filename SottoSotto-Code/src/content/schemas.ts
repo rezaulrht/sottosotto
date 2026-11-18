@@ -52,6 +52,11 @@ export const siteSchema = z.strictObject({
       applyText: nonEmpty,
       button: nonEmpty,
     }),
+    press: z.strictObject({
+      toConfirm: z.boolean().optional(),
+      eyebrow: nonEmpty,
+      heading: nonEmpty,
+    }),
     cookieBanner: z.strictObject({
       toConfirm: z.boolean().optional(),
       heading: nonEmpty,
@@ -420,6 +425,31 @@ const venueImage = z.strictObject({
     })
     .optional(),
 });
+
+// ---------------------------------------------------------------- press.json
+
+export const pressItemSchema = z.strictObject({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  publication: nonEmpty,
+  /** As printed on the page, or null when no date is printed. */
+  date: nonEmpty.nullable(),
+  headline: nonEmpty,
+  /** File in the assets folder, e.g. "press/…png". */
+  file: nonEmpty,
+  /** Where the headline sits on the page, as fractions of width and height. */
+  spot: z.tuple([z.number().gt(0).lt(1), z.number().gt(0).lt(1)]),
+  award: z.boolean(),
+  /** false: shown on the table but never opened large (e.g. garbled restored text). */
+  readable: z.boolean(),
+  toConfirm: z.literal(true),
+});
+
+export const pressSchema = z.strictObject({
+  items: z.array(pressItemSchema).min(1),
+});
+
+export type PressItem = z.infer<typeof pressItemSchema>;
+export type Press = z.infer<typeof pressSchema>;
 
 export const venueSchema = z.strictObject({
   opening: z.strictObject({ image: venueImage }),

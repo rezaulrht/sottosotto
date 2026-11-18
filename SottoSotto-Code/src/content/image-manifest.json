@@ -989,6 +989,387 @@
       ]
     }
   },
+  "press-bath-chronicle-2012": {
+    "source": "press/Bath Chronicle Italian Restaurant Feature.png",
+    "sourceHash": "516a2b4cbfc75bc0abfd3f45dde486809b5ba2e2682a849f8f011de07c6301d3",
+    "width": 1478,
+    "height": 1064,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADQBQCdASoYABEAPu1krU+ppSQiMBgIATAdiUAZQj/8WmKGOv68Wk1aBs1JbtJXX88JGaxT28oAAPzgCzyUSwTFTNDvlxxF4EUnF/2mPUdYrT1yojfr6xW6F9isjBN71LZ34lWFHhs86LfsrDhiqWmuK8/jKudmpjtMYC2Bqbt9wo1UY2H1RadbglqoWsXvXYspDUb5g+BKwn03bT++wx27dJoEhelpLJaY3tLAAAAAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-chronicle-2012-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-chronicle-2012-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-chronicle-2012-1200.avif"
+        },
+        {
+          "width": 1478,
+          "src": "/img/press/press-bath-chronicle-2012-1478.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-chronicle-2012-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-chronicle-2012-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-chronicle-2012-1200.webp"
+        },
+        {
+          "width": 1478,
+          "src": "/img/press/press-bath-chronicle-2012-1478.webp"
+        }
+      ]
+    }
+  },
+  "press-bath-dining-guide": {
+    "source": "press/Elegant Restaurant Guide_ Bath Dining Gems.png",
+    "sourceHash": "0992c048a7999474d4291d75a5208862085228abfc478459718f7a64409ea076",
+    "width": 1199,
+    "height": 1312,
+    "lqip": "data:image/webp;base64,UklGRiYBAABXRUJQVlA4IBoBAAAwBgCdASoYABoAPu1qrlCppaQiqAqpMB2JZgCzoP8qQPewQLNxg0l/CW+HqCyEl9PU5n3nijIn3y1QAP7q5SY9gINy/gnuf6+vgyS53hqR8SkGuok+JRBicw/18022uQNQeI4f4HD7czLKQBAqPD+fKctFavB8f4MsPWhV7o/XvKkZD573r64M2UmQPDgS+Bl8vwRMF97LERq408ZfjNHKONb7JtpI2+/cKGB2JhFlyh44AWRcEFRAeTgfbUFXE+GWOD+LEk4Cyl8g6Y8ruE3OqcArZjqAWXrivCv+oix8Vb+oFqQ7EJzbTQf3jCWTs839vwDJlQuZgn2puUdGZLfPqNAeVYhEOHGtixRt68puRAWz3FvkAYRvgAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-dining-guide-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-dining-guide-800.avif"
+        },
+        {
+          "width": 1199,
+          "src": "/img/press/press-bath-dining-guide-1199.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-dining-guide-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-dining-guide-800.webp"
+        },
+        {
+          "width": 1199,
+          "src": "/img/press/press-bath-dining-guide-1199.webp"
+        }
+      ]
+    }
+  },
+  "press-bath-life-food-of-love": {
+    "source": "press/Bath Life_ Romance and Spa Escapes.png",
+    "sourceHash": "abe94a2cd5e7f0d421973fe57b8cc385d71266ae0a097c3711758e342bf1e661",
+    "width": 1536,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JagCxDDfJ/jeAG4aXlRW6os8jPtvIAAD7aPjCnDxX925ApXpufrvUVvw/mZy2hcJMlFU88y6A5HwHheXpG56IJAT44Aw0kxNowAYySH4JHW+jq2eEf24/XayH6kElhwWJbS2UaF75BmENTru9vt6xhhad+FF1RGNMtwauuU4IdKyFn0/62pEyIVprHTEOdLI3xpJv56UAAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-life-food-of-love-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-life-food-of-love-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-life-food-of-love-1200.avif"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-bath-life-food-of-love-1536.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-life-food-of-love-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-life-food-of-love-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-life-food-of-love-1200.webp"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-bath-life-food-of-love-1536.webp"
+        }
+      ]
+    }
+  },
+  "press-bath-life-review": {
+    "source": "press/Sotto Sotto Restaurant Feature Spread.png",
+    "sourceHash": "07df16414ae6def46bfa61bfdb847b7f24b32f9d95413127e52b65eed0b1081b",
+    "width": 1536,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbAC7IDZgvBgqL0ZYpO0jDezbIqAA/uGP1tQMZM0o2brjsqzUGsCK4woiteaw+bg5UnvYMZZbOTdZzSZ/XKKp+VE2WXPOED1WRx895v7Wj5gAenr8M+tRdvuOkt+9LtvYCuUVLdqsYYMx61sDvgc4id1RacKBuE/NQj9mrAHjVTk5ILa96UKt9r+87cz4QGThHiVMEK7xEtBO9a9THwAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-life-review-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-life-review-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-life-review-1200.avif"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-bath-life-review-1536.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-bath-life-review-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-bath-life-review-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-bath-life-review-1200.webp"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-bath-life-review-1536.webp"
+        }
+      ]
+    }
+  },
+  "press-beautiful-bath": {
+    "source": "press/Beautiful Bath Travel Guide.png",
+    "sourceHash": "b686f34ff4e07e37a941cc36a00831abd64f534f78e93c559c30da928090a826",
+    "width": 1479,
+    "height": 1064,
+    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAwBQCdASoYABEAPu1srlIppaQiqAgBMB2JYwC7M5H/UCX1sPRpr7GT9CSN2sGJQfYHiAD+tC8f50D6dtnRtPNWYagkK1xyeMSBdez+kliHMzfHmuBOygzotQ8u7QwxH9bejZblIBNIy3LfWxhb9eMdBhcPWbRyLvfdfd9OMeEs9Ha1aBgBqgKuLdfMB6yz5RgaRBzIMADRc6eyEWtgBfkzAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-beautiful-bath-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-beautiful-bath-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-beautiful-bath-1200.avif"
+        },
+        {
+          "width": 1479,
+          "src": "/img/press/press-beautiful-bath-1479.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-beautiful-bath-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-beautiful-bath-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-beautiful-bath-1200.webp"
+        },
+        {
+          "width": 1479,
+          "src": "/img/press/press-beautiful-bath-1479.webp"
+        }
+      ]
+    }
+  },
+  "press-four-bath-2012": {
+    "source": "press/Magazine Spread Highlighting Best Italian.png",
+    "sourceHash": "24e81ab6dfc04c6883e4e758217e4aa5c4474f6f522dfdb1c6b78529f051baf9",
+    "width": 1536,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCsAYvqQL7vcl4yFdcCaAD2rWU1g6+yQYGKAGHm1IJDwWsAETe1NIQBUsZ8ekpuuSBpHmbXiMBqu1x6RE6bXcF5fpaQMqvo7eQ9nyPXzPDCRs5cyZlQ3YoC/FfK+et3AwA4W9UcJ7gAmcVCOfNmqP1mHgQflje/Tzp+Y2QoWUKMFK6zS5LqxMRIutQzmnfhNwgGgIZIORi5nAGNMJ96lkAAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-four-bath-2012-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-four-bath-2012-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-four-bath-2012-1200.avif"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-four-bath-2012-1536.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-four-bath-2012-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-four-bath-2012-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-four-bath-2012-1200.webp"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-four-bath-2012-1536.webp"
+        }
+      ]
+    }
+  },
+  "press-inbath-awards": {
+    "source": "press/InBath Festival and Dining Guide.png",
+    "sourceHash": "e4b9b1f77bfa50cfe7ff06145324ea248236e115acb5bc1bc6642b3e61c7815b",
+    "width": 1536,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdABnPkPwQMOXAAP6obKuBFu8aKClxf5B8V3AwLG8MN1smePwpNetnt9a1xueqZyu2/mnapKvm9NfXugb92K2Y7k2jBMu8GCB/YXeCyWjnd9uKcuL95aDZaaGIH9eUx3vLxBhW1RtIr+ucs0Y0Z5ySaiwHjxucg08x7T6q9AZRsToE2AAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-inbath-awards-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-inbath-awards-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-inbath-awards-1200.avif"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-inbath-awards-1536.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-inbath-awards-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-inbath-awards-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/press/press-inbath-awards-1200.webp"
+        },
+        {
+          "width": 1536,
+          "src": "/img/press/press-inbath-awards-1536.webp"
+        }
+      ]
+    }
+  },
+  "press-telegraph-2015": {
+    "source": "press/Weekend Food Feature_ Sotto Sotto, Bath.png",
+    "sourceHash": "6837d62f115315c1cb0f3a68b31343c01476762d2223106b6d127cda34ed96eb",
+    "width": 1150,
+    "height": 1367,
+    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBQCdASoYAB0APu1srVIppaQiqAgBMB2JYgC/PAgdgAaq7q0u6R8H4KjqNNI7xDEOt9qrSVwwAP7T6bbwcLW3zqCE/SwmrTPL9LoXZIBpzU56idSKm0Tqjz31XU7mKTC2Kkeu8FOOZk5N+YBQoNY7C/v/kW+jNRUyIMmFfsSj5qU1BlNh//y81k+h5hmQORacP73T9iYYMNFqNr2XIbSYI6SzzzoJyvhGU+KEXSG203KNVg8mdAFSaFHx1l4Kg872SkcCsZg1cLXmBeqHuhzUmsBCpH5FvnmsOSWGYJpjAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-telegraph-2015-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-telegraph-2015-800.avif"
+        },
+        {
+          "width": 1150,
+          "src": "/img/press/press-telegraph-2015-1150.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-telegraph-2015-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-telegraph-2015-800.webp"
+        },
+        {
+          "width": 1150,
+          "src": "/img/press/press-telegraph-2015-1150.webp"
+        }
+      ]
+    }
+  },
+  "press-western-daily-press-2012": {
+    "source": "press/Western Daily Press Restaurant Review.png",
+    "sourceHash": "36740b8f37971d19eaaabe8530232d88935914bda90f9c85e9ed66ae99f9d2dd",
+    "width": 1132,
+    "height": 1390,
+    "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACwBQCdASoYAB0APu1oqk+ppiOiKA1RMB2JYgC06Y1IZVHipoTBYv2J0kJUvePi/+IMJXyAoAAA/u1w5B6Dw1vgroP1G8MjjmYTLw1KOpDTnp610+mGZTHtd5WBVT82k3kMUNfW8mQUpDHcZB6e+W8Gm2M9y3Koi7qaoURO4UZwUmjwfXGRxUP3wNr9iOCTr81JKPdEA0hZDqBk8dw24moh5SBXwMaL/fNA6RF6XB4zKmmq1A/qAN8aMpxhOtQyzv5xYRMyb2ecAjo1DmcniCJXOaniPEr06Vh8AA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/press/press-western-daily-press-2012-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-western-daily-press-2012-800.avif"
+        },
+        {
+          "width": 1132,
+          "src": "/img/press/press-western-daily-press-2012-1132.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/press/press-western-daily-press-2012-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/press/press-western-daily-press-2012-800.webp"
+        },
+        {
+          "width": 1132,
+          "src": "/img/press/press-western-daily-press-2012-1132.webp"
+        }
+      ]
+    }
+  },
   "risotto-con-zucchine-e-salmone": {
     "source": "Creamy Salmon Risotto with Lemon Zest.png",
     "sourceHash": "dcd8f7ca0d091d848c052a13b63a550b276f84a7d49c9a16cdbc18ce55db4144",

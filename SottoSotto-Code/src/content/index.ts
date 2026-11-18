@@ -5,20 +5,36 @@
  */
 import type { Metadata } from 'next';
 import { rawFiles } from './raw';
-import { venueImageKey } from './image-jobs';
+import { pressImageKey, venueImageKey } from './image-jobs';
 import { flaggedValues } from './report';
 import type { ManifestEntry, SeoPageKey, VideoEntry } from './schemas';
 import { validateContent } from './validate';
 
 export const content = validateContent(rawFiles);
-export const { site, allergens, menu, desserts, wine, venue, seo, privacy, manifest, videos } =
-  content;
+export const {
+  site,
+  allergens,
+  menu,
+  desserts,
+  wine,
+  venue,
+  seo,
+  privacy,
+  press,
+  manifest,
+  videos,
+} = content;
 
 /** Every flagged value in the raw data (mock, to confirm, needs verification…). */
 export const flags = flaggedValues(rawFiles);
 
 export function imageFor(key: string): ManifestEntry | undefined {
   return manifest[key];
+}
+
+/** A press page's manifest entry. */
+export function pressImage(id: string): ManifestEntry | undefined {
+  return manifest[pressImageKey(id)];
 }
 
 /** A venue photo's manifest entry, or undefined while it is a placeholder (`src: null`). */

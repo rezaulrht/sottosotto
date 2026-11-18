@@ -4,7 +4,7 @@
  * so a broken data file fails the build with a readable message.
  */
 import type { z } from 'zod';
-import { venueImageKey, venueImageRefs } from './image-jobs';
+import { pressImageKey, venueImageKey, venueImageRefs } from './image-jobs';
 import type { RawFiles } from './raw';
 import {
   allergensSchema,
@@ -12,6 +12,7 @@ import {
   manifestSchema,
   menuSchema,
   videoManifestSchema,
+  pressSchema,
   privacySchema,
   seoSchema,
   siteSchema,
@@ -25,6 +26,7 @@ import {
   type Seo,
   type Site,
   type Venue,
+  type Press,
   type VideoManifest,
   type Wine,
 } from './schemas';
@@ -38,6 +40,7 @@ export interface Content {
   venue: Venue;
   seo: Seo;
   privacy: Privacy;
+  press: Press;
   manifest: ImageManifest;
   videos: VideoManifest;
 }
@@ -97,6 +100,7 @@ export function validateContent(raw: RawFiles): Content {
   const venue = parse('venue.json', venueSchema);
   const seo = parse('seo.json', seoSchema);
   const privacy = parse('privacy.json', privacySchema);
+  const press = parse('press.json', pressSchema);
   const manifest = parse('image-manifest.json', manifestSchema);
   const videos = parse('video-manifest.json', videoManifestSchema);
 
@@ -111,6 +115,19 @@ export function validateContent(raw: RawFiles): Content {
           file: 'venue.json',
           path: `image "${ref.src}"`,
           message: `No processed photo for "${ref.src}". Put it in the assets folder and run \`npm run images\`.`,
+        });
+      }
+    }
+  }
+
+  if (press && manifest) {
+    for (const item of press.items) {
+      const entry = manifest[pressImageKey(item.id)];
+      if (!entry || entry.source !== item.file) {
+        issues.push({
+          file: 'press.json',
+          path: `items "${item.id}"`,
+          message: `No processed page for "${item.file}". Put it in the assets folder and run \`npm run images\`.`,
         });
       }
     }
@@ -247,6 +264,7 @@ export function validateContent(raw: RawFiles): Content {
     venue: venue!,
     seo: seo!,
     privacy: privacy!,
+    press: press!,
     manifest: manifest!,
     videos: videos!,
   };

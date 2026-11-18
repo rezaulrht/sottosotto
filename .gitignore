@@ -17,3 +17,6 @@ SottoSotto-Code/.cache/
 .env*
 !.env.example
 .DS_Store
+
+# Plan execution ledgers (superpowers)
+.superpowers/

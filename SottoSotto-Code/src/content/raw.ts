@@ -5,6 +5,7 @@
 import allergens from '../../data/allergens.json';
 import desserts from '../../data/desserts.json';
 import menu from '../../data/menu.json';
+import press from '../../data/press.json';
 import privacy from '../../data/privacy.json';
 import seo from '../../data/seo.json';
 import site from '../../data/site.json';
@@ -23,6 +24,7 @@ export const rawFiles = {
   'venue.json': venue,
   'seo.json': seo,
   'privacy.json': privacy,
+  'press.json': press,
   'image-manifest.json': manifest,
   'video-manifest.json': videoManifest,
 } as const satisfies Record<string, unknown>;

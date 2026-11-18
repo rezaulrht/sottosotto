@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import desserts from '../data/desserts.json';
 import menu from '../data/menu.json';
+import press from '../data/press.json';
 import venue from '../data/venue.json';
 import { imageJobs } from '../src/content/image-jobs';
 import { manifestSchema, type ImageManifest, type ManifestEntry } from '../src/content/schemas';
@@ -36,7 +37,7 @@ const WARN_BYTES_AT_1200 = 300 * 1024;
 type Item = { id: string; image: string | null };
 const items: Item[] = [...menu.sections, ...desserts.sections].flatMap((s) => s.items as Item[]);
 // Dish photos and venue photos (M5): see src/content/image-jobs.ts.
-const wanted = imageJobs(items, venue);
+const wanted = imageJobs(items, venue, press.items);
 
 const previous: ImageManifest = manifestSchema.parse(
   JSON.parse(readFileSync(manifestPath, 'utf8')) as unknown,

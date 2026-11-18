@@ -1,0 +1,131 @@
+{
+  "_about": "Press pages the client sent on 2026-11-18 (magazine pic.zip), shown on Home (design 2026-11-18, D70). Headlines and headline positions (spot, 0..1 of the page) come from the client's newspaper film; dates and publication names only as printed on the page (null when not printed). Every item is toConfirm until the client confirms it in writing (Q53); award items are the client's pages, shown as printed. The pages look AI-restored; FOUR Bath's small text is garbled, so it is not readable (not opened large) until the original scan arrives (Q54).",
+  "items": [
+    {
+      "id": "bath-chronicle-2012",
+      "publication": "The Bath Chronicle",
+      "date": "Thursday 26 January 2012",
+      "headline": "New restaurant eyes Italy",
+      "file": "press/Bath Chronicle Italian Restaurant Feature.png",
+      "spot": [
+        0.39,
+        0.29
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "western-daily-press-2012",
+      "publication": "Western Daily Press",
+      "date": "Saturday 10 March 2012",
+      "headline": "A true Italian",
+      "file": "press/Western Daily Press Restaurant Review.png",
+      "spot": [
+        0.37,
+        0.63
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "bath-life-review",
+      "publication": "Bath Life",
+      "date": null,
+      "headline": "Sotto Sotto",
+      "file": "press/Sotto Sotto Restaurant Feature Spread.png",
+      "spot": [
+        0.26,
+        0.16
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "telegraph-2015",
+      "publication": "The Daily Telegraph",
+      "date": "Saturday 28 March 2015",
+      "headline": "I come from a land down under",
+      "file": "press/Weekend Food Feature_ Sotto Sotto, Bath.png",
+      "spot": [
+        0.44,
+        0.57
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "four-bath-2012",
+      "publication": "FOUR Bath",
+      "date": "November/December 2012",
+      "headline": "Best Italian · Winner",
+      "file": "press/Magazine Spread Highlighting Best Italian.png",
+      "spot": [
+        0.59,
+        0.86
+      ],
+      "award": true,
+      "readable": false,
+      "toConfirm": true
+    },
+    {
+      "id": "inbath-awards",
+      "publication": "InBath",
+      "date": "May/June",
+      "headline": "Award-winning restaurants",
+      "file": "press/InBath Festival and Dining Guide.png",
+      "spot": [
+        0.72,
+        0.19
+      ],
+      "award": true,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "bath-life-food-of-love",
+      "publication": "Bath Life",
+      "date": "25 January – 8 February 2013",
+      "headline": "The food of love",
+      "file": "press/Bath Life_ Romance and Spa Escapes.png",
+      "spot": [
+        0.76,
+        0.52
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "beautiful-bath",
+      "publication": "Beautiful Bath",
+      "date": null,
+      "headline": "Beautiful Bath",
+      "file": "press/Beautiful Bath Travel Guide.png",
+      "spot": [
+        0.74,
+        0.16
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    },
+    {
+      "id": "bath-dining-guide",
+      "publication": "Bath dining guide",
+      "date": null,
+      "headline": "Authentic Italian flavours",
+      "file": "press/Elegant Restaurant Guide_ Bath Dining Gems.png",
+      "spot": [
+        0.74,
+        0.45
+      ],
+      "award": false,
+      "readable": true,
+      "toConfirm": true
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export interface ImageJob {
   /** File name in the assets folder. */
   source: string;
   /** Output folder under public/img/. */
-  folder: 'dishes' | 'venue';
+  folder: 'dishes' | 'venue' | 'press';
 }
 
 export interface VenueImageRef {
@@ -52,9 +52,15 @@ export function venueImageRefs(venue: VenueImages): VenueImageRef[] {
   ];
 }
 
+/** Manifest key of a press page: "press-<id>". */
+export function pressImageKey(id: string): string {
+  return `press-${id}`;
+}
+
 export function imageJobs(
   dishes: Array<{ id: string; image: string | null }>,
   venue: VenueImages,
+  press: Array<{ id: string; file: string }> = [],
 ): ImageJob[] {
   const jobs: ImageJob[] = dishes
     .filter((d): d is { id: string; image: string } => d.image !== null)
@@ -66,6 +72,9 @@ export function imageJobs(
     if (seen.has(key)) continue;
     seen.add(key);
     jobs.push({ key, source: ref.src, folder: 'venue' });
+  }
+  for (const item of press) {
+    jobs.push({ key: pressImageKey(item.id), source: item.file, folder: 'press' });
   }
   return jobs;
 }
