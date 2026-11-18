@@ -7,7 +7,6 @@ import { BookButton } from '@/components/global/BookButton';
 import { Picture } from '@/components/shared/Picture';
 import { StairDescent } from '@/components/shared/StairDescent';
 import { desserts, imageFor, menu, site, venue, wine } from '@/content';
-import type { Dish } from '@/content/schemas';
 import styles from './HomeSections.module.css';
 
 /* ---- 2. Philosophy: an editorial spread (heading and photo, then the words) */
@@ -78,95 +77,41 @@ export function VenueDescent() {
   );
 }
 
-/* ---- 4. The menu at a glance: its courses, not a handful of dishes */
+/* ---- 4. Menu: a line of course tags to the Menu page (the user: a pointer, not a showcase) */
 
-interface Course {
-  id: string;
-  title: string;
-  subtitle: string;
+interface Tag {
+  label: string;
   href: string;
-  /** A few names from the course, as a taste of what is in it. */
-  sample: string[];
-  /** The first dish in the course with a photo. */
-  imageId: string | null;
 }
 
-function courses(): Course[] {
-  const firstPhoto = (items: Dish[]) => items.find((d) => imageFor(d.id))?.id ?? null;
-  const food: Course[] = menu.sections
+function menuTags(): Tag[] {
+  const food = menu.sections
     .filter((s) => !('textOnly' in s && s.textOnly))
-    .map((s) => ({
-      id: s.id,
-      title: s.nameIt,
-      subtitle: s.nameEn,
-      href: '/menu/#menu',
-      sample: s.items.slice(0, 3).map((d) => d.name),
-      imageId: firstPhoto(s.items),
-    }));
-  const [sweet, ...others] = desserts.sections;
-  const dessert: Course = {
-    id: sweet!.id,
-    title: sweet!.nameIt,
-    subtitle: [sweet!.nameEn, ...others.map((o) => o.nameEn)].join(' & '),
+    .map((s) => ({ label: s.nameEn, href: '/menu/#menu' }));
+  const dessert = {
+    label: desserts.sections.map((s) => s.nameEn).join(' & '),
     href: '/menu/#dessert',
-    sample: sweet!.items.slice(0, 3).map((d) => d.name),
-    imageId: firstPhoto(sweet!.items),
   };
-  const drink: Course = {
-    id: wine.tab.id,
-    title: wine.tab.label,
-    subtitle: [
-      ...wine.groups.map((g) => g.name),
-      ...wine.drinks.slice(0, 3).map((d) => d.name),
-    ].join(' · '),
-    href: `/menu/#${wine.tab.id}`,
-    sample: [],
-    imageId: null,
-  };
-  return [...food, dessert, drink];
+  return [...food, dessert, { label: wine.tab.label, href: `/menu/#${wine.tab.id}` }];
 }
 
-export function MenuIndex() {
+export function MenuTags() {
   return (
     <section className={styles.section} aria-labelledby="home-menu">
-      <div className="container">
-        <h2 id="home-menu" className={styles.heading} data-effect="reveal-lines">
+      <div className={`container ${styles.menuTags}`}>
+        <h2 id="home-menu" className={styles.label}>
           Menu
         </h2>
-        <ol className={styles.courses}>
-          {courses().map((c, i) => {
-            const image = c.imageId ? imageFor(c.imageId) : undefined;
-            return (
-              <li key={c.id}>
-                <Link href={c.href} className={styles.course}>
-                  <span className={styles.courseNo} aria-hidden="true">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className={styles.courseText}>
-                    <span className={styles.courseTitle}>{c.title}</span>
-                    <span className={styles.courseSub}>{c.subtitle}</span>
-                    {c.sample.length ? (
-                      <span className={styles.courseSample}>{c.sample.join(' · ')}</span>
-                    ) : null}
-                  </span>
-                  {image ? (
-                    <span className={styles.coursePhoto} aria-hidden="true">
-                      <Picture image={image} alt="" sizes="(min-width: 48em) 16rem, 5rem" />
-                    </span>
-                  ) : null}
-                  <span className={styles.courseArrow} aria-hidden="true">
-                    →
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
-        <p className={styles.menuMore}>
-          <Link href="/menu/" className={styles.textLink}>
-            See the full menu
-          </Link>
-        </p>
+        <ul className={styles.tags}>
+          {menuTags().map((t) => (
+            <li key={t.label}>
+              <Link href={t.href}>{t.label}</Link>
+            </li>
+          ))}
+        </ul>
+        <Link href="/menu/" className={styles.textLink}>
+          See the menu <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </section>
   );

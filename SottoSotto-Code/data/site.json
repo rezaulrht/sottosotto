@@ -35,6 +35,12 @@
       "reject": "Reject",
       "privacyLink": "Privacy Policy",
       "settings": "Cookie settings"
+    },
+    "press": {
+      "toConfirm": true,
+      "_note": "The client's own words from their newspaper film (Sotto_Sotto_Newspaper_Film_Reimagined.html, 2026-11-18): eyebrow from its intertitle, heading from its printing-press sheet. Client to confirm (Q53).",
+      "eyebrow": "A story told by the press",
+      "heading": "Sotto Sotto in the news"
     }
   },
   "hours": {

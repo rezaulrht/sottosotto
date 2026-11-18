@@ -1,0 +1,115 @@
+/* The press reader: the page as large as the screen allows, on the warm dark table. */
+.dialog {
+  margin: auto;
+  width: min(72rem, calc(100% - 2 * var(--margin)));
+  max-height: 94vh;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: radial-gradient(ellipse at 50% 40%, #3a2c1f, var(--ink-950) 70%);
+  color: var(--color-text);
+  overscroll-behavior: contain;
+}
+.dialog::backdrop {
+  background: rgb(8 7 6 / 0.82);
+  backdrop-filter: blur(6px);
+}
+.inner {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--space-4);
+}
+.source {
+  margin: 0 0 var(--space-1);
+  color: var(--color-accent);
+}
+.headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  line-height: 1.15;
+  color: var(--bone-100);
+}
+.close {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--bone-100);
+}
+.stage {
+  display: grid;
+  place-items: center;
+}
+.page {
+  position: relative;
+  max-width: 100%;
+  max-height: calc(94vh - 12rem);
+  box-shadow: 0 22px 40px rgb(0 0 0 / 0.7);
+}
+.page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* The headline marker from the client's film: an amber ring, no flash. */
+.ring {
+  position: absolute;
+  width: 150px;
+  height: 76px;
+  max-width: 40%;
+  max-height: 20%;
+  border: 3px solid var(--color-accent);
+  border-radius: var(--radius-1);
+  box-shadow: 0 0 30px rgb(231 184 107 / 0.6);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+.nav button {
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: none;
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--bone-100);
+}
+.nav button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.count {
+  font-variant-numeric: tabular-nums;
+  color: var(--bone-300);
+}
+@media (max-width: 47.99em) {
+  .dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+  .page {
+    max-height: calc(100dvh - 13rem);
+  }
+}
+:global(html[data-press-reader-open]) {
+  overflow: hidden;
+}

@@ -6,7 +6,14 @@ import site from '../../data/site.json' with { type: 'json' };
  * phones, no hidden content without JS, resize and back/forward without breakage.
  */
 
-const SECTIONS = ['Our Food Is Our Culture', 'Venue', 'Menu', 'Wine list', 'Reserve your table'];
+const SECTIONS = [
+  'Our Food Is Our Culture',
+  'Venue',
+  'Sotto Sotto in the news',
+  'Menu',
+  'Wine list',
+  'Reserve your table',
+];
 
 function collectErrors(page: Page): string[] {
   const errors: string[] = [];
@@ -154,24 +161,30 @@ test('the wine strip has a pause button', async ({ page }) => {
   await expect(strip.locator('ul[aria-hidden="true"]')).toHaveCount(1);
 });
 
-test('the menu index lists the courses and links into the menu', async ({ page }) => {
+test('the menu section is a line of tags to the Menu page', async ({ page }) => {
   await page.goto('/');
-  const index = page.locator('[aria-labelledby="home-menu"]');
-  for (const title of ['A per cominciare', 'I farinacei', 'Le specialità', 'Peccati di gola']) {
-    await expect(index.getByRole('link', { name: new RegExp(title) })).toHaveAttribute(
-      'href',
-      /\/menu\/#(menu|dessert)$/,
-    );
-  }
-  await expect(index.getByRole('link', { name: /^05 Wine|Wine/ }).first()).toHaveAttribute(
-    'href',
+  const menu = page.locator('[aria-labelledby="home-menu"]');
+  const links = menu.getByRole('link');
+  await expect(links).toHaveText([
+    'To start',
+    'Pasta & risotto',
+    'Specialities',
+    'Desserts & Cheese',
+    'Wine',
+    /^See the menu/,
+  ]);
+  const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+  expect(hrefs).toEqual([
+    '/menu/#menu',
+    '/menu/#menu',
+    '/menu/#menu',
+    '/menu/#dessert',
     '/menu/#wine',
-  );
-  // A course, not a handful of single dishes, and no Find Us section on Home.
-  await expect(index.locator('a[href^="/menu/#"][href$="tiramisu"]')).toHaveCount(0);
+    '/menu/',
+  ]);
+  // A pointer to the Menu page, not a showcase: no photos, and no Find Us on Home.
+  await expect(menu.locator('img')).toHaveCount(0);
   await expect(page.locator('#home-find')).toHaveCount(0);
-  await index.getByRole('link', { name: /I farinacei/ }).click();
-  await expect(page).toHaveURL(/\/menu\/#menu$/);
 });
 
 test('phone: the venue heading comes before its photos, which swipe sideways', async ({

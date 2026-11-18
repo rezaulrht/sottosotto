@@ -1,5 +1,6 @@
 import { HomeHero } from '@/components/home/HomeHero';
-import { BookingBand, MenuIndex, Philosophy, VenueDescent } from '@/components/home/HomeSections';
+import { BookingBand, MenuTags, Philosophy, VenueDescent } from '@/components/home/HomeSections';
+import { PressTable } from '@/components/home/PressTable';
 import { WineStrip } from '@/components/home/WineStrip';
 import { pageMetadata, site, wine } from '@/content';
 import { weeklySummary } from '@/lib/hours';
@@ -17,7 +18,7 @@ function openDaysSummary(): string {
     .join(', ');
 }
 
-/** Home (PAGES.md: hero, philosophy, venue, menu, wine, booking; the footer comes from the layout). */
+/** Home (PAGES.md: hero, philosophy, venue, press, menu, wine, booking; the footer comes from the layout). */
 export default function HomePage() {
   const wineNames = wine.groups.flatMap((g) => g.wines.map((w) => w.name));
   return (
@@ -31,7 +32,8 @@ export default function HomePage() {
       <HomeHero hoursSummary={openDaysSummary()} />
       <Philosophy />
       <VenueDescent />
-      <MenuIndex />
+      <PressTable />
+      <MenuTags />
       <WineStrip title={`${wine.tab.label} list`} names={wineNames} />
       <BookingBand />
     </MotionScope>
