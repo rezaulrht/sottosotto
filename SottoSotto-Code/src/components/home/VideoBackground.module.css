@@ -117,6 +117,11 @@
    so the title stays readable (contrast is checked on the darkest part behind it). */
 .media[data-tone='light'] .overlay {
   background:
-    linear-gradient(to top, var(--ink-900) 0%, rgb(18 17 16 / 0.6) 22%, transparent 50%),
+    linear-gradient(to top, rgb(18 17 16 / 0.82) 0%, rgb(18 17 16 / 0.5) 24%, transparent 52%),
     linear-gradient(to bottom, rgb(18 17 16 / 0.5), transparent 20%);
+}
+/* A clean bottom edge, not a fade: the page's stone texture is fixed to the screen while the
+   clip scrolls, so a fade shows the texture sliding behind it and never lining up. */
+.media[data-tone='light'] {
+  mask-image: none;
 }

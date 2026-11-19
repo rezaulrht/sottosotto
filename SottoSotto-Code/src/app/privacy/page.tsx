@@ -7,6 +7,8 @@ export const metadata = pageMetadata('privacy', '/privacy/');
 export default function PrivacyPage() {
   return (
     <div className={`container ${styles.page}`}>
+      {/* How far through the policy you are (CSS scroll timeline, D79). */}
+      <div className={styles.progress} aria-hidden="true" />
       <article className={styles.legal}>
         <h1 className={styles.title}>{privacy.title}</h1>
         {privacy.blocks.map((block, i) => {

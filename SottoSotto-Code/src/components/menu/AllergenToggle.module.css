@@ -1,5 +1,22 @@
 .toggle {
   font-size: var(--step-small);
+  interpolate-size: allow-keywords;
+}
+/* Opens and closes smoothly where ::details-content is supported; elsewhere it just opens. */
+@media (prefers-reduced-motion: no-preference) {
+  .toggle::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+      block-size 240ms var(--ease-out),
+      opacity 200ms var(--ease-out),
+      content-visibility 240ms allow-discrete;
+  }
+  .toggle[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
 }
 
 .summary {

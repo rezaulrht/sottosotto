@@ -1,53 +1,47 @@
 {
-  "_about": "Venue page content. All photos are MOCK placeholders until the client supplies them. Copy and its status: docs/CONTENT.md section 4.",
+  "_about": "Venue page content, plus the two venue photos Home uses (home). Photos: the client's own (2026-11-19, D76); the street photo is openly licensed (D63). Copy and its status: docs/CONTENT.md section 4.",
   "opening": {
     "image": {
       "mock": false,
-      "toConfirm": true,
-      "src": "old-site/photos/new-6.jpg",
-      "alt": "A long stone-walled corridor with a wooden floor, lit by wall lights",
+      "src": "client-2026-11-19/08-vault-lattice-screens.jpg",
+      "alt": "The vaulted stone dining room seen between two wooden lattice screens, tables set down both sides",
       "caption": null,
-      "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+      "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
     }
   },
   "descent": {
     "images": [
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-2.jpg",
-        "alt": "A candelabra with lit candles against a rough stone wall",
+        "src": "client-2026-11-19/07-bar-onyx-bartender.jpg",
+        "alt": "A bartender at work behind the bar, its front lit amber through onyx panels, glasses hanging under the stone vault",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-9.jpg",
-        "alt": "Lit candelabras along a vaulted stone room",
+        "src": "client-2026-11-19/25-vault-long-tables.jpg",
+        "alt": "A long row of set tables beside a leather banquette, candles lit, running down the stone vault",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/sotto_sotto-10.jpg",
-        "alt": "Candles on the stone walls of the vault",
+        "src": "client-2026-11-19/29-tables-stone-wall-b.jpg",
+        "alt": "Tables laid with folded napkins and wine glasses against the stone wall",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-11.jpg",
-        "alt": "The bar under the lit stone vault, with stools and tables",
+        "src": "client-2026-11-19/21-bottles-lit-a.jpg",
+        "alt": "Bottles lit from below on a shelf along the stone wall",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       }
     ]
   },
   "setting": {
-    "eyebrow": "The street",
     "heading": "On North Parade",
     "lead": "Sotto Sotto is on North Parade.",
     "fact": {
@@ -71,85 +65,161 @@
       "_note": "Openly licensed street photo from Wikimedia Commons (D63), downloaded with the user's OK on 2026-11-15. Original in sotto sotto assets/commons/. The credit line must stay with the photo. Can be replaced by the client's own photo."
     }
   },
+  "stairs": {
+    "_note": "The street as you go down the stairs (D80): a different photo from the street section above it.",
+    "image": {
+      "mock": false,
+      "src": "commons/Bath, North Parade Road - night.jpg",
+      "alt": "North Parade in Bath at night: a wet road under street lamps beside the Georgian terrace",
+      "caption": null,
+      "credit": {
+        "author": "Lewis Clarke",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bath_,_North_Parade_Road_-_geograph.org.uk_-_7905071.jpg"
+      },
+      "_note": "Openly licensed photo from Wikimedia Commons, downloaded with the user's OK on 2026-11-19 (D80). Original (2400 px copy) in sotto sotto assets/commons/. The credit line must stay with the photo."
+    }
+  },
   "story": {
     "mock": true,
     "heading": "Our story",
     "text": "(MOCK) Placeholder: who founded Sotto Sotto and when it opened. To come from the client.",
     "image": {
       "mock": false,
-      "toConfirm": true,
-      "src": "old-site/photos/new-14.jpg",
-      "alt": "A chef plating a dessert in the kitchen",
+      "src": "client-2026-11-19/27-relief-two-figures.jpg",
+      "alt": "A carved stone relief of two classical figures set into the stone wall",
       "caption": null,
-      "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+      "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
     }
   },
-  "rooms": {
+  "wall": {
+    "_note": "The Venue page wall (D77): the stone texture behind the vault, and the photos set into it in niches. shape: arch (the vault), round or plaque.",
+    "texture": {
+      "mock": false,
+      "src": "client-2026-11-19/32-wall-texture-9.jpg",
+      "alt": "The stone wall of the vault, lit from one side",
+      "caption": null,
+      "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+    },
     "images": [
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-16.jpg",
-        "alt": "The vaulted stone dining room, full of guests",
+        "src": "client-2026-11-19/25-vault-long-tables.jpg",
+        "alt": "A long row of set tables beside a leather banquette, candles lit, running down the stone vault",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-18.jpg",
-        "alt": "Guests at tables against the stone walls",
+        "src": "client-2026-11-19/07-bar-onyx-bartender.jpg",
+        "alt": "A bartender at work behind the bar, its front lit amber through onyx panels, glasses hanging under the stone vault",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-8.jpg",
-        "alt": "Bottles on the shelves behind the bar",
+        "src": "client-2026-11-19/09-wall-medallion.jpg",
+        "alt": "A round bronze medallion of a helmeted head on the stone wall",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
-      }
-    ]
-  },
-  "details": {
-    "images": [
-      {
-        "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-12.jpg",
-        "alt": "Sotto Sotto cards in a brass holder",
-        "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "round",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-17.jpg",
-        "alt": "A table set with glasses, a candle and a plated dish",
+        "src": "client-2026-11-19/28-table-down-the-vault.jpg",
+        "alt": "A set table looking down the vaulted dining room",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-4.jpg",
-        "alt": "A flaming cocktail in a martini glass",
+        "src": "client-2026-11-19/16-frieze-warm.jpg",
+        "alt": "A carved frieze of dancing figures on the stone wall",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "plaque",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       },
       {
         "mock": false,
-        "toConfirm": true,
-        "src": "old-site/photos/new-15.jpg",
-        "alt": "A panna cotta with Sotto Sotto written in chocolate on the plate",
+        "src": "client-2026-11-19/12-wine-barrels-wall.jpg",
+        "alt": "Wine barrels set into the stone wall around a rack of bottles; the top barrel reads Sotto Sotto Est. 2011",
         "caption": null,
-        "_note": "From the current website (images/new and images/ slideshow), downloaded 2026-11-16 at the user's request because the client has not sent venue photos (Q6). Only 500 x 350 px. Client to confirm they are current and send the originals."
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/06-dining-tables-stone-wall.jpg",
+        "alt": "A row of set tables along the curved stone wall",
+        "caption": null,
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/21-bottles-lit-a.jpg",
+        "alt": "Bottles lit from below on a shelf along the stone wall",
+        "caption": null,
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/29-tables-stone-wall-b.jpg",
+        "alt": "Tables laid with folded napkins and wine glasses against the stone wall",
+        "caption": null,
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/03-bar-shelves-wine-fridges.jpg",
+        "alt": "Bottles on the bar shelf above lit wine fridges",
+        "caption": null,
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/10-table-set-close.jpg",
+        "alt": "Wine glasses, folded napkins and plates on a wooden table by the stone wall",
+        "caption": null,
+        "shape": "round",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+      },
+      {
+        "mock": false,
+        "src": "client-2026-11-19/04-bar-shakers.jpg",
+        "alt": "Cocktail shakers on the bar, with bottles and lit fridges behind",
+        "caption": null,
+        "shape": "arch",
+        "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
       }
     ]
   },
   "bookingPrompt": {
     "heading": "See it for yourself",
     "button": "Book a Table"
+  },
+  "home": {
+    "_note": "Venue photos used on Home: the wine list and the Reserve your table band (D76).",
+    "wine": {
+      "mock": false,
+      "src": "client-2026-11-19/12-wine-barrels-wall.jpg",
+      "alt": "Wine barrels set into the stone wall around a rack of bottles; the top barrel reads Sotto Sotto Est. 2011",
+      "caption": null,
+      "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+    },
+    "booking": {
+      "mock": false,
+      "src": "client-2026-11-19/22-booth-candles-a.jpg",
+      "alt": "Tables set for dinner beside a leather banquette, candles lit, under the stone wall",
+      "caption": null,
+      "_note": "Sent by the client on 2026-11-19 (WhatsApp, 1600 x 1200). Original in sotto sotto assets/client-2026-11-19/ (D76)."
+    }
   }
 }

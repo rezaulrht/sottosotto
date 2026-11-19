@@ -58,7 +58,8 @@
   cursor: pointer;
   transition:
     background-color var(--dur-micro) var(--ease-out),
-    color var(--dur-micro) var(--ease-out);
+    color var(--dur-micro) var(--ease-out),
+    transform 140ms var(--ease-out);
 }
 .button:hover {
   background: var(--color-accent);

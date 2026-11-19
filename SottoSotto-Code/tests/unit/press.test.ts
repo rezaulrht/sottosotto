@@ -37,12 +37,13 @@ describe('press.json', () => {
     expect(press.items.filter((p) => !p.readable).map((p) => p.id)).toEqual(['four-bath-2012']);
   });
 
-  it('spots are inside the page (0..1)', () => {
+  it('each box sits inside its page', () => {
     for (const p of press.items) {
-      for (const v of p.spot) {
-        expect(v).toBeGreaterThan(0);
-        expect(v).toBeLessThan(1);
-      }
+      const [x, y, w, h] = p.box;
+      expect(x).toBeGreaterThanOrEqual(0);
+      expect(y).toBeGreaterThanOrEqual(0);
+      expect(x + w).toBeLessThanOrEqual(1);
+      expect(y + h).toBeLessThanOrEqual(1);
     }
   });
 

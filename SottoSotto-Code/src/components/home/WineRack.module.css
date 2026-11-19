@@ -1,0 +1,197 @@
+/* Home §5 wine rack (D77). The card reads in full without JS (first wine). */
+
+.rack {
+  display: grid;
+  gap: var(--space-8);
+}
+
+/* ---- The card: the wine pulled from the rack */
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  min-height: 15rem;
+  max-width: 38rem;
+}
+.cardName {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-h1);
+  font-weight: 300;
+  line-height: 1.02;
+  color: var(--bone-100);
+  text-wrap: balance;
+}
+.cardMeta {
+  margin: 0;
+  color: var(--bone-300);
+}
+.cardNote {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: var(--step-lead);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--bone-100);
+}
+.cardNote::before {
+  content: '“';
+}
+.cardNote::after {
+  content: '”';
+}
+
+/* ---- The rack: groups of upright labels standing on a shelf */
+.shelf {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-end;
+  overflow-x: auto;
+  /* Room for a pulled label to rise without being clipped. */
+  padding: var(--space-6) var(--margin) var(--space-2);
+  margin-inline: calc(-1 * var(--margin));
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+.group {
+  display: grid;
+  gap: var(--space-3);
+  flex: 0 0 auto;
+}
+.bottles {
+  display: flex;
+  gap: 0.375rem;
+  align-items: flex-end;
+  padding-bottom: 0.375rem;
+  /* The shelf the labels stand on. */
+  border-bottom: 2px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+.groupName {
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--bone-300);
+}
+
+.label {
+  /* Capsule colour by group: straw for white and rosé, garnet for red, gold for bubbles. */
+  --capsule: var(--color-accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 2.75rem;
+  height: 15rem;
+  padding: 0 0 var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--bone-100) 14%, transparent);
+  border-radius: 0.75rem 0.75rem 0.25rem 0.25rem;
+  background: linear-gradient(to right, rgb(255 255 255 / 0.04), transparent 40%), var(--ink-800);
+  color: var(--bone-300);
+  scroll-snap-align: center;
+  cursor: pointer;
+  transition:
+    transform 220ms var(--ease-out),
+    border-color 220ms var(--ease-out),
+    color 220ms var(--ease-out),
+    background-color 220ms var(--ease-out);
+}
+.group[data-group='white-rose'] .label {
+  --capsule: #d9c792;
+}
+.group[data-group='red'] .label {
+  --capsule: #8a2c3a;
+}
+.group[data-group='sparkling'] .label {
+  --capsule: #c9a24e;
+}
+.capsule {
+  width: 100%;
+  height: 2.25rem;
+  margin-bottom: var(--space-3);
+  border-radius: 0.7rem 0.7rem 0 0;
+  background: linear-gradient(to right, rgb(255 255 255 / 0.18), transparent 45%), var(--capsule);
+  opacity: 0.75;
+}
+.labelName {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-height: 11rem;
+}
+
+@media (hover: hover) {
+  .label:hover {
+    transform: translateY(-0.5rem);
+    color: var(--bone-100);
+  }
+}
+.label[aria-selected='true'] {
+  transform: translateY(-1.5rem);
+  border-color: var(--color-accent);
+  background-color: var(--ink-700);
+  color: var(--bone-100);
+}
+.label[aria-selected='true'] .capsule {
+  opacity: 1;
+}
+.label:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* First sight (D79): the labels rise up onto the shelf one after another. */
+.shelf[data-rise-wait] .label {
+  transform: translateY(70%);
+  opacity: 0;
+}
+.shelf[data-rising] .label {
+  transition-duration: 900ms;
+  transition-property: transform, opacity, border-color, color, background-color;
+  transition-delay: calc(var(--i) * 28ms);
+}
+
+/* The name settles in as each wine is pulled out. */
+@media (prefers-reduced-motion: no-preference) {
+  .cardName {
+    animation: settle 420ms var(--ease-out);
+  }
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+    filter: blur(4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .label {
+    transition: none;
+  }
+}
+
+@media (min-width: 64em) {
+  /* The rack fills the width: each group by its number of wines, the labels share it. */
+  .shelf {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .group {
+    flex: var(--count) 1 0;
+    min-width: 0;
+  }
+  .label {
+    flex: 1 1 0;
+    min-width: 1.75rem;
+    max-width: 3rem;
+    width: auto;
+    height: 17rem;
+  }
+}

@@ -75,7 +75,7 @@ Total: 27 assigned + 8 spare = 35.
 | Asset | Needed for | Until it arrives |
 |---|---|---|
 | 4 side-dish photos | Menu: I contorni | Text-only (D14) |
-| Venue photos (entrance, stairs, rooms, details, restaurant) | Venue page, Home venue teaser | 13 photos from the current website's slideshows, downloaded 2026-11-16 (user's request) into `sotto sotto assets/old-site/photos/`; 500 × 350 px; flagged `toConfirm` in `data/venue.json` (D69, Q6). Also downloaded and unused: 12 old dish photos (not today's menu), the entrance banner (text baked in) and the old logo `sottosotto.jpg` (600 × 219) |
+| Venue photos (entrance, stairs, rooms, details, restaurant) | Venue page, Home venue teaser, Home wine list and booking band | The client's 32 photos (2026-11-19, 1600 × 1200) in `sotto sotto assets/client-2026-11-19/`, 16 in use (D76). No entrance or stairs photo yet. The 13 old-website photos (D69) are no longer used. Ten bare-wall close-ups could become the real wall texture |
 | Hero video | Home hero | Placeholder clip and poster **(MOCK)** (D9; `site.json` `media.heroVideo`) |
 | Booking-section video (optional) | Home booking band | Placeholder clip and poster **(MOCK)** (`site.json` `media.bookingVideo`) |
 | Logo in vector format (SVG/AI/EPS) | Header, footer, favicon, social image | Placeholder **(MOCK)**. The current site has only a 300 × 115 PNG |
@@ -119,3 +119,13 @@ No new photos or video came with this update. The dish-to-photo map in section 1
 | 9 press pages (`magazine pic.zip`) | Home press (D70) | Originals in `sotto sotto assets/press/`; built to `public/img/press/` by `npm run images`; appear digitally restored, FOUR Bath garbled (Q54) |
 | Drone clip (`intro drone.mov`, 18.7 s, 4K HEVC) | Find Us (D71) | Original in `sotto sotto assets/video/intro-drone.mov`; `public/video/findus-{1080,720}.{mp4,webm}` and poster via `npm run video` with CLIP_NAME=findus |
 | Newspaper film (`Sotto_Sotto_Newspaper_Film_Reimagined.html`) | Style reference only | Not shipped; its look, headlines, headline positions and wording are reused (D70) |
+
+## Added 2026-11-19 (D80)
+
+| Asset | Where | Source |
+|---|---|---|
+| Logo (`public/brand/sotto-sotto-logo.png`) | Header, footer | sottosotto.co.uk `images/sottosottologo.png`, 300 × 115 PNG; vector wanted (Q9) |
+| North Parade at night | Venue stairs | Commons, Lewis Clarke, CC BY-SA 2.0 |
+| Bath Sports and Leisure Centre | Find Us parking | Commons, Rwendland, CC BY-SA 4.0 |
+| Manvers Street at night | Find Us parking | Commons, Lewis Clarke, CC BY-SA 2.0 |
+| Bath Cricket Club | Find Us parking | Commons, DS Pugh, CC BY-SA 2.0 |

@@ -127,7 +127,13 @@ Slow and deliberate. No bounce, no overshoot, no springs.
 | Hover lighting | Card goes from dimmed (about 70% on Home, about 30% on Menu) to 100% in `dur-hover`, with a radial `amber-300` glow at 10–15% opacity behind it. |
 | Candle cursor | Desktop pointers only (`hover: hover` and `pointer: fine`). Small flame follows the pointer with a slight lag; radial glow about 240 px wide. Spark on entering a dish: 400 ms, once. Flicker: slow, low amplitude (opacity ±5%). The real cursor stays available on links, buttons and the booking iframe. |
 | Rotating badge | One turn per 20–30 s, linear. |
-| Wine strip | Continuous slow scroll, pauses on hover and focus. |
+| Wine rack | The pointed, tapped or arrowed label rises 1.5rem; the card's name settles in (420 ms). |
+| Page arrival (D79) | In-app navigation only: rise 12px, fade, blur 4px → 0, 450 ms ease-out. |
+| Press | Buttons, tabs, summaries, Book a Table: scale 0.97, 140 ms. |
+| Header tuck | Out 260 ms while reading down, back 380 ms on scroll up. Menu tabs follow. |
+| Rise | `data-rise` groups: children up 18px and in, 80 ms apart, once. |
+| Booking steps | New step slides 1.25rem in from the direction of travel, 280 ms. |
+| Reading line | Privacy: 2px amber line scaled with page scroll. |
 | Header | Background and height change over `dur-base` once the hero is scrolled past. |
 
 ### Reduced motion (`prefers-reduced-motion: reduce`)
@@ -140,7 +146,7 @@ Slow and deliberate. No bounce, no overshoot, no springs.
 | Pinned stair descent | Normal stacked photos |
 | Horizontal gallery | Normal horizontal scroll with native scrolling |
 | Candle cursor, spark, flicker | Off; all dishes at full brightness |
-| Rotating badge, wine strip | Static |
+| Rotating badge | Static |
 | Smooth scrolling | Native scrolling |
 
 ## 5. Performance budgets

@@ -38,9 +38,17 @@
     },
     "press": {
       "toConfirm": true,
-      "_note": "The client's own words from their newspaper film (Sotto_Sotto_Newspaper_Film_Reimagined.html, 2026-11-18): eyebrow from its intertitle, heading from its printing-press sheet. Client to confirm (Q53).",
+      "_note": "The client's own words from their newspaper film (Sotto_Sotto_Newspaper_Film_Reimagined.html, 2026-11-18): eyebrow from its intertitle, heading from its printing-press sheet; intro, outro and tagline are its title cards and callout line, word for word; the eyebrow also heads the paper reel. Client to confirm (Q53).",
       "eyebrow": "A story told by the press",
-      "heading": "Sotto Sotto in the news"
+      "heading": "Sotto Sotto in the news",
+      "intro": {
+        "eyebrow": "The Sotto Sotto story",
+        "sub": "The newspapers are talking"
+      },
+      "outro": {
+        "eyebrow": "The critics have spoken"
+      },
+      "tagline": "The critics have spoken · Sotto Sotto, Bath"
     }
   },
   "hours": {
@@ -133,18 +141,16 @@
     "_note": "Placeholders from the current site's index.html, to confirm with the client (decision D24)."
   },
   "address": {
-    "mock": true,
     "line1": "10 North Parade",
     "city": "Bath",
     "postcode": "BA2 4AL",
     "country": "United Kingdom",
-    "_note": "MOCK (decision D23). The current site shows both \"10 N Parade\" (map query) and \"12a North Parade\" (footer, privacy policy). Postcode BA2 4AL appears in both. Real address to come from the client (OPEN_QUESTIONS Q1)."
+    "_note": "Confirmed 2026-11-19 (D81): 10 North Parade, Bath BA2 4AL in the Food Standards Agency register (FHRSID 359645, ratings.food.gov.uk) and on OpenStreetMap (Sotto Sotto, amenity=restaurant); the press pages (2012–2015) give the same. The old site's \"12a North Parade\" is not used."
   },
   "geo": {
-    "mock": true,
-    "lat": 51.3807,
-    "lng": -2.3573,
-    "_note": "MOCK. Approximate point on North Parade, not a verified pin. Replace with the client's confirmed map pin."
+    "lat": 51.38069,
+    "lng": -2.35657,
+    "_note": "Confirmed 2026-11-19 (D81): the FSA register point (51.380689, -2.356594) and the OpenStreetMap restaurant node (51.3806924, -2.3565668) are 2 m apart."
   },
   "parking": [
     {
@@ -153,7 +159,20 @@
       "note": null,
       "walkingMinutes": {
         "value": 4,
-        "mock": true
+        "_note": "Measured 2026-11-19 by `npm run routes` (OpenStreetMap foot routing to the confirmed pin), at 80 m a minute, rounded up (D81)."
+      },
+      "image": {
+        "mock": false,
+        "src": "commons/Bath Sports and Leisure Centre, 2015.jpg",
+        "alt": "The entrance of Bath Sports and Leisure Centre, reached by a walkway between autumn trees",
+        "caption": null,
+        "credit": {
+          "author": "Rwendland",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bath_Sports_and_Leisure_Centre,_2015.jpg"
+        },
+        "_note": "Openly licensed photo from Wikimedia Commons, downloaded with the user's OK on 2026-11-19 (D80). Original (2400 px copy) in sotto sotto assets/commons/. The credit line must stay with the photo."
       }
     },
     {
@@ -161,8 +180,21 @@
       "address": "5A Manvers Street, Bath BA1 1JZ",
       "note": "Open 24/7",
       "walkingMinutes": {
-        "value": 6,
-        "mock": true
+        "value": 3,
+        "_note": "Measured 2026-11-19 by `npm run routes` (OpenStreetMap foot routing to the confirmed pin), at 80 m a minute, rounded up (D81)."
+      },
+      "image": {
+        "mock": false,
+        "src": "commons/Bath, Manvers Street - night.jpg",
+        "alt": "Manvers Street in Bath at night, lit by street lamps",
+        "caption": null,
+        "credit": {
+          "author": "Lewis Clarke",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bath_,_Manvers_Street_-_geograph.org.uk_-_7905096.jpg"
+        },
+        "_note": "Openly licensed photo from Wikimedia Commons, downloaded with the user's OK on 2026-11-19 (D80). Original (2400 px copy) in sotto sotto assets/commons/. The credit line must stay with the photo."
       }
     },
     {
@@ -171,21 +203,36 @@
       "addressMissing": true,
       "note": null,
       "walkingMinutes": {
-        "value": 4,
-        "mock": true
+        "value": 5,
+        "_note": "Measured 2026-11-19 by `npm run routes` (OpenStreetMap foot routing to the confirmed pin), at 80 m a minute, rounded up (D81)."
+      },
+      "image": {
+        "mock": false,
+        "src": "commons/Bath Cricket Club, 2026.jpg",
+        "alt": "Bath Cricket Club ground on a sunny day, the pavilion beyond the trees",
+        "caption": null,
+        "credit": {
+          "author": "DS Pugh",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bath_Cricket_Club_-_geograph.org.uk_-_8287095.jpg"
+        },
+        "_note": "Openly licensed photo from Wikimedia Commons, downloaded with the user's OK on 2026-11-19 (D80). Original (2400 px copy) in sotto sotto assets/commons/. The credit line must stay with the photo."
       }
     }
   ],
   "gettingHere": [
     {
-      "mock": true,
       "mode": "train",
-      "text": "Placeholder: nearest station and walking time."
+      "text": "By train: Leave Bath Spa station by the front and walk north along Manvers Street and Pierrepont Street to North Parade."
     },
     {
-      "mock": true,
+      "mode": "bus",
+      "text": "By bus: From the bus station on Dorchester Street, next to the railway station, walk north to Manvers Street and on up Pierrepont Street to North Parade."
+    },
+    {
       "mode": "foot",
-      "text": "Placeholder: a one-line walking direction from the city centre."
+      "text": "On foot: From Bath Abbey, walk south past Parade Gardens to North Parade."
     }
   ],
   "social": [

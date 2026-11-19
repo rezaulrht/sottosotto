@@ -71,7 +71,6 @@ From the client, 2026-11-14 (a Google summary). The fact sentence is kept exactl
 
 | Item | Text | Status |
 |---|---|---|
-| Eyebrow | The street | New |
 | Heading | On North Parade | New |
 | Lead | Sotto Sotto is on North Parade. | New |
 | Fact | North Parade is a historic Georgian street and promenade in central Bath, designed by John Wood the Elder in 1741, built in honey-coloured Bath stone, with views over the River Avon and Parade Gardens. | Hold (Q33: needs verification) |
@@ -113,8 +112,8 @@ This text describes the street, not the restaurant. It must not be reworded to i
 | Email [379] | info@sottosotto.co.uk (placeholder, to confirm) | Hold (Q1) |
 | Response note [381] | We will respond to your email within 24 hours. | Keep |
 | Map button | Get directions | New |
-| Parking | Sports and Leisure Centre car park · Manvers Street Car Park (Open 24/7) · Bath Cricket Club Public Car Park. Names and addresses from the client; walking times **(MOCK)**; Cricket Club address missing. | Hold (Q30) |
-| Getting here | Train and on-foot lines **(MOCK, optional)** | Hold (Q30) |
+| Parking | Sports and Leisure Centre car park · Manvers Street Car Park (Open 24/7) · Bath Cricket Club Public Car Park. Names and addresses from the client; walking times measured with OpenStreetMap foot routing (D80); Cricket Club address missing. | Hold (Q30, address only) |
+| Getting here | By train, by bus, on foot: written by us; minutes from measured routes (D80, D81). | Ready |
 | Careers heading [383] | Careers at Sotto Sotto | Keep |
 | Careers text [384] | We are always looking for dedicated professionals to join our team. | Keep |
 | Careers text [386] | If you are interested in working at Sotto Sotto please apply by sending a brief covering letter, CV and photograph to careers@sottosotto.co.uk | Keep (see Q18 about the photograph) |

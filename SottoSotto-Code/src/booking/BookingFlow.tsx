@@ -38,6 +38,7 @@ const STEPS: Array<{ id: Exclude<Step, 'done'>; label: string }> = [
   { id: 'time', label: 'Time' },
   { id: 'details', label: 'Your details' },
 ];
+const ORDER: Step[] = ['date', 'guests', 'time', 'details', 'done'];
 const DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const EMPTY_DETAILS: GuestDetails = { name: '', phone: '', email: '', notes: '' };
 
@@ -84,6 +85,8 @@ export function BookingFlow({
   const provider = useMemo(() => mockProvider(hours, rules), [hours, rules]);
 
   const [step, setStep] = useState<Step>('date');
+  // Which way the last move went: the next panel slides in from that side (none at first).
+  const [dir, setDir] = useState<'forward' | 'back' | null>(null);
   const [date, setDate] = useState<IsoDate | null>(null);
   const [month, setMonth] = useState<{ year: number; month: number } | null>(null);
   const [party, setParty] = useState<number | null>(null);
@@ -117,6 +120,7 @@ export function BookingFlow({
 
   const go = (next: Step) => {
     moved.current = true;
+    setDir(ORDER.indexOf(next) < ORDER.indexOf(step) ? 'back' : 'forward');
     setStep(next);
   };
 
@@ -174,7 +178,7 @@ export function BookingFlow({
       : (closedNames[0] ?? '');
 
   return (
-    <div className={styles.flow}>
+    <div className={styles.flow} data-dir={dir ?? undefined}>
       {preview ? (
         <p className={styles.preview} role="note">
           <strong>Preview.</strong> Online booking is not live yet: nothing you enter here is sent

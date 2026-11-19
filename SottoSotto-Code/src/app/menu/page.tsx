@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { AllergenToggle } from '@/components/menu/AllergenToggle';
 import { CandleLight } from '@/components/menu/CandleLight';
 import { MenuTabs } from '@/components/menu/MenuTabs';
@@ -93,8 +94,9 @@ function DishGroups({ sections }: { sections: DishSection[] }) {
         </ul>
       ) : (
         <ul className={styles.dishGrid}>
-          {section.items.map((dish) => (
-            <li key={dish.id}>
+          {section.items.map((dish, i) => (
+            // Each card rises in as it is reached, a beat after its row neighbour (D82).
+            <li key={dish.id} data-rise="" style={{ '--rise-i': i % 3 } as CSSProperties}>
               <DishCard dish={dish} />
             </li>
           ))}

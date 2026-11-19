@@ -49,18 +49,13 @@ test.describe('without JavaScript', () => {
 test.describe('reduced motion', () => {
   test.use({ reducedMotion: 'reduce' });
 
-  test('static: no pinning, no split text, no moving wine list', async ({ page }) => {
+  test('static: no pinning, no split text', async ({ page }) => {
     const errors = collectErrors(page);
     await page.goto('/');
     await expect(mode(page)).toHaveAttribute('data-motion-mode', 'reduced');
     await expect(page.locator('[data-pinned]')).toHaveCount(0);
     await expect(page.locator('#home-philosophy')).toHaveText('Our Food Is Our Culture');
     await expect(page.locator('#home-philosophy > *')).toHaveCount(0);
-    const animation = await page
-      .locator('[aria-labelledby="home-wine"] ul')
-      .first()
-      .evaluate((el) => getComputedStyle(el.parentElement!).animationName);
-    expect(animation).toBe('none');
     expect(errors).toEqual([]);
   });
 });
@@ -149,42 +144,92 @@ test.describe('desktop', () => {
   });
 });
 
-test('the wine strip has a pause button', async ({ page }) => {
+test('the wine list is a rack of labels: pulling one out shows that wine', async ({ page }) => {
   await page.goto('/');
-  const strip = page.locator('[aria-labelledby="home-wine"]');
-  const toggle = strip.getByRole('button', { name: /the moving wine list/ });
-  await expect(toggle).toBeVisible();
-  await toggle.click();
-  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
-  await expect(strip).toHaveAttribute('data-paused', '');
-  // Read once by screen readers: the loop copy is hidden.
-  await expect(strip.locator('ul[aria-hidden="true"]')).toHaveCount(1);
+  const section = page.locator('section[aria-labelledby="home-wine"]');
+  await expect(section.getByRole('heading', { level: 2, name: 'Wine list' })).toBeAttached();
+  await expect(section.getByRole('img', { name: /Wine barrels/ })).toBeAttached();
+  const tabs = section.getByRole('tab');
+  await expect(tabs).toHaveCount(28);
+  const card = section.getByRole('tabpanel');
+  // The first wine is pulled out to start with, and its card reads in full.
+  await expect(tabs.first()).toHaveAttribute('aria-selected', 'true');
+  await expect(card).toContainText('Pinot Grigio Blush');
+  await expect(card).toContainText('Very soft with aromas of freshly crushed cranberries');
+  await expect(section).not.toContainText('£');
+  // One tab stop; arrow keys move along the rack.
+  await tabs.first().focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
+  await expect(tabs.nth(1)).toBeFocused();
+  await page.keyboard.press('End');
+  await expect(tabs.last()).toBeFocused();
+  // Tapping or clicking a label pulls it out.
+  await section.getByRole('tab', { name: 'Syrah, Red' }).click();
+  await expect(card).toContainText('Molino a Vento · Sicily · 2024/25');
+  await expect(section.getByRole('link', { name: 'See the full wine list' })).toHaveAttribute(
+    'href',
+    '/menu/#wine',
+  );
 });
 
-test('the menu section is a line of tags to the Menu page', async ({ page }) => {
+test('the booking band runs straight into the footer', async ({ page }) => {
+  await page.goto('/');
+  const band = page.locator('section[aria-labelledby="home-book"]');
+  await expect(band.getByRole('img', { name: /candles lit/ })).toBeAttached();
+  await expect(band.getByRole('link', { name: /book a table/i })).toBeVisible();
+  const gap = await band.evaluate((el) => {
+    const footer = document.querySelector('footer')!;
+    return footer.getBoundingClientRect().top - el.getBoundingClientRect().bottom;
+  });
+  expect(Math.abs(gap)).toBeLessThan(1);
+});
+
+test('the menu section is a strip of courses, each opening its part of the Menu page', async ({
+  page,
+}) => {
   await page.goto('/');
   const menu = page.locator('[aria-labelledby="home-menu"]');
-  const links = menu.getByRole('link');
-  await expect(links).toHaveText([
+  await expect(menu.getByRole('link', { name: /^See the full menu/ })).toHaveAttribute(
+    'href',
+    '/menu/',
+  );
+  const courses = menu.locator('li a');
+  await expect(courses).toHaveCount(4);
+  const hrefs = await courses.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+  expect(hrefs).toEqual([
+    '/menu/#group-starters',
+    '/menu/#group-pasta-risotto',
+    '/menu/#group-specialities',
+    '/menu/#dessert',
+  ]);
+  for (const [i, name] of [
     'To start',
     'Pasta & risotto',
     'Specialities',
     'Desserts & Cheese',
-    'Wine',
-    /^See the menu/,
-  ]);
-  const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
-  expect(hrefs).toEqual([
-    '/menu/#menu',
-    '/menu/#menu',
-    '/menu/#menu',
-    '/menu/#dessert',
-    '/menu/#wine',
-    '/menu/',
-  ]);
-  // A pointer to the Menu page, not a showcase: no photos, and no Find Us on Home.
-  await expect(menu.locator('img')).toHaveCount(0);
+  ].entries())
+    await expect(courses.nth(i)).toContainText(name);
+  // Each course has its photo and a taste of its dishes (names only, from the data).
+  await expect(menu.locator('li img')).toHaveCount(4);
+  await expect(courses.first()).toContainText('Bruschetta ai gamberoni');
+  await expect(courses.first()).toContainText('6 dishes');
+  // A taste, not a copy: no prices.
+  await expect(menu).not.toContainText('£');
   await expect(page.locator('#home-find')).toHaveCount(0);
+});
+
+test('phone: the courses swipe sideways without widening the page', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'Phone only');
+  await page.goto('/');
+  const tops = await page
+    .locator('[aria-labelledby="home-menu"] li')
+    .evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+  expect(new Set(tops).size).toBe(1);
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(0);
 });
 
 test('phone: the venue heading comes before its photos, which swipe sideways', async ({

@@ -8,8 +8,8 @@ export interface ReaderItem {
   publication: string;
   date: string | null;
   headline: string;
-  /** Headline position as fractions of the page. */
-  spot: [number, number];
+  /** The Sotto Sotto part of the page: [x, y, width, height] as fractions of the page. */
+  box: [number, number, number, number];
   avif: string;
   webp: string;
   width: number;
@@ -18,7 +18,7 @@ export interface ReaderItem {
 
 /**
  * The press reader (design 2026-11-18): a native <dialog> showing one page as large as the
- * screen allows, with an amber ring on its headline (the client's `spot`). Opened by any
+ * screen allows, with the film's amber square on the Sotto Sotto part (`box`). Opened by any
  * link with `data-press-open`; without JS those links simply open the image. Arrow keys
  * and the buttons move through the readable pages; focus returns to the opener.
  */
@@ -39,11 +39,9 @@ export function PressReader({ items }: { items: ReaderItem[] }) {
       const at = items.findIndex((i) => i.id === link.getAttribute('data-press-open'));
       if (at < 0) return;
       e.preventDefault();
-      // The table pages are pointer-only: return focus to the headline in the list.
+      // The film's pages are pointer-only: return focus to its "Read this page" link.
       openerRef.current =
-        document.querySelector<HTMLElement>(
-          `[data-press-list] [data-press-open="${items[at]!.id}"]`,
-        ) ?? (link as HTMLElement);
+        document.querySelector<HTMLElement>('[data-press-read]') ?? (link as HTMLElement);
       byPointerRef.current = e.detail > 0;
       setIndex(at);
       dialog.showModal();
@@ -110,7 +108,12 @@ export function PressReader({ items }: { items: ReaderItem[] }) {
             <span
               className={styles.ring}
               data-ring=""
-              style={{ left: `${item.spot[0] * 100}%`, top: `${item.spot[1] * 100}%` }}
+              style={{
+                left: `${item.box[0] * 100}%`,
+                top: `${item.box[1] * 100}%`,
+                width: `${item.box[2] * 100}%`,
+                height: `${item.box[3] * 100}%`,
+              }}
               aria-hidden="true"
             />
           </div>

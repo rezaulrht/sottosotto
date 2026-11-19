@@ -28,13 +28,13 @@ Route names are a proposal. Copy for every section is in `CONTENT.md`; business 
 
 | # | Section | Spec | Content source |
 |---|---|---|---|
-| 1 | Hero | Full-screen muted looping video, dark overlay (about 50–60% opacity), faint grain on top. Short headline with the name and "Italian Restaurant in Bath". Slowly rotating circular "Book a table" badge that opens the modal. Live hours chip. Poster image loads first and replaces the video on slow connections or reduced motion. | `site.json` name, tagline, hours. Video and poster: placeholder. |
+| 1 | Hero | Full-screen muted looping video, dark overlay (about 50–60% opacity), faint grain on top. Short headline with the name and "Italian Restaurant in Bath". Slowly rotating circular "Book a table" badge with the logo's grapes at its centre, opening the modal. Today's hours beside the Book button as a typographic block (D82). Poster image loads first and replaces the video on slow connections or reduced motion. | `site.json` name, tagline, hours. Video and poster: placeholder. |
 | 2 | Philosophy | Editorial spread (D68): the heading and a dish photo on one side; the first paragraph set as a statement with an amber rule, the other two as reading text, with 'Sapori' set in italic amber. "Booking is strongly recommended" leads into a booking button. | `site.json` `copy.philosophyFull`, `copy.bookingNote` |
-| 3 | Venue teaser | Pinned section. Venue photos slide past step by step as you scroll, getting darker and warmer, like descending the stairs. Ends with a "Step inside" link to Venue. Phones (D68): heading and link first, then the photos as a sideways swipe row. | Venue photos: placeholder |
-| 4 | Press | Papers on a dark table beside the headline list (D70): the 9 client pages drop in once in view; a reader opens each large with an amber ring on its headline. Phones: a swipe row. | `press.json` (toConfirm), `site.json` `copy.press` |
-| 4b | Menu | One line of course tags to the Menu page and "See the menu" (D72). | `menu.json`, `desserts.json`, `wine.json` |
-| 5 | Wine strip ("Wine list") | A slow scrolling line of wine names. Text only. | `wine.json` names; heading from the wine tab label |
-| 6 | Booking band | Full-width image or second video with "Reserve your table" and a note that the restaurant is small. | `copy.bookingNote`. Media: placeholder. |
+| 3 | Venue teaser | Pinned section. Venue photos slide past step by step as you scroll, getting darker and warmer, like descending the stairs. Ends with a "Step inside" link to Venue. Phones (D68): heading and link first, then the photos as a sideways swipe row. | `venue.json` `descent` (client photos, D76) |
+| 4 | Press | The client's newspaper film (D73): each of the 9 pages flies in, zooms, and an amber square rings its Sotto Sotto part under a big headline; "Read this page" opens the reader. One screen tall; reduced motion: still pages. | `press.json` (toConfirm), `site.json` `copy.press` |
+| 4b | Menu | A strip of four course panels with photos, each opening its part of the Menu page; the open panel lists its first dishes and dish count; "See the full menu" (D74). Phones: a swipe row. | `menu.json`, `desserts.json`, image manifest |
+| 5 | Wine list | A rack of upright wine labels on a shelf, by group, in front of the barrel-wall photo. Pointing at, tapping or arrowing to a label pulls it out; the card above shows name, producer, region, vintage and note. No prices; "See the full wine list" opens the wine tab (D77). | `wine.json`; photo `venue.json` `home.wine` |
+| 6 | Booking band | Full-bleed photo of candlelit set tables; "Reserve your table", the note, the open days and the button in a double-ruled card. Runs straight into the footer (D76). | `copy.bookingNote`, `site.json` hours; photo `venue.json` `home.booking` |
 | 7 | ~~Find us teaser~~ | Removed from Home (D68). Find Us stays in the main navigation and the footer. | — |
 | 8 | Footer | Global footer. | `site.json` |
 
@@ -56,16 +56,15 @@ The page reads like a slow walk through the space.
 
 | # | Section | Spec |
 |---|---|---|
-| 1 | Opening | Full-screen photo of the entrance or stairs, slow zoom on scroll. |
-| 2 | The descent | Pinned scroll section. Photos change step by step; the light gets warmer and dimmer. |
-| 3a | The street | North Parade text (from `venue.json` `setting`) with a photo that unmasks. The history sentence needs verification before launch (Q33). |
-| 3b | Our story | The restaurant's own story. **(MOCK)** placeholder until the client sends it (Q34). |
-| 4 | The rooms | Horizontal-scroll gallery with small captions. |
-| 5 | Details | Close-up collage (stone, table setting, wine shelves, candle). |
-| 6 | Booking prompt | "See it for yourself" + Book a Table. |
+| 1 | Opening | Full-screen photo (the vault through the lattice screens), slow zoom on scroll. |
+| 2 | Street level | "On North Parade": the river photo wide, the street fact as a pull quote (needs verification before launch, Q33). |
+| 3 | The stairs | "Leave the street, take the stairs, and step inside." The stage is held while scrolling: the street closes to a strip of daylight overhead, step edges rise past, the stone takes over and the line arrives a step at a time. CSS only; static line on the stone where unsupported or with reduced motion (D77). |
+| 4a | Our story | In the vault: the relief in an arched niche beside the text. **(MOCK)** text until the client sends it (Q34). |
+| 4b | The rooms | The client's photos set into the stone wall in arched, round and plaque niches, three columns at different heights (two-up on phones); each lights up as it comes into view. |
+| 5 | Booking prompt | "See it for yourself" + Book a Table, still on the stone. |
 
 - Content: `data/venue.json`. Copy and its status: `CONTENT.md` section 4.
-- Venue photos are still to come from the client. Use placeholders **(MOCK)**.
+- Venue photos: the client's own (2026-11-19, D76).
 - No accessibility details or private hire section (D12).
 - The current site's venue text is mostly award claims and old press quotes. It is not carried over as is; see `CONTENT.md` section 4 and Q16.
 
@@ -121,11 +120,10 @@ If the optional type filter is built, it covers the bar sections too (e.g. Wine 
 
 | # | Section | Spec | Data |
 |---|---|---|---|
-| 0 | Drone clip | The client's drone clip opens the page, full width, with the title low on it and a pause button; ends above North Parade, right over the map (D71). | `site.json` `media.findUsVideo` |
-| 1 | Map | Google Map styled dark to match the site, custom pin, "Get directions" button. | `site.json` geo (MOCK) |
+| 0–1 | Landing stage | One full-screen stage (D75): the client's drone clip (D71) with "Find Us" and a pause button; scrolling through it, the clip zooms, softens and dissolves into the self-hosted dark map (D42), which settles on North Parade with the pin; then a card with the address and "Get directions". No JS or reduced motion: one screen with the map and the card at once. | `site.json` `media.findUsVideo`, geo (MOCK), address (MOCK) |
 | 2 | Contact | Address, phone and info@ email in large type. | `site.json` address (MOCK), contact |
-| 3 | Parking | Three cards: car park name, address, walking time, note. Not shown on the map. A card with no address (Bath Cricket Club) shows name and walking time only. | `site.json` parking: names and addresses real; walking times **(MOCK)** |
-| 4 | Getting here | Optional: one line each for train and on foot. | `site.json` gettingHere (MOCK, optional) |
+| 3 | Parking | A ruled list: measured walking time first, then name, address, note, and a credited Commons photo of the place (D78, D80). A place with no address (Bath Cricket Club) shows name, walk and photo. Photos wipe in as they are reached. | `site.json` parking |
+| 4 | Getting here | The walks on the map (D81): a cropped dark map with three amber routes (station, bus station, Abbey → Sotto Sotto) that draw on first sight; beside it (below on phones) the three ways, each with its measured minutes and one line of directions; pointing at or tapping a way lights its route. | `site.json` gettingHere, `src/content/routes.json` |
 | 5 | Careers | Current site's careers text, "Send your CV" button using careers@. | `CONTENT.md` section 6 |
 
 ## Booking (D59)

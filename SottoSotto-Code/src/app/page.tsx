@@ -1,8 +1,13 @@
 import { HomeHero } from '@/components/home/HomeHero';
-import { BookingBand, MenuTags, Philosophy, VenueDescent } from '@/components/home/HomeSections';
-import { PressTable } from '@/components/home/PressTable';
-import { WineStrip } from '@/components/home/WineStrip';
-import { pageMetadata, site, wine } from '@/content';
+import {
+  BookingBand,
+  MenuCourses,
+  Philosophy,
+  VenueDescent,
+  WineList,
+} from '@/components/home/HomeSections';
+import { PressSection } from '@/components/home/PressSection';
+import { pageMetadata, site } from '@/content';
 import { weeklySummary } from '@/lib/hours';
 import { restaurantJsonLd, serialiseJsonLd } from '@/lib/jsonld';
 import { legacyRedirectScript } from '@/lib/nav';
@@ -20,7 +25,6 @@ function openDaysSummary(): string {
 
 /** Home (PAGES.md: hero, philosophy, venue, press, menu, wine, booking; the footer comes from the layout). */
 export default function HomePage() {
-  const wineNames = wine.groups.flatMap((g) => g.wines.map((w) => w.name));
   return (
     <MotionScope>
       {/* Old `/?p=menu` style links (D43); inline so they move on before first paint. */}
@@ -32,10 +36,10 @@ export default function HomePage() {
       <HomeHero hoursSummary={openDaysSummary()} />
       <Philosophy />
       <VenueDescent />
-      <PressTable />
-      <MenuTags />
-      <WineStrip title={`${wine.tab.label} list`} names={wineNames} />
-      <BookingBand />
+      <PressSection />
+      <MenuCourses />
+      <WineList />
+      <BookingBand hoursSummary={openDaysSummary()} />
     </MotionScope>
   );
 }

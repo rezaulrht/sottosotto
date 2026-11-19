@@ -19,6 +19,25 @@ export const price = z
   .positive()
   .refine((n) => Math.abs(Math.round(n * 100) - n * 100) < 1e-6, 'At most 2 decimals');
 
+/** A photo the image pipeline builds (venue photos, parking places), with its credit if any. */
+const venueImage = z.strictObject({
+  mock: z.boolean(),
+  /** A real photo the client has not signed off yet (e.g. taken from the current site). */
+  toConfirm: z.boolean().optional(),
+  src: nonEmpty.nullable(),
+  alt: nonEmpty,
+  caption: nonEmpty.nullable(),
+  /** For openly licensed photos that require attribution (D63). */
+  credit: z
+    .strictObject({
+      author: nonEmpty,
+      license: nonEmpty,
+      licenseUrl: httpsUrl,
+      sourceUrl: httpsUrl,
+    })
+    .optional(),
+});
+
 // ---------------------------------------------------------------- site.json
 
 const session = z
@@ -56,6 +75,12 @@ export const siteSchema = z.strictObject({
       toConfirm: z.boolean().optional(),
       eyebrow: nonEmpty,
       heading: nonEmpty,
+      /** The film's opening title card. */
+      intro: z.strictObject({ eyebrow: nonEmpty, sub: nonEmpty }),
+      /** The film's closing title card (its line under the name is the address). */
+      outro: z.strictObject({ eyebrow: nonEmpty }),
+      /** The line under each headline. */
+      tagline: nonEmpty,
     }),
     cookieBanner: z.strictObject({
       toConfirm: z.boolean().optional(),
@@ -108,6 +133,8 @@ export const siteSchema = z.strictObject({
         address: nonEmpty.nullable(),
         addressMissing: z.boolean().optional(),
         note: nonEmpty.nullable(),
+        /** A photo of the place (openly licensed, credited; D80). */
+        image: venueImage.optional(),
         walkingMinutes: z.strictObject({
           value: z.number().int().positive(),
           mock: z.boolean().optional(),
@@ -413,24 +440,6 @@ export const wineSchema = z.strictObject({
 
 // ---------------------------------------------------------------- venue.json
 
-const venueImage = z.strictObject({
-  mock: z.boolean(),
-  /** A real photo the client has not signed off yet (e.g. taken from the current site). */
-  toConfirm: z.boolean().optional(),
-  src: nonEmpty.nullable(),
-  alt: nonEmpty,
-  caption: nonEmpty.nullable(),
-  /** For openly licensed photos that require attribution (D63). */
-  credit: z
-    .strictObject({
-      author: nonEmpty,
-      license: nonEmpty,
-      licenseUrl: httpsUrl,
-      sourceUrl: httpsUrl,
-    })
-    .optional(),
-});
-
 // ---------------------------------------------------------------- press.json
 
 export const pressItemSchema = z.strictObject({
@@ -441,8 +450,10 @@ export const pressItemSchema = z.strictObject({
   headline: nonEmpty,
   /** File in the assets folder, e.g. "press/…png". */
   file: nonEmpty,
-  /** Where the headline sits on the page, as fractions of width and height. */
-  spot: z.tuple([z.number().gt(0).lt(1), z.number().gt(0).lt(1)]),
+  /** The Sotto Sotto part of the page, [x, y, width, height] as fractions of the page. */
+  box: z
+    .tuple([z.number().min(0), z.number().min(0), z.number().gt(0), z.number().gt(0)])
+    .refine(([x, y, w, h]) => x + w <= 1 && y + h <= 1, 'box must sit inside the page'),
   award: z.boolean(),
   /** false: shown on the table but never opened large (e.g. garbled restored text). */
   readable: z.boolean(),
@@ -460,22 +471,28 @@ export const venueSchema = z.strictObject({
   opening: z.strictObject({ image: venueImage }),
   descent: z.strictObject({ images: z.array(venueImage).min(1) }),
   setting: z.strictObject({
-    eyebrow: nonEmpty,
     heading: nonEmpty,
     lead: nonEmpty,
     fact: z.strictObject({ text: nonEmpty, needsVerification: z.boolean(), source: nonEmpty }),
     close: nonEmpty,
     image: venueImage,
   }),
+  /** The street seen as you go down the stairs (D80). */
+  stairs: z.strictObject({ image: venueImage }),
   story: z.strictObject({
     mock: z.boolean().optional(),
     heading: nonEmpty,
     text: nonEmpty,
     image: venueImage,
   }),
-  rooms: z.strictObject({ images: z.array(venueImage).min(1) }),
-  details: z.strictObject({ images: z.array(venueImage).min(1) }),
+  /** The vault's stone wall and the photos set into it (D77). */
+  wall: z.strictObject({
+    texture: venueImage,
+    images: z.array(venueImage.extend({ shape: z.enum(['arch', 'round', 'plaque']) })).min(1),
+  }),
   bookingPrompt: z.strictObject({ heading: nonEmpty, button: nonEmpty }),
+  /** Venue photos Home uses: beside the wine list and behind "Reserve your table" (D76). */
+  home: z.strictObject({ wine: venueImage, booking: venueImage }),
 });
 
 // ---------------------------------------------------------------- seo.json

@@ -34,8 +34,6 @@ describe('mock guard report', () => {
     const paths = flags.map((f) => `${f.file}:${f.path}`);
     expect(paths).toEqual(
       expect.arrayContaining([
-        'site.json:address',
-        'site.json:geo',
         'site.json:contact',
         'site.json:parking[2]',
         'venue.json:setting.fact',

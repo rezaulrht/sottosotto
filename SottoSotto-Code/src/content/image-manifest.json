@@ -1595,6 +1595,845 @@
       ]
     }
   },
+  "venue-client-2026-11-19-03-bar-shelves-wine-fridges": {
+    "source": "client-2026-11-19/03-bar-shelves-wine-fridges.jpg",
+    "sourceHash": "089d495fe1e2f7f367a4367fb315e5d19fef154eb1da7d0713e1020e4071d8db",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JbACdMy/BePb0DtvM4AFW1P0CUHh8lyJ4AOETthAe5qES9JRobGyrzsl2HANfybTu5B9C39USkUqkwT9vsyyrdBcAL1nZRFexZNXJWeF5Zv5PmzwUhkN2t64FVGNeZB7BwTveQJ7SNn8XUhk3HyxxPPumSx22OXb8pnCJY+jjzK8KZyahSXddzyI4Bet9a3SXkfOmSZEu7nMIUAocArE9oOWPd5EwHBOAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-03-bar-shelves-wine-fridges-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-04-bar-shakers": {
+    "source": "client-2026-11-19/04-bar-shakers.jpg",
+    "sourceHash": "66f27332f557e5ecbe82c9742e2e12b239024d63ff60ef280369777cdb8db50a",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAADwBACdASoYABIAPu1sq1EppaOiqAqpMB2JQBhQO7SNfVGOeJD27+c09CKkt8p3EwAA/U812bwPgdSS6p+Lg8laugDuVRmi6ZyNgPntKykiXqes1SZSfUsyaWcN4+urkDMsTbnRfLeM8oaH0nG0ULQNrDs3PwtqJnYWZMOzPh+BDnJcf+PeQJBAsOJrrCDc8zFnCtzuB7MBsOzdg9ERBL+Vzgqbl5t1Um3Qal4bQWoP1X2oBoC8kVNUPEgAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-04-bar-shakers-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-06-dining-tables-stone-wall": {
+    "source": "client-2026-11-19/06-dining-tables-stone-wall.jpg",
+    "sourceHash": "27132242616e30cda8f73ca954941e1880a0880be9a1b8bf34b63aa06d29f011",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABwBQCdASoYABIAPu1sqlEppaOiqAqpMB2JQBdkGxVIHvYGU83j/mIRz3yS8zJLG5bjPdegAP3AaotFBxNhcoksDrWwcKZyqkDf7QrNqJsNb80+1lJtQjPFdUxDBldiPBXCLoqtdesLqsrhY9ApBtl6y8P0nEBSi3gSVjkStVxzOgM3xCey5UolgnkiMYqu91sx+b2cwLY1r/hdeeZ9ON5tsC/hA3lqVMTeXPv+WU2l8pUj7VVDaDeHJzuzW3u7NbdUQPexdKFdXzoqJIESgAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-06-dining-tables-stone-wall-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-07-bar-onyx-bartender": {
+    "source": "client-2026-11-19/07-bar-onyx-bartender.jpg",
+    "sourceHash": "04c341739d74173d883518a1af5ad193c4936cd7318e4b46ac91fa76a3b37558",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAQBQCdASoYABIAPu1sqlGppaOiqAqpMB2JbACdMoPJ5BHqATpOfLzH0GN8vMEfStdQAP4zrqge32EgvUtEDVYZ/4vDf8xzsgjRnPSJAzB1q4ggRinETlIWOvhScKnVBGJ+Lb3Xz4ciRu0uGf0mLYAXMmvhN/Wij+7dY6NyhT6H9oqwnO60aHQZZc0J595ByOyEkPkTWuFD8b+VvGUQuQHTph1xe36NGjiBbWHd/HMTzUQC9lnBWuvEY33bctXrPazvdhNLN+Tyji+oAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-07-bar-onyx-bartender-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-08-vault-lattice-screens": {
+    "source": "client-2026-11-19/08-vault-lattice-screens.jpg",
+    "sourceHash": "073b323fdd1932b6bee2f06f0d053d4f621b86429676ad115f1dc7a4a9ad8b5b",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACwBACdASoYABIAPu1oqVAppaOiqA1RMB2JYwCw7BDYHXgwWDEQbInTjqj2M7YAAP7Pgn+d9ADC59PzeEIHiFlV917Eggh0jvITMdZz8tUa+kyisxLNgeamR4MKFGBEUZJbYhYNstEoBT9XsfvAZ4Gw1shoLpXvee4gZLG1ZwgjVj48FqXABVPXTDYC9iYHWXCWqUivvRXF9bP6oRewAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-08-vault-lattice-screens-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-09-wall-medallion": {
+    "source": "client-2026-11-19/09-wall-medallion.jpg",
+    "sourceHash": "1f39d62a8f9f94e9e438edf16aaf4589e7c2592277806ccbb6e7f3fb21593a99",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoYABIAPu1qqk8ppiOiMBgIATAdiWIAABSEYGCzZCzxROFCtEAAkW/EA7AO1wOrYFfJ/0TFxEC92K02//9fcsF3Ur5/navJs9YCrhEnrYzveP7iQrAkumLR7tfYs6DooIEuYFgEjGmf8CfFgAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-09-wall-medallion-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-10-table-set-close": {
+    "source": "client-2026-11-19/10-table-set-close.jpg",
+    "sourceHash": "0b8140ec3a9e02ca4623eed05875d03a54bf88d9be06783d716880ffe315b832",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADwBQCdASoYABIAPu1srFEppaQiqAqpMB2JZgCdMoCGAZ6yXlmELCIXzJPNBuOP13fPEOjxI5G6AAD+0eOvz0LWJCLv6vs+eKVMcUlH1sYhfiabji1YyALlLBy0Ky5pYy6C6hBvO56R+gkeSt1a7yv5nHQM0oMEaEBuynYOirCnWVgyrN/gDppaKROOZYDqRJXh2yq/XNBbfVvpPvFOGBc5OuPpgeN3Ey0T3M9HF50TGfFa54rKTHrEgxsWQU8XHzEMF+cWm27hC6LgWA6CIq5doGjJsODkGRJaBHwQ4N8cpMtDC6hJbIYBoLNJkCsAAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-10-table-set-close-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-12-wine-barrels-wall": {
+    "source": "client-2026-11-19/12-wine-barrels-wall.jpg",
+    "sourceHash": "78467a242a6adaf756e69a27a45ed50dcee6699b27011752105440cfbbeafd4d",
+    "width": 1200,
+    "height": 1600,
+    "lqip": "data:image/webp;base64,UklGRigBAABXRUJQVlA4IBwBAAAwBwCdASoYACAAPu1kqU2ppaQiMAgBMB2JYgC7Mxs0pSBtAFaCZc+Sx5bjkNR95fCHXxlOgOZJP48Vqv/MU+vTjwAA/tP8cxg6yl1Wu376Y7e6r8isC5v2KBvbktn9vXat7fjSTW4c+IxGBXEmLqWa9n0R5WDshCD4Yq2cWd3Y07ePe9G4Hxn60vSRfkHCYMadEaHbdcPk123Ll4ogoqmLCDz5C8ZwNBVqltdMYfIy1XDMMML8PVstCEQWbToPSXNsSg7sb6IvJOi2dMPNBlPmLJvDmhN+6PFWMKv3AR7bXRw6SzT5vgtveP/hitRCCn7Zx7oNNJnD20HHEUdXZosT22Tk1UOJsbAU513ugvQsCIOPfk5ZbhFOHK3gAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-1200.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-12-wine-barrels-wall-1200.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-16-frieze-warm": {
+    "source": "client-2026-11-19/16-frieze-warm.jpg",
+    "sourceHash": "e5077659ebb2fe16b7e5dd0dc4cd6ac361f19c7812a6dec106782e3a7ee5d00c",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwBACdASoYABIAPu1irVAppSQisBgIATAdiUAW2QI9NQhC4D3qOwBGLU2JTvVHDAAA/Fd5pr/6qnFT2GcdCUZJCn88+UrgYdz7qenjsj7zVAsTNvWb9JGOF8zU2rAqf1KwMqvNSwiP7xXKv0kO5UVAAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-16-frieze-warm-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-21-bottles-lit-a": {
+    "source": "client-2026-11-19/21-bottles-lit-a.jpg",
+    "sourceHash": "408e40c40b58b71e2481e2474c75587dffa06309578fd648eeef05db3061b5e6",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBACdASoYABIAPu1krE+ppSQiMBgIATAdiWIAABMtlmNa+I5yQhURAAD+qFwIP3SeWPjo8xJoUqynO9AcfWi5L405sedDBg4HI6v9J4cVlp36tpZLEWCfwDjii8kftaG3xwoVNGGl/ugJMVRCpGGYw8M5smJ0AejJv5msWKGAAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-21-bottles-lit-a-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-22-booth-candles-a": {
+    "source": "client-2026-11-19/22-booth-candles-a.jpg",
+    "sourceHash": "ddd8ceec9d41c56037cddcd7a2564efd6372c75c3491934a8269ea5ccd40c36b",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBQCdASoYABIAPu1oqU+ppaOiKA1RMB2JYwCdABE8ZgVcLn3MBO8SqtnbrFtd/aXW8roAAP7d+g9Ej8BglxYcNooyd8nk2EY0ozJeV+Rx33wk24V4oTI80M72YLCCuTy+Z+TryPsIgpMvqixRR9Lby2x49qs2zeTmVrmk9yowzebLKhmNlQv+wRsPP4evnjra1Bf1W+Uf5os+ntvUqeOVXXEOAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-22-booth-candles-a-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-25-vault-long-tables": {
+    "source": "client-2026-11-19/25-vault-long-tables.jpg",
+    "sourceHash": "3e3df5f600a6da626e576371375282e78b99548a3c251223a52dfa7fdda4c9dd",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACwBACdASoYABIAPu1urlIppiQiqAgBMB2JQAh/5VgAXA+xBvsnVvKHMZHtIkAAAPZD7C6mHFhJQf2qen8K2k5a/VVHbt0YtdX6zaefizQsRX/jf4zbmllAGqQ+QmPFm6/Kk2B+QPmHwuH6Gi9U/OwoNaJPwc0ktcEPavNDRLdfCBc6PEDohv8mTGP+x4eSg/QLLxVVWdPsgX6+b3fJdbDWU12Jz8aIl0m+O1TMByd2gSy2sAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-25-vault-long-tables-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-27-relief-two-figures": {
+    "source": "client-2026-11-19/27-relief-two-figures.jpg",
+    "sourceHash": "41c45bd187d4afefd2746a5fadbebe5494640ea70855a2202277dffae0f61abf",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACwBACdASoYABIAPu1sq1EppiOiqAqpMB2JYwCdMoBOAbVIBi7KBJkuMZnslioAAMrQBsPRk1GyVZ/WgBzvy/DJoYPlsU4Kyrcgt8AkakWHZu521Cyig/bsVB3b+WoDlnVeW0peEVU+d6ykjwaSsJ6rAyDqrf1AiGrUTOQvyncVu/XL9M2vcTwW/wOOQ+CNTXaF1Rt92jkTykcYNg6o3j6xmN8ncAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-27-relief-two-figures-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-28-table-down-the-vault": {
+    "source": "client-2026-11-19/28-table-down-the-vault.jpg",
+    "sourceHash": "141d9707da4298683512e88d828ca11bc54ba42e7ed47ffe1a04ee50c75e2497",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAQBgCdASoYABIAPu1sqlEppaOiqAqpMB2JQBdl9C4/lWBFEBQOxQvUaIYovPK7l7v9nvb3jUH7mAAA+GCkT/9Xmk9eee9r4TY6SghgZcdjG6C6ah9HTyY2o6twjJM7FRNiGh/sTzDfd9ij2R9v+9b9JmYQEN9IlUyiq981Cnqil2lG+Wo3vY2IPYfFiLDyjNOroN3c+j4i4QRu5weHrVQ8+CWZ6oGani94uOQnwfN0xg5fOltpgR7g/t6yi5XYyxYrEyONxh+ZOeQCJGbT+cykKIG7fPFxyAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-28-table-down-the-vault-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-29-tables-stone-wall-b": {
+    "source": "client-2026-11-19/29-tables-stone-wall-b.jpg",
+    "sourceHash": "981b78d5c15ac79314c05f4743490d78a91e0ddd1b94d6bc3dfd7391541af5b2",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAABQBQCdASoYABIAPu1wsFIppiSiqAgBMB2JQBYj6x2O6TQRKfuvOlxX8HdjApWf1hqjNDAA/cO8BYsGBZcnPjYxOQlUaSgXuVOj8dIEv6NaIwtFv3lJ4+wGLNV89zFTtPpWHs6hLEepMEOi1Sz88YORqeWqzJ0FnNv1an/wOe1BWbCqhqELj7aUm9mXD/sR2yce8j+hlbv5CuPUQ1v2SogJs7zla4ulmb5/VgRz2f4Fl+eW/MFalmyQ9Qc6BjwXguxnSklmVsiAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-29-tables-stone-wall-b-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-client-2026-11-19-32-wall-texture-9": {
+    "source": "client-2026-11-19/32-wall-texture-9.jpg",
+    "sourceHash": "84585690609f2be5463e677fb09f63b1fc35445067fd18cb08a0b6b6e523eb18",
+    "width": 1600,
+    "height": 1200,
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQBACdASoYABIAPu1cqU4ppKOiMBgMATAdiWUAzcAOxjH4higQZRIb3QyRMIkzgAD9mkKR4extMcY/HGvikmg5gh+sW9mnVbDp2GEwTqdj34LKTn6hBe3oJcicC3zWV5H5WGdMv6wGRs42rttxmv5FQAAAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-1200.avif"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-1600.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-1200.webp"
+        },
+        {
+          "width": 1600,
+          "src": "/img/venue/venue-client-2026-11-19-32-wall-texture-9-1600.webp"
+        }
+      ]
+    }
+  },
+  "venue-commons-bath-cricket-club-2026": {
+    "source": "commons/Bath Cricket Club, 2026.jpg",
+    "sourceHash": "80b97c593a44b7e02d7424c8ac4e742be2011f0dca23544c8bd1f41ac73be5c4",
+    "width": 1024,
+    "height": 683,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JagC7MoADX0Iu6orU6f+dVgQAAP69u2N5tZ/2a1s1kkgwDfKQHwwOzhGsWlal9GbSLttey6og7uS8S0uZL+yCqk4euU7FL0RK6T8oscFhAyda6YuSe//29UzVM1w0uGK80IAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-800.avif"
+        },
+        {
+          "width": 1024,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-1024.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-800.webp"
+        },
+        {
+          "width": 1024,
+          "src": "/img/venue/venue-commons-bath-cricket-club-2026-1024.webp"
+        }
+      ]
+    }
+  },
+  "venue-commons-bath-manvers-street-night": {
+    "source": "commons/Bath, Manvers Street - night.jpg",
+    "sourceHash": "2e30cba21273013912300711a6305e22edc59357969678dd5134b041fe8be45a",
+    "width": 2400,
+    "height": 1600,
+    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdOUE4AAwkJNjT6zYVpkPuPwAA/uUdnpOiK2fhBJFOAQLoTFEONSHyjZrG86FskCxzQoXB9WQY30X36AHuiEcG0z8q/OFjYg9QLO3xkN5YTIOT4kik7i/2JdZT6B/c0SjHvQfm7ucl9u9/FQeHZ3z4C42CA5fH5/StQgAAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-1200.avif"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-2400.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-1200.webp"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-manvers-street-night-2400.webp"
+        }
+      ]
+    }
+  },
+  "venue-commons-bath-north-parade-road-night": {
+    "source": "commons/Bath, North Parade Road - night.jpg",
+    "sourceHash": "bbaabcd36b7a2f0929e82b5faa501f904f7ba96eeead0c10ddbfd8ada0704408",
+    "width": 2400,
+    "height": 1600,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBYdhFbLIjRoze8sxAAA/u8kJ/2cD4Qqi8AP5VigWnJZSkDIpp4cJk71DFd8IpFBLsbu4BaCOd3sDCz27rrbpTi4ghWUp9h7aZtM8o2x8+6eOkE/UNMX0LAkFfl/3oUgnTzMaaYmvLQFA3RZOz8m8RmAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-480.avif"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-1200.avif"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-2400.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-480.webp"
+        },
+        {
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-800.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-1200.webp"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-north-parade-road-night-2400.webp"
+        }
+      ]
+    }
+  },
   "venue-commons-bath-somerset-01": {
     "source": "commons/Bath, Somerset - 01.jpg",
     "sourceHash": "3b36d90a1bacd0392627c1e3b927d1fa9679658e1192b3248b452802c5890f32",
@@ -1640,379 +2479,47 @@
       ]
     }
   },
-  "venue-old-site-photos-new-11": {
-    "source": "old-site/photos/new-11.jpg",
-    "sourceHash": "b9fee342c364b627ca7934ee51cf2622a8f83c9777d1a05275c4784f9ed0aa2e",
-    "width": 501,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAACQBQCdASoYABEAPu1srFCppaQiqAqpMB2JYgCxHuOA/+UrhMvaw51SsTgOuAYyQp/tMjKAAAD+unzQ+B/6ElfhJr90nYnVysfR/QwcSDQPJ2gtqXhNUP/m+C47zzVwlnBkspodPpTmOuQbe5ojIw6vVrMLMh+Ov3zlFyqZtkiTGiugnk7fyLVSNQP4tYpsnLi1xu6/Xz5wxKhrAmUy7P6zvBl0GEt4BBzXwWABRq5t4nU8Y3ufLG2D4lPfB6kTF8EToMs1Z3XVnFqjbvAaiNks8v8CX2C4AAA=",
+  "venue-commons-bath-sports-and-leisure-centre-2015": {
+    "source": "commons/Bath Sports and Leisure Centre, 2015.jpg",
+    "sourceHash": "11192e3660ae5adf7c2a6ec918fa57bb9a40c378c73d338841f7f013a975820c",
+    "width": 2400,
+    "height": 1596,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JbACdEf/i2InNZPTsgujzauHOQAD+xYNAkGNY//zdAQK9VSHGravS/pb6nHn6TWLH+nOGR+fEzxtrN227DycCNwl7LjfDclo5B7y2q1yph26eQq8Qf5zIfwQoTQvWbEV/vjEk546Fag2w2/Wci/KEG0SVDjs2mBqvvdi4J1nYcIYXr6r5VDyvreuMZx9WcAAAAA==",
     "sources": {
       "avif": [
         {
           "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-11-480.avif"
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-480.avif"
         },
         {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-11-501.avif"
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-800.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-1200.avif"
+        },
+        {
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-2400.avif"
         }
       ],
       "webp": [
         {
           "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-11-480.webp"
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-480.webp"
         },
         {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-11-501.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-12": {
-    "source": "old-site/photos/new-12.jpg",
-    "sourceHash": "a02f969019c13089b63f5c0a612357550062b9c47d0e46036b14284063deb26c",
-    "width": 501,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABwBQCdASoYABEAPu1ur1IppiQiqAgBMB2JZACdINJ90AQw1CrEj/t57R7fzBzTKhyrsqXQAP7KmEq5UlXpkE3bydhCLqblkJKJFgydFjC7u3uqu6C4IfK9uYSlnHFRnj+FFgTlr1/tUpwtD5dLuFLbcUJu9MmuUfGqAJcxXBsXK9wyeA9GDgOz9DJ0Eg0v8c8GG/J4DpxlgC8ITHV2oXNhW+F6ZIA9Xwxf9dUsxxeJUFh7eg9Az0zJ2g30mQujaBtbKfqyVQ0ILFwAAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-12-480.avif"
+          "width": 800,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-800.webp"
         },
         {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-12-501.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-12-480.webp"
+          "width": 1200,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-1200.webp"
         },
         {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-12-501.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-14": {
-    "source": "old-site/photos/new-14.jpg",
-    "sourceHash": "21ca5a8f90380d608de542d4756229dd37f32cfbfd6c8aa95aa1103e76d4f0dd",
-    "width": 501,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAABwBgCdASoYABEAPu1qrVCppaQiqAqpMB2JZACxG9ZDg7jsWXuSOA4wj7GYxTh7wCKVdznnqERZzpc2b0AA/e9PF7BMGb56iHeTB0U46qM8Vqfqdxyh0U0vxUwkmsxt8BDqoYaCs3lvLto+E8YUfSd3VTeCq1t//QGoMQKdK2zkfbp102nmprRFhTSeqjANGauUvUzfgnEmTRDCxTzcKqDXmMRtQ2xuGVTrhYSo8ikIJXGRCj/UIz9M81QEZsEqPzg/mR68xubQ/iq4QZngQBVs/pAf7nXNtRS+sWoMldglMMZ27dJRa6aYAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-14-480.avif"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-14-501.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-14-480.webp"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-14-501.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-15": {
-    "source": "old-site/photos/new-15.jpg",
-    "sourceHash": "825f8a45e981d35e2de55b5d7a56eaac9fd40523831df897a9293de290ddb75e",
-    "width": 501,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAwBQCdASoYABEAPu1sqlEppiOiqAqpMB2JZQC4MYsscyru+YPF9UsrCLRnd0tmgCaOsAD+qhLQ54pQp+KZ21lM2rSqUiU3dBJDhd23KInIM1vGg8rKUxC9Q7aQ4UVe+/KGN9yg6fuS9TA0FfmaNnkor4ucIiamMRgxBr7sz3hXwZXTfi2wMBnr/BVVn8d+ufpesJutzpaAUF+m3Ye7+JK6WWImbDbahk0QJ/b/9mlW36WChZSNOvLziyZcTs/djsZ+B9c6F/xhEAAA",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-15-480.avif"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-15-501.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-15-480.webp"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-15-501.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-16": {
-    "source": "old-site/photos/new-16.jpg",
-    "sourceHash": "33f18fa5870d17078a3b86e954cedc1051676c375d4c335bc6b8384d7b1cffa9",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAABwBQCdASoYABEAPu1sq1EppaOiqAqpMB2JQBOl6glQHeoFlTg0ZovLTdgv0lkG/TdkPQcAAPA8Yk/qy6WVAl9cwefXGh73Xj2BFFH810hvZOrjCxsqlotoGgpve0lEztN1cm4rprt48ypaTQkUyrzDOsL8GBzFlKddC7lbUuTw5R/NfiO11RddBu0qaZS8+6rN68Xv3ZaOweajYLJNXpqgzsAod/BmDLcjSGPgY4brkriDgBep/GAuscsIauGzuGeHXOuAglhazp4eV964SxpN2CAAAA==",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-16-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-16-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-16-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-16-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-17": {
-    "source": "old-site/photos/new-17.jpg",
-    "sourceHash": "42771faeebe3ab881ee726b78937b4455374ecc9e393327bc852f6a80df59e86",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBACdASoYABEAPu1qrFEppaQqqAqpUB2JZQDA4agSAITfkzNEZ89bNrkLYgAA/u9kKXsq1hIC8pXm2H1mTpQon4B1/XXNecZPABmDZevzh6Ov15PVnrTwd3aTM85PElxb6gbRo5Zoq92VLQPcDGZht8xnI919CHrGx15nIRFAwI2OfBmveQx2gE78J8Qke/LonFLA/eYHktfacflB6fbMSOUSAYIXSGQP6cdsNZK/lz+u9jtcxWnIVPvyEMAAAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-17-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-17-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-17-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-17-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-18": {
-    "source": "old-site/photos/new-18.jpg",
-    "sourceHash": "c67a7789c88ba457a4a828483e117ef2b2ed74b6c524666a246cf3b4e64908ed",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAwBgCdASoYABEAPu1sq1EppaOiqAqpMB2JZgCdMuz7T2LyqVYEUAFCMUGnUjQoIgGrBB/RBSRxAndgAMunAguulzwImxlUYAZc72C/BxQhH17gLrSLswIs35G2J/R/TYdozhoIibEk5JCQDIplgIW7XQKzWPvH0mJLZ9WNaCafKCv6X7BS7xEPLtLdA9sNqzgG3xMq7eGfHN1qoNUIS2t41WKeeOBGKynU4N6O4aqM5NBw6cwNkM8ALBbjS0EdoIaGgjupSyS1VpQ3a2HGQwz8v8PRPpsQQAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-18-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-18-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-18-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-18-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-2": {
-    "source": "old-site/photos/new-2.jpg",
-    "sourceHash": "9938eea50771d66a859de89774d91b0b2f506ae6b34aa72314825082424e06c3",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwBACdASoYABEAPu1sqk8ppiOiMBgIATAdiWMAuwAQuOjqAoW5dLNTfNAA/tq3mSeR3lcmQ8w8W/oKQQxYLSeptcc5hBeTaLxlUiE3YMxSjipWt2XkgbBjCZ3eYEaHHdweS19AdSr4iH7hNFrjwAAA",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-2-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-2-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-2-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-2-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-4": {
-    "source": "old-site/photos/new-4.jpg",
-    "sourceHash": "fe58e31024e780635ea6a2228da37c9aa549c21588240da4e9d145b5723036e0",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwBACdASoYABEAPu1kqk+ppSOiMBgIATAdiWMAxxUgAYAVaSYkIUuRwKK3198AAP7wyo0yqu3mStnrU2lscnqHjYXhGGSr1LffRqmFrKRiOFS62i65gReHGu+vydHfRRBLVMd2oNTnSb/npdddn7ZCJ0nH7vwdLTorf3qV6MnQq2JCJ2R5mOGgAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-4-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-4-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-4-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-4-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-6": {
-    "source": "old-site/photos/new-6.jpg",
-    "sourceHash": "b995b1e841aeff36ec551dd8fa2ef68d554c59c5eee7245acbec452b7deaf445",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBQCdASoYABEAPu1sq1EppaOiqAqpMB2JYgCdEf/jeBb2hVQb07ssU6VSsKo/tx9Fi/3AAP7AfUT+XD2bGQUBgHQiiniuQKFKggqbQ8qnLXq6hS3/rd3n0o4C7xQNxtGVEvSI/5zAPH+9ZeI4q9NhB3oxT790tEuW3pwbk/87lewsdHP1+kvj76PqGqM74H5WlVAerpc3pqTX9QSSwnPevZB3USkcOMQXyixMTbSl8wMtZnGgFN/4AAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-6-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-6-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-6-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-6-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-8": {
-    "source": "old-site/photos/new-8.jpg",
-    "sourceHash": "1f8d8579cf83cde30072d75f7337a48720471aed4a956a2f2249fd88a7c40476",
-    "width": 501,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAAAwBgCdASoYABEAPu1qrlCppaQiqAqpMB2JbACdMoMpBsA/VcYEzUGKcKN0z6K3DsxaCmajHGhdsfsAAP1Tl1oQ07OiYzvoRjuDxv3hEb7SjuzJhToo3sQ6vcN7BkKpKOhSU/Al39XHGYEEWHLmNRtDrCBVqA/YDxvRCoVnyOeWlJ8MJqp+pAEc2tDBg2+HUf45vT4CL5uO4M5UidKYgwoNEiyL+2blEXoONfUdVeFs3PawUgB3f1SPHPN48uI82j9AKXsn0YSzhsEjbApGLwH7WslV/0Xv0GQncKEoYKnfBD3/A9eoQw2CvUkiDLVVOhFhZQEcC3/yI1oAAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-8-480.avif"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-8-501.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-8-480.webp"
-        },
-        {
-          "width": 501,
-          "src": "/img/venue/venue-old-site-photos-new-8-501.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-new-9": {
-    "source": "old-site/photos/new-9.jpg",
-    "sourceHash": "430ce2c9cdc20971a5d17a1f92cbdcc559ad8dadf384b33f728dd41d07f5f279",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoYABEAPu1qq1EppaOiqAqpMB2JYwCw7Aym5B/gvW9A80+Y0/qgAP7CdDKBYcsogJiSw+u393EWgwXLwPLcMAWttPlEQBNu2lws+5Bw8ShJCFTrzpctHVLTqDs/OjEbGi2Sgwv9aNx9ggLJeGs/Q860zJOmA1++J80ZMPXp6ZgGh0BPWx08fbikQ9vG1EY/DhRwOjEhYoN1NgAAAAA=",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-9-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-9-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-new-9-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-new-9-500.webp"
-        }
-      ]
-    }
-  },
-  "venue-old-site-photos-sotto-sotto-10": {
-    "source": "old-site/photos/sotto_sotto-10.jpg",
-    "sourceHash": "fc3656adb470373687db7e34638185571972d5350712ba4ef04128fa41e047e3",
-    "width": 500,
-    "height": 350,
-    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQBACdASoYABEAPu1sqlGppaOiqAqpMB2JZQDLLArI1b2B14z5VBESXCmgAPfdR8yGLqy4wZUN3HtVVkZhWbJdqu/5LoKINf40y4bgUqTM/q/qHtE4xCitks/+e5jrn9KJIYMHcPqjse4Pz/joHQz/ggSFWcanjyL6rvs1BrvRiCcDvcxPz/mbGxDzScK7+6d/DYlknQAAAA==",
-    "sources": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-sotto-sotto-10-480.avif"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-sotto-sotto-10-500.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/img/venue/venue-old-site-photos-sotto-sotto-10-480.webp"
-        },
-        {
-          "width": 500,
-          "src": "/img/venue/venue-old-site-photos-sotto-sotto-10-500.webp"
+          "width": 2400,
+          "src": "/img/venue/venue-commons-bath-sports-and-leisure-centre-2015-2400.webp"
         }
       ]
     }

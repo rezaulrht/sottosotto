@@ -1,0 +1,178 @@
+/* Find Us "Getting here": the walks drawn on the map (D81). */
+
+.walks {
+  display: grid;
+  gap: var(--space-7);
+}
+@media (min-width: 64em) {
+  .walks {
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-9);
+    align-items: center;
+  }
+}
+
+.figure {
+  margin: 0;
+}
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  background: #141311;
+}
+.credit {
+  margin-top: var(--space-2);
+  font-size: var(--step-small);
+  color: var(--color-text-muted);
+}
+.credit a {
+  color: inherit;
+}
+
+.labels text {
+  fill: #8c877e;
+  font-family: var(--font-label);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+/* ---- The routes */
+.route {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: calc(3px * var(--u));
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition:
+    opacity 260ms var(--ease-out),
+    stroke-width 260ms var(--ease-out);
+}
+.start {
+  fill: var(--ink-900);
+  stroke: var(--color-accent);
+  stroke-width: calc(2px * var(--u));
+}
+.from {
+  fill: var(--bone-100);
+  font-family: var(--font-label);
+  font-size: calc(12px * var(--u));
+  letter-spacing: 0.06em;
+  paint-order: stroke;
+  stroke: #141311;
+  stroke-width: calc(4px * var(--u));
+}
+.walk {
+  transition: opacity 260ms var(--ease-out);
+}
+
+/* One way lit: its route thickens, the others step back. */
+.walks[data-active] .walk {
+  opacity: 0.25;
+}
+.walks[data-active='train'] .walk[data-mode='train'],
+.walks[data-active='bus'] .walk[data-mode='bus'],
+.walks[data-active='foot'] .walk[data-mode='foot'] {
+  opacity: 1;
+}
+.walks[data-active='train'] .walk[data-mode='train'] .route,
+.walks[data-active='bus'] .walk[data-mode='bus'] .route,
+.walks[data-active='foot'] .walk[data-mode='foot'] .route {
+  stroke-width: calc(5px * var(--u));
+}
+
+.pin circle {
+  fill: var(--color-accent);
+  stroke: var(--ink-900);
+  stroke-width: 2;
+}
+.pin text {
+  fill: var(--bone-100);
+  font-family: var(--font-display);
+  paint-order: stroke;
+  stroke: #141311;
+  stroke-width: 4;
+}
+
+/* First sight: the routes draw from their start to the door, one after another. */
+.walks[data-rise-wait] .route {
+  stroke-dashoffset: 1;
+}
+.walks[data-rising] .route {
+  transition:
+    stroke-dashoffset 1400ms var(--ease-in-out),
+    opacity 260ms var(--ease-out),
+    stroke-width 260ms var(--ease-out);
+  transition-delay: calc(400ms + var(--n) * 450ms), 0ms, 0ms;
+}
+
+/* ---- The ways */
+.rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--color-border);
+}
+.row {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+.way {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.wayName {
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--color-accent-soft);
+  transition: color 200ms var(--ease-out);
+}
+.way[aria-pressed='true'] .wayName,
+.walks[data-active='train'] .row[data-mode='train'] .wayName,
+.walks[data-active='bus'] .row[data-mode='bus'] .wayName,
+.walks[data-active='foot'] .row[data-mode='foot'] .wayName {
+  color: var(--color-accent);
+}
+.minutes {
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--bone-100);
+  white-space: nowrap;
+}
+.minutes .label {
+  color: var(--color-text-muted);
+}
+.text {
+  max-width: 44ch;
+  color: var(--bone-300);
+}
+.way:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route,
+  .walk,
+  .wayName {
+    transition: none;
+  }
+}

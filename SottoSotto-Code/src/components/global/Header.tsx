@@ -11,7 +11,8 @@ const HEADER_ID = 'site-header';
 /**
  * Nav left, name centred, Book right (PAGES.md, Global). Transparent at the top of the
  * page; solid and smaller once scrolled (`data-scrolled`, set by HeaderScroll).
- * The logo is a text wordmark until the client supplies one (Q9).
+ * The logo is the one on the current website (300 × 115 PNG, D80) until the client sends a
+ * vector original (Q9). It eases smaller with the header, by transform.
  */
 export function Header() {
   return (
@@ -28,7 +29,14 @@ export function Header() {
             </div>
           </div>
           <Link href="/" className={styles.wordmark} aria-label={`${site.name}, home`}>
-            {site.name}
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export, tiny PNG */}
+            <img
+              src="/brand/sotto-sotto-logo.png"
+              alt=""
+              width={300}
+              height={115}
+              className={styles.logo}
+            />
           </Link>
           <div className={styles.end}>
             <BookButton />

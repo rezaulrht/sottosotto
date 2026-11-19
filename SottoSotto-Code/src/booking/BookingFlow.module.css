@@ -87,6 +87,21 @@
   display: grid;
   gap: var(--space-4);
 }
+/* A step change: the new panel slides in from the side you are heading (D79). */
+@media (prefers-reduced-motion: no-preference) {
+  .flow[data-dir] > .panel {
+    animation: step-in 280ms var(--ease-out);
+  }
+  .flow[data-dir='back'] > .panel {
+    --step-from: -1.25rem;
+  }
+}
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--step-from, 1.25rem));
+  }
+}
 .stepTitle {
   font-size: var(--step-h3);
 }

@@ -12,9 +12,12 @@ export function Footer() {
   const { address, contact, copy, hours, social } = site;
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.grid}`}>
+      <div className={`container ${styles.grid}`} data-rise="">
         <div className={styles.lead}>
-          <p className={styles.name}>{site.name}</p>
+          <p className={styles.name}>
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export, tiny PNG */}
+            <img src="/brand/sotto-sotto-logo.png" alt={site.name} width={300} height={115} />
+          </p>
           <p className={styles.philosophy}>{copy.philosophyShort}</p>
           <p className={styles.note}>{copy.bookingNote}</p>
         </div>

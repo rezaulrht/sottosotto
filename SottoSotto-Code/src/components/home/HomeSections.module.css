@@ -124,144 +124,238 @@
   }
 }
 
-/* ---- 4. Menu: one line of course tags */
-.menuTags {
+/* ---- 4. Menu: a strip of courses. Tall photo panels; on a laptop the one under the
+   pointer or focus widens and lists its first dishes (the first is open until then). On a
+   phone, a swipe row with the dishes shown. */
+.coursesHead {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: var(--space-4) var(--space-6);
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  margin-bottom: var(--space-6);
 }
-.menuTags .label {
+.coursesHead .heading {
   margin: 0;
 }
-.tags {
+.courses {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-3);
-  margin: 0;
-  padding: 0;
+  gap: var(--space-3);
+  margin-block: 0;
   list-style: none;
 }
-.tags a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  font-family: var(--font-display);
-  font-size: var(--step-lead);
-  color: var(--bone-100);
+.course {
+  position: relative;
+  min-width: 0;
+}
+.courseLink {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-1);
+  color: var(--color-text);
   text-decoration: none;
-  transition:
-    border-color var(--dur-hover) var(--ease-out),
-    color var(--dur-hover) var(--ease-out);
+  background: var(--color-surface);
 }
-.tags a:hover,
-.tags a:focus-visible {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+.coursePhoto {
+  position: absolute;
+  inset: 0;
 }
+.coursePhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 900ms var(--ease-out);
+}
+/* The words sit on a dark fall-off at the foot of the photo. */
+.courseLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(12 11 10 / 0.92),
+    rgb(12 11 10 / 0.35) 45%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+.courseText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-5);
+}
+.courseIt {
+  color: var(--color-accent-soft);
+}
+.courseName {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step-h3);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.courseDishes {
+  display: grid;
+  gap: 0.15em;
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--step-small);
+}
+.courseDishes .label {
+  margin-top: var(--space-2);
+  color: var(--color-text-dim);
+}
+.courseLink:focus-visible {
+  outline: 2px solid var(--color-accent-soft);
+  outline-offset: 3px;
+}
+
+/* Laptops: the strip; one panel open at a time. */
+@media (min-width: 48em) {
+  .courses {
+    height: clamp(26rem, 62vh, 36rem);
+  }
+  .course {
+    flex: 1 1 0;
+    transition: flex-grow 700ms var(--ease-out);
+  }
+  /* Open: the hovered or focused panel, or the first until one is. */
+  .course:hover,
+  .course:focus-within,
+  .courses:not(:hover):not(:focus-within) .course:first-child {
+    flex-grow: 1.8;
+  }
+  .courseDishes {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .courseDishes > * {
+    opacity: 0;
+    transform: translateY(0.5em);
+    transition:
+      opacity 400ms var(--ease-out),
+      transform 400ms var(--ease-out);
+  }
+  .course:hover .courseDishes,
+  .course:focus-within .courseDishes,
+  .courses:not(:hover):not(:focus-within) .course:first-child .courseDishes {
+    max-height: 12em;
+  }
+  .course:hover .courseDishes > *,
+  .course:focus-within .courseDishes > *,
+  .courses:not(:hover):not(:focus-within) .course:first-child .courseDishes > * {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(180ms + var(--i) * 50ms);
+  }
+  .courseDishes > * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .courseText {
+    padding: var(--space-4);
+  }
+}
+@media (min-width: 48em) and (hover: hover) and (pointer: fine) {
+  .course:hover .coursePhoto img {
+    transform: scale(1.06);
+  }
+}
+
+/* Phones: a swipe row. */
+@media (max-width: 47.99em) {
+  .courses {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--margin);
+    scrollbar-width: none;
+    padding-bottom: var(--space-2);
+  }
+  .courses::-webkit-scrollbar {
+    display: none;
+  }
+  .course {
+    flex: 0 0 78%;
+    height: min(30rem, 72svh);
+    scroll-snap-align: start;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .tags a {
+  .course,
+  .coursePhoto img,
+  .courseDishes > * {
     transition: none;
   }
 }
 
-/* ---- 5. Wine strip: slow continuous line of names */
-.wine {
-  padding-block: var(--space-9);
-  border-block: 1px solid var(--color-border);
+/* ---- 5. Wine list: a rack of labels in front of the barrel wall (D77) */
+.cellar {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--section-pad);
+  border-top: 1px solid var(--color-border);
   overflow: hidden;
 }
-.wineHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
+/* The barrel wall, dim, on the right; it fades out towards the card and the rack. */
+.cellarPhoto {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: min(100%, 46rem);
+  mask-image:
+    linear-gradient(to right, transparent, #000 35%),
+    linear-gradient(to bottom, #000 50%, transparent 85%);
+  mask-composite: intersect;
 }
-.wineToggle {
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 var(--space-3);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background: none;
-  font-family: var(--font-label);
-  font-size: var(--step-label);
-  letter-spacing: var(--tracking-label);
-  text-transform: lowercase;
-  color: var(--bone-300);
+.cellarPhoto picture,
+.cellarPhoto img {
+  width: 100%;
+  height: 100%;
 }
-.wineToggle:hover {
-  border-color: var(--color-accent);
+.cellarPhoto img {
+  object-fit: cover;
+  object-position: 50% 12%;
+  filter: brightness(0.7) saturate(0.9);
 }
-.marquee {
-  overflow: hidden;
+.cellarInner {
+  display: grid;
+  gap: var(--space-6);
 }
-.marqueeInner {
-  display: flex;
-  width: max-content;
+.cellarInner .heading {
+  margin-bottom: 0;
 }
-.track {
-  display: flex;
-  flex-shrink: 0;
-  gap: var(--space-7);
-  padding: 0 var(--space-7) 0 0;
-  margin: 0;
-  list-style: none;
-  font-family: var(--font-display);
-  font-size: var(--step-h2);
-  line-height: 1.2;
-  white-space: nowrap;
-  color: var(--bone-100);
+.cellarInner .textLink {
+  justify-self: start;
 }
-.track li::after {
-  content: '·';
-  margin-left: var(--space-7);
-  color: var(--color-accent);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .marqueeInner {
-    animation: marquee 140s linear infinite;
-  }
-  .wine:is(:hover, :focus-within, [data-paused]) .marqueeInner {
-    animation-play-state: paused;
-  }
-}
-@keyframes marquee {
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-/* Reduced motion: one static, wrapped list. */
-@media (prefers-reduced-motion: reduce) {
-  .marqueeInner {
-    width: auto;
-    padding-inline: var(--margin);
-  }
-  .track {
-    flex-wrap: wrap;
-    gap: var(--space-3) var(--space-6);
-    font-size: var(--step-h3);
-    white-space: normal;
-  }
-  .track[aria-hidden] {
-    display: none;
-  }
-  .wineToggle {
-    display: none;
+@media (max-width: 47.99em) {
+  .cellarPhoto {
+    inset: auto 0 0 0;
+    width: 100%;
+    height: 32rem;
+    mask-image: linear-gradient(to bottom, transparent, #000 40%, #000 70%, transparent);
   }
 }
 
-/* ---- 6. Booking band: full-width image under a dark overlay */
+/* ---- 6. Booking band: a set table, and a card framed like a place card */
 .band {
   position: relative;
   isolation: isolate;
   display: grid;
   align-items: end;
-  min-height: 80svh;
+  min-height: 88svh;
   padding-block: var(--space-10) var(--space-9);
   overflow: hidden;
 }
@@ -269,31 +363,60 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-}
-.bandMedia picture,
-.bandMedia img {
-  width: 100%;
-  height: 100%;
+  /* The photo comes up out of the page at its top edge (D82); its foot runs into the footer. */
+  mask-image: linear-gradient(to bottom, transparent, #000 28%);
 }
 .bandMedia img {
-  object-fit: cover;
+  object-position: 50% 60%;
 }
+/* Darkest where the card sits and at the foot, where the photo runs into the footer. */
 .bandMedia::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgb(18 17 16 / 0.85), rgb(18 17 16 / 0.35) 60%), rgb(18 17 16 / 0.35);
+    linear-gradient(to top, var(--color-surface) 0%, rgb(27 26 24 / 0) 30%),
+    linear-gradient(to right, rgb(18 17 16 / 0.8), rgb(18 17 16 / 0.15) 65%);
 }
-.bandText {
+.bandCard {
+  position: relative;
   display: grid;
   justify-items: start;
-  gap: var(--space-5);
+  gap: var(--space-4);
+  max-width: 30rem;
+  padding: var(--space-7) var(--space-6);
+  background: rgb(18 17 16 / 0.9);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
 }
-.bandText .heading {
-  margin-bottom: 0;
+/* A second, inner rule: the double frame of a printed place card. */
+.bandCard::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
+  pointer-events: none;
 }
-
-.wineToggle[hidden] {
-  display: none;
+.bandHeading {
+  margin: 0;
+  font-size: var(--step-h2);
+}
+.bandNote {
+  margin: 0;
+  max-width: 34ch;
+  font-size: var(--step-lead);
+  line-height: 1.45;
+  color: var(--bone-100);
+}
+.bandHours {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--color-accent);
+}
+@media (min-width: 48em) {
+  .bandCard {
+    padding: var(--space-8) var(--space-8);
+  }
 }

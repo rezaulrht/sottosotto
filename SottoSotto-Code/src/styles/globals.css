@@ -13,7 +13,16 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   color-scheme: dark;
+  accent-color: var(--color-accent);
+  caret-color: var(--color-accent);
+  scrollbar-color: var(--concrete-500) var(--ink-950);
 }
+/* The parts the browser draws carry the palette too. */
+::selection {
+  background: var(--amber-500);
+  color: var(--ink-950);
+}
+
 body {
   min-height: 100dvh;
   background-color: var(--color-bg);
@@ -72,6 +81,34 @@ h4 {
 }
 a {
   color: inherit;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/*
+ * Motion everywhere (D79).
+ * Press: anything pressable gives a little under the finger. :where() keeps it weaker than any
+ * component's own transform, so it never fights a component's motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  :where(button, summary, [data-booking], [role='tab']):not(:disabled) {
+    transition: transform 140ms var(--ease-out);
+  }
+  :where(button, summary, [data-booking], [role='tab']):not(:disabled):active {
+    transform: scale(0.97);
+  }
+}
+/* Rises (src/motion/arrive.ts): a group's children come up in order the first time it is
+   seen. Only ever hidden while JS is watching it, so nothing is lost without JS. */
+[data-rise-wait] > * {
+  opacity: 0;
+  transform: translateY(18px);
+}
+:where([data-rising]) > * {
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 900ms var(--ease-out);
+  transition-delay: calc(var(--rise-i, 0) * 80ms);
 }
 
 /* Typography */

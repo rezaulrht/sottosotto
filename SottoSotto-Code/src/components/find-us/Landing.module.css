@@ -1,0 +1,139 @@
+/*
+ * Find Us opening (D75): the drone clip and the map share one stage. While the visitor
+ * scrolls through it, the clip zooms, softens and dissolves into the map, which settles on
+ * North Parade with the pin; then the address card comes in. `--p` (0..1) comes from
+ * LandingStage. Static (no JS, reduced motion): one screen with the map and the card.
+ */
+.landing {
+  --p: 1;
+  --mapIn: clamp(0, calc((var(--p) - 0.45) / 0.35), 1);
+  --infoIn: clamp(0, calc((var(--p) - 0.78) / 0.15), 1);
+  position: relative;
+}
+.landing[data-scrolly] {
+  --p: 0;
+  height: 260svh;
+}
+.stage {
+  position: relative;
+  height: 100svh;
+  min-height: 34rem;
+  overflow: hidden;
+  background: var(--ink-950);
+}
+.landing[data-scrolly] .stage {
+  position: sticky;
+  top: 0;
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  transform: scale(calc(1 + var(--p) * 0.35));
+  opacity: calc(1 - var(--mapIn));
+  filter: blur(calc(var(--mapIn) * 6px));
+}
+.landing[data-scrolly] .clip {
+  will-change: transform, opacity;
+}
+/* The Home hero's bottom fade does not belong here: the map takes over instead. */
+.clip > * {
+  mask-image: none;
+}
+.landing:not([data-scrolly]) .clip {
+  visibility: hidden;
+}
+
+.map {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 100svh);
+  opacity: var(--mapIn);
+  transform: translate(-50%, -50%) scale(calc(1.7 - var(--mapIn) * 0.7));
+}
+.landing[data-scrolly] .map {
+  will-change: transform, opacity;
+}
+.map figure > div {
+  border: 0;
+}
+/* The credit is shown on the stage instead (the figure is larger than the screen). */
+.map figcaption {
+  display: none;
+}
+/* Edges of the map sink into the dark, so the street and the pin hold the eye. */
+.map::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgb(12 11 10 / 0.85) 75%);
+}
+
+.title {
+  position: absolute;
+  left: var(--margin);
+  bottom: calc(var(--space-9) + 44px);
+  z-index: 3;
+  margin: 0;
+  opacity: calc(1 - var(--p) * 3);
+}
+.landing:not([data-scrolly]) .title {
+  opacity: 1;
+}
+.hint {
+  position: absolute;
+  right: var(--margin);
+  bottom: var(--space-6);
+  z-index: 3;
+  margin: 0;
+  color: var(--color-text-muted);
+  opacity: calc(1 - var(--p) * 4);
+}
+.landing:not([data-scrolly]) .hint {
+  display: none;
+}
+
+.card {
+  position: absolute;
+  left: var(--margin);
+  top: calc(var(--header-h) + var(--space-5));
+  z-index: 3;
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  max-width: 26rem;
+  padding: var(--space-6);
+  border: 1px solid rgb(237 232 223 / 0.14);
+  background: rgb(12 11 10 / 0.86);
+  opacity: var(--infoIn);
+  transform: translateY(calc((1 - var(--infoIn)) * 1.5rem));
+}
+/* Always in the page for screen readers and keyboards: tabbing to it early just shows it. */
+.card:focus-within {
+  opacity: 1;
+  transform: none;
+}
+.card address {
+  font-style: normal;
+  font-size: var(--step-lead);
+}
+.name {
+  margin: 0;
+  color: var(--color-accent-soft);
+}
+
+.credit {
+  position: absolute;
+  right: var(--margin);
+  bottom: var(--space-4);
+  z-index: 3;
+  margin: 0;
+  font-size: var(--step-small);
+  color: var(--color-text-dim);
+  opacity: var(--mapIn);
+}
+.credit a {
+  color: inherit;
+}

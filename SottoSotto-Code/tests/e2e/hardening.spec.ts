@@ -56,10 +56,10 @@ test('Home carries a Restaurant JSON-LD block without mock values', async ({ pag
   expect(blocks).toHaveLength(1);
   const ld = JSON.parse(blocks[0]!) as Record<string, unknown>;
   expect(ld).toMatchObject({ '@type': 'Restaurant', name: site.name, servesCuisine: 'Italian' });
-  // site.json address, geo, contact and social are flagged today, so they are left out.
-  expect(blocks[0]).not.toContain(site.address.postcode);
+  // The confirmed address and pin are in (D81); contact and social stay out while flagged.
+  expect(blocks[0]).toContain(site.address.postcode);
+  expect(blocks[0]).toContain(String(site.geo.lat));
   expect(blocks[0]).not.toContain(site.contact.phoneE164);
-  expect(blocks[0]).not.toContain(String(site.geo.lat));
 });
 
 test('sitemap lists every route on the real domain', async ({ request }) => {

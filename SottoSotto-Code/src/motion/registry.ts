@@ -25,8 +25,6 @@ const LOADERS: Record<string, () => Promise<{ default: Effect }>> = {
   'stair-descent': () => import('./effects/stair-descent'),
   'image-unmask': () => import('./effects/image-unmask'),
   'slow-zoom': () => import('./effects/slow-zoom'),
-  'rooms-gallery': () => import('./effects/rooms-gallery'),
-  'press-drop': () => import('./effects/press-drop'),
 };
 
 const namesOf = (el: HTMLElement) => (el.dataset.effect ?? '').split(/\s+/).filter(Boolean);

@@ -22,24 +22,27 @@ describe('image jobs (M5)', () => {
   });
 
   it('lists every venue image in page order', () => {
-    expect(venueImageRefs(venue)).toHaveLength(1 + 4 + 1 + 1 + 3 + 4);
+    expect(venueImageRefs(venue)).toHaveLength(1 + 4 + 1 + 1 + 1 + 1 + 12 + 2);
   });
 
   it('builds every dish photo and only the venue photos that have a src', () => {
     const jobs = imageJobs(dishes, venue);
     expect(jobs.filter((j) => j.folder === 'dishes')).toHaveLength(27);
-    // The street photo (D63) and the 13 photos from the current website (D69).
+    // The street photo (D63), the client's photos (D76) and the two Home uses them (D76).
     const withSrc = [
       venue.opening.image,
       ...venue.descent.images,
       venue.setting.image,
+      venue.stairs.image,
       venue.story.image,
-      ...venue.rooms.images,
-      ...venue.details.images,
+      venue.wall.texture,
+      ...venue.wall.images,
+      venue.home.wine,
+      venue.home.booking,
     ]
       .map((i) => i.src)
       .filter((s): s is string => s !== null);
-    expect(withSrc).toHaveLength(14);
+    expect(withSrc).toHaveLength(23);
     expect(
       jobs
         .filter((j) => j.folder === 'venue')
@@ -51,7 +54,7 @@ describe('image jobs (M5)', () => {
   it('adds a venue job, once, as soon as a src is set', () => {
     const withPhoto = structuredClone(venue) as Mutable;
     withPhoto.opening.image.src = SAMPLE;
-    withPhoto.rooms.images[0].src = SAMPLE; // the same photo twice is processed once
+    withPhoto.wall.images[0].src = SAMPLE; // the same photo twice is processed once
     const sampleJobs = imageJobs(dishes, withPhoto as typeof venue).filter(
       (j) => j.folder === 'venue' && j.source === SAMPLE,
     );

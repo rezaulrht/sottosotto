@@ -3,6 +3,7 @@
 import type Lenis from 'lenis';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import { enterPage, watchRises } from './arrive';
 import { MOTION_QUERIES } from './conditions';
 
 /** Jump to the URL hash target, honouring its scroll-margin-top (Lenis ignores it). */
@@ -88,12 +89,20 @@ export function MotionProvider() {
     // Only after in-app navigation: on a fresh load the browser's own hash jump is right.
     const navigated = !firstRouteRef.current;
     firstRouteRef.current = false;
+    // The new page settles in (never on a fresh load), and its groups wait to rise (D79).
+    const main = document.getElementById('main');
+    if (navigated && main) enterPage(main);
+    let stopRises: (() => void) | null = null;
     const id = requestAnimationFrame(() => {
+      stopRises = watchRises();
       void refreshScrollTriggers().then(() => {
         if (navigated) scrollToHash(lenisRef.current);
       });
     });
-    return () => cancelAnimationFrame(id);
+    return () => {
+      cancelAnimationFrame(id);
+      stopRises?.();
+    };
   }, [pathname]);
 
   return null;

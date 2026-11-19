@@ -1,20 +1,49 @@
+/* Hours beside the hero's Book button (D82): typographic, no pill, no dot. */
 .chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 32px;
-  padding: var(--space-1) var(--space-3);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--ink-900) 70%, transparent);
-  font-size: var(--step-small);
-  color: var(--color-text-muted);
-  font-variant-numeric: tabular-nums;
+  margin: 0;
+  padding-left: var(--space-4);
+  border-left: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  font-variant-numeric: tabular-nums lining-nums;
 }
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background: var(--color-accent);
+.inner {
+  display: grid;
+  gap: 0.2rem;
+}
+.when {
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--color-accent);
+}
+.detail {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--bone-100);
+}
+.detail::first-letter {
+  text-transform: uppercase;
+}
+/* Shown as layout, not as characters: kept in the text for reading aloud. */
+.sep {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: pre;
+}
+/* Today's state replaces the weekly summary after load: it settles in rather than swaps. */
+@media (prefers-reduced-motion: no-preference) {
+  .inner {
+    animation: hours-in 500ms var(--ease-out);
+  }
+}
+@keyframes hours-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
 }

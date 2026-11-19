@@ -120,6 +120,19 @@ export function validateContent(raw: RawFiles): Content {
     }
   }
 
+  if (site && manifest) {
+    for (const place of site.parking) {
+      const src = place.image?.src;
+      if (src && manifest[venueImageKey(src)]?.source !== src) {
+        issues.push({
+          file: 'site.json',
+          path: `parking "${place.name}" image`,
+          message: `No processed photo for "${src}". Put it in the assets folder and run \`npm run images\`.`,
+        });
+      }
+    }
+  }
+
   if (press && manifest) {
     for (const item of press.items) {
       const entry = manifest[pressImageKey(item.id)];

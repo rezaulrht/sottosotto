@@ -17,6 +17,10 @@ interface Props {
   ratio?: string;
   priority?: boolean;
   className?: string;
+  /** Extra class on the frame that clips the photo (e.g. an arched niche). */
+  frameClassName?: string;
+  /** Rise into place the first time it is seen (D82; see src/motion/arrive.ts). */
+  rise?: boolean;
 }
 
 /**
@@ -31,15 +35,20 @@ export function VenuePhoto({
   ratio = '4 / 3',
   priority,
   className,
+  frameClassName,
+  rise = false,
 }: Props) {
   const entry = venuePhoto(image);
   const style = fill ? undefined : ({ aspectRatio: ratio } as CSSProperties);
   return (
     <figure
       className={[styles.figure, fill ? styles.fill : null, className].filter(Boolean).join(' ')}
+      data-rise={rise ? '' : undefined}
     >
       <div
-        className={[styles.frame, image.credit ? styles.graded : null].filter(Boolean).join(' ')}
+        className={[styles.frame, image.credit ? styles.graded : null, frameClassName]
+          .filter(Boolean)
+          .join(' ')}
         style={style}
       >
         {entry ? (

@@ -4,20 +4,20 @@ Nothing here may be guessed. When a question is answered, update the data or doc
 
 **Blocks launch** = cannot go live without it. **Blocks build** = that part cannot be finished without it.
 
-Last updated 2026-11-14 (Update 1). Answered and removed: Q19 (signature dishes: Home shows the menu's courses instead, D68), Q25 (Hospres in a sheet: no longer needed, D59), Q2 (parking list: replaced by Q30), Q17 (privacy policy: used as is, D25), Q20 (architecture approved), Q26 (placeholder video, D50), Q43 (static map, D42), Q44 (Next.js, D30), Q46 (tools approved), Q49 (branching, D49).
+Last updated 2026-11-14 (Update 1). Answered and removed: Q6 (venue photos: the client sent 32 new photos on 2026-11-19, D76), Q19 (signature dishes: Home shows the menu's courses instead, D68), Q25 (Hospres in a sheet: no longer needed, D59), Q2 (parking list: replaced by Q30), Q17 (privacy policy: used as is, D25), Q20 (architecture approved), Q26 (placeholder video, D50), Q43 (static map, D42), Q44 (Next.js, D30), Q46 (tools approved), Q49 (branching, D49).
 
 ## Client: facts
 
 | # | Question | Why it matters | Blocks |
 |---|---|---|---|
-| Q1 | What are the exact street address and map pin, phone number, info@ and careers@ emails? The address is a mock ("10 North Parade"); the current site shows both "10 N Parade" and "12a North Parade". Phone and emails are placeholders from the current site. The press pages you sent (2012–2015) give 10 North Parade, Bath BA2 4AL and 01225 330236. | Footer, Find Us, map, careers, search listings | Launch |
+| Q1 | Are the phone number (01225 330236) and the info@ and careers@ emails current? They are placeholders from the current site. (Address and map pin are now confirmed from the Food Standards Agency register and OpenStreetMap: 10 North Parade, Bath BA2 4AL, D81.) | Footer, Find Us, map, careers, search listings | Launch |
 | Q13 | Are 14:00 and 22:00 last orders or closing times? The old meta text said "last orders 2pm and 10pm" with closing at 2.30 and 10.30. | Wording of hours and the "Open today" chip | Launch |
 | Q14 | Holiday closures. The Christmas Day and 1–14 January closures are mock placeholders from the old footer. What are the real ones (bank holidays too)? | Hours chip must not say "Open today" on a closed day | Launch |
 | Q10 | Which social accounts are current? Facebook and Twitter links are mock (from the old site, not checked). Is there an Instagram account to link (link only, no feed)? | Footer links | Launch |
 | Q12 | Exact wording of the allergy note and the sourcing note on the printed menu. We hold paraphrases only. | Menu, Dessert and Wine sections | Launch |
 | Q15 | What is the 125 ml price for still wines by the glass? The list says 125 ml is available but gives no price. | Wine list | No (can show the note only) |
 | Q27 | Are the dessert and cheese prices still right? They come from the old website PDF; they are not on the November 2026 menu. | Prices shown on the Dessert section | Launch |
-| Q30 | Real walking times from the restaurant to the three car parks (current values are mock estimates), and the address of the Bath Cricket Club Public Car Park. Also: do you want the optional "Getting here" lines (train, on foot), and what should they say? Both are mock. | Find Us parking cards | Launch |
+| Q30 | The address of the Bath Cricket Club Public Car Park. (Walking times are now measured and the "Getting here" lines written by us from OpenStreetMap routing, D80.) | Find Us parking | Launch |
 | Q34 | The restaurant's own story: who founded it and when it opened. A MOCK placeholder is in `data/venue.json`. The Bath Chronicle page the client sent (26 January 2012) says Sotto Sotto opened then, founded by Antonio Abategiovanni, chef Giuseppe D'Elisa and Carlo Battaglia: is that right, and can we use it? | Venue page "Our story" | Launch |
 
 ## Client: menu and allergens
@@ -40,9 +40,8 @@ Last updated 2026-11-14 (Update 1). Answered and removed: Q19 (signature dishes:
 | Q3 | Photos for the 4 side dishes. | Sides are text-only until then | No |
 | Q4 | Check the 9 "likely" photo matches by eye (list in `ASSETS.md`). | A wrong photo next to a dish misleads guests | Launch |
 | Q5 | Are the 35 dish images real photographs of Sotto Sotto's dishes? Are larger originals available (they are about 1535 px wide; the spec asks for 3000 px)? | Image quality on large screens; images must show the dishes actually served | Launch |
-| Q6 | Venue photos. We now use 13 photos from your current website (corridor, candles, vault, bar, dining room, details; D69), but they are only 500 × 350 px and look soft at full screen. Are they still current, and can you send the originals or new photos? | The whole Venue page and the Home venue teaser | Launch |
 | Q7 | Hero video, and the optional second video for the booking band. Both are MOCK placeholders. | Home hero | Launch |
-| Q9 | Logo in vector format (SVG, AI or EPS). Placeholder until then. | Only a small PNG exists | Build |
+| Q9 | Logo in vector format (SVG, AI or EPS). The site now uses the logo from the current website (300 × 115 PNG, D80); a vector original would keep it sharp at any size. | Header and footer use the small PNG | Build |
 | Q31 | Brand colours and fonts, if the client has any. The `DESIGN_SYSTEM.md` palette and type are placeholders. | Visual design | Build |
 | Q16 | Venue copy: may we use the TripAdvisor Certificate of Excellence sentence and the two press quotes (The Times 2012, The Sun 2013)? The TripAdvisor claim is undated, and the Sun quote names dishes no longer on the menu. | Extra venue copy beyond the North Parade text | No |
 | Q33 | Verify the North Parade text against a reliable source (e.g. Historic England) before launch: "designed by John Wood the Elder in 1741", "honey-coloured Bath stone", "views over the River Avon and Parade Gardens". It came from a Google summary. | Published historical claims | Launch |

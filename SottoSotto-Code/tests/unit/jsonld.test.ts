@@ -34,9 +34,11 @@ describe('JSON-LD Restaurant (D43)', () => {
     expect(leaked).toEqual([]);
   });
 
-  it('leaves out the flagged address, geo, telephone and social links today', () => {
-    expect(ld).not.toHaveProperty('address');
-    expect(ld).not.toHaveProperty('geo');
+  it('includes the confirmed address and pin (D81); leaves out flagged telephone and social', () => {
+    expect(ld).toMatchObject({
+      address: { streetAddress: '10 North Parade', postalCode: 'BA2 4AL', addressCountry: 'GB' },
+      geo: { latitude: site.geo.lat, longitude: site.geo.lng },
+    });
     expect(ld).not.toHaveProperty('telephone');
     expect(ld).not.toHaveProperty('sameAs');
   });

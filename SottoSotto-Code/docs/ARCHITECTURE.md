@@ -131,18 +131,17 @@ SottoSotto-Code/
 | | 2 Philosophy | `Philosophy` | Word reveal tied to scroll |
 | | 3 Venue teaser | `StairDescent` (teaser variant) | Pinned stair descent (desktop) |
 | | 4 Featured menu | `FeaturedDishes` | Dim → lit on hover, focus or centre of screen |
-| | 5 Wine strip | `WineMarquee` | Slow marquee; pauses on hover and focus |
+| | 5 Wine list | `WineRack` (tabs: labels on a shelf, card for the pulled wine) | Label pulls out on hover, tap or arrow keys (D77) |
 | | 6 Booking band | `BookingBand` | Image unmask / optional video |
 | | 7 Find us teaser | `FindUsTeaser` (StaticMap) | Unmask |
 | Menu | Tabs | `MenuTabs` (sticky; Wine label from `wine.json` `tab.label`) | Scroll-to + hash update |
 | | Menu, Dessert | `MenuSection` → `DishCard` (Picture, tags, `AllergenToggle`), `SideList`, `AllergenKey` | Candle lighting |
 | | Wine | `WineList` (groups), `BarSection` (uniformPrice / price / priceColumns shapes), `AllergenKey` | Candle lighting on rows |
 | Venue | 1 Opening | `VenueOpening` | Slow zoom on scroll |
-| | 2 Descent | `StairDescent` (full variant) | Pinned steps, warmer and darker |
-| | 3a Street, 3b Our story | `VenueStory` | Unmask, line reveals |
-| | 4 Rooms | `RoomsGallery` | Pinned horizontal scroll (desktop), scroll-snap (mobile) |
-| | 5 Details | `DetailsCollage` | Staggered unmask |
-| | 6 Booking prompt | `BookingPrompt` | — |
+| | 2 Street level | `VenuePhoto` + pull quote | Unmask, line reveals |
+| | 3 The stairs | CSS only (`venue.module.css`) | Scroll timeline: the street closes overhead, the line arrives step by step (D77) |
+| | 4 The vault: Our story, the rooms in niches | `VenuePhoto` with arch / round / plaque frames on the sticky stone wall | Niches light up as they enter (scroll timeline) |
+| | 5 Booking prompt | `BookButton` | — |
 | Find Us | 1 Map | `StaticMap` + `DirectionsLink` (§9.3) | — |
 | | 2 Contact | `ContactBlock` | Line reveals |
 | | 3 Parking | `ParkingCards` | — |
@@ -258,8 +257,8 @@ With `next/link` the root layout stays mounted between pages, so cleanup is expl
 
 | Section | Desktop | Mobile | Reduced motion |
 |---|---|---|---|
-| Stair descent (Home teaser, Venue) | Pinned for about 3–4 viewport heights; steps swap with a vertical slide; warm dark overlay 0 → 45% | Not pinned: photos stacked with the same darkening per photo, fading in | Stacked, no animation |
-| Rooms gallery | Pinned horizontal scroll | Native horizontal scroll with `scroll-snap` | Native scroll |
+| Stair descent (Home teaser) | Pinned for about 3–4 viewport heights; steps swap with a vertical slide; warm dark overlay 0 → 45% | Not pinned: photos stacked with the same darkening per photo, fading in | Stacked, no animation |
+| Venue stairs, niches (D77) | CSS scroll timeline: stage held for 280svh; niches light up | Same (CSS) | Static: the line on the stone, niches lit; also where scroll timelines are unsupported |
 | Philosophy word reveal | Scrubbed opacity | Scrubbed opacity (cheap) | Full text visible |
 
 `ScrollTrigger.config({ ignoreMobileResize: true })` avoids jumps when the iOS address bar hides. Text splitting keeps the real sentence for screen readers (split spans are `aria-hidden` with an `sr-only` copy, or SplitText's built-in aria option).

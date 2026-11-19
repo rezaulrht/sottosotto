@@ -63,20 +63,7 @@
   line-height: var(--leading-display);
 }
 
-/* Cards and grids */
-.grid {
-  display: grid;
-  gap: var(--space-7) var(--gutter);
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-  padding: 0;
-  list-style: none;
-}
-
-.card {
-  display: grid;
-  gap: var(--space-3);
-  align-content: start;
-}
+/* Lists */
 .cardTitle {
   font-size: var(--step-h3);
 }
@@ -130,10 +117,32 @@
 .tabs a:hover {
   color: var(--color-accent);
 }
+.tabs a {
+  position: relative;
+}
+.tabs a::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0.55rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--ease-out);
+}
 .tabs a[aria-current] {
   color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 0.45em;
+}
+.tabs a[aria-current]::after {
+  transform: scaleX(1);
+}
+/* When the header tucks away (D79) the tabs ride up with it instead of leaving a gap. */
+.tabs {
+  transition: transform 380ms var(--ease-out);
+}
+:global(html:has(header[data-tucked])) .tabs {
+  transform: translateY(calc(-1 * var(--header-h-compact)));
+  transition-duration: 260ms;
 }
 
 .menuSection {
@@ -145,9 +154,34 @@
   margin-top: var(--space-8);
 }
 .groupTitle {
+  position: relative;
   display: grid;
   gap: var(--space-1);
   margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+}
+/* Each course is underlined by a hairline that draws as you reach it (D80). */
+.groupTitle::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-accent), transparent 70%);
+  transform-origin: left;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .groupTitle::after {
+      animation: rule-draws linear both;
+      animation-timeline: view();
+      animation-range: entry 40% cover 30%;
+    }
+  }
+}
+@keyframes rule-draws {
+  from {
+    transform: scaleX(0);
+  }
 }
 .groupTitle small {
   font-family: var(--font-label);
@@ -230,13 +264,71 @@
   color: var(--color-accent);
 }
 
-.parkingCard {
+.parkingList {
+  max-width: 48rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--color-border);
+}
+.parkingRow {
   display: grid;
-  gap: var(--space-2);
-  align-content: start;
-  padding: var(--space-5);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  grid-template-columns: 6.5rem 1fr;
+  gap: var(--space-5);
+  align-items: baseline;
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+.walk {
+  display: grid;
+  font-family: var(--font-display);
+  font-size: var(--step-h2);
+  font-weight: 300;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--color-accent-soft);
+}
+.walk .label {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+.parkingText {
+  display: grid;
+  gap: var(--space-1);
+}
+.parkingPhoto {
+  grid-column: 1 / -1;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parkingPhoto picture {
+      animation: photo-wipe linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 35%;
+    }
+  }
+}
+@keyframes photo-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: scale(1.08);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+@media (min-width: 48em) {
+  .parkingList {
+    max-width: 60rem;
+  }
+  .parkingRow {
+    grid-template-columns: 6.5rem 1fr 18rem;
+    align-items: start;
+  }
+  .parkingPhoto {
+    grid-column: auto;
+  }
 }
 
 /* Privacy */
@@ -311,27 +403,57 @@
   margin-top: var(--space-7);
 }
 
-/* Find Us map */
-.findMap {
-  width: 100%;
-  max-width: 40rem;
+/* Find Us: the opening stage (D75) runs under the fixed header, like the Home hero. */
+.page:has(> [data-find-stage]) {
+  padding-top: 0;
 }
 
-/* Find Us: the client's drone clip opens the page (D71); the title sits low on it. */
-.findHero {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  align-items: end;
-  min-height: 70svh;
+/* ---- Motion on the quiet pages (D79) */
+
+/* Privacy: a thin amber line along the top shows how far through the policy you are. */
+.progress {
+  display: none;
 }
-.findHeroText {
-  position: relative;
-  z-index: 1;
-  /* Leave room for the pause button at the bottom left. */
-  padding-bottom: calc(var(--space-5) + 44px + var(--space-5));
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .progress {
+      display: block;
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: calc(var(--z-header) + 1);
+      height: 2px;
+      background: var(--color-accent);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: read-through linear both;
+      animation-timeline: scroll(root);
+    }
+  }
 }
-/* The clip runs under the fixed header, like the Home hero. */
-.page:has(> .findHero) {
-  padding-top: 0;
+@keyframes read-through {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* 404: the heading surfaces from below its own baseline, then the line under it. */
+@media (prefers-reduced-motion: no-preference) {
+  .lost {
+    animation: surface 900ms var(--ease-out) 80ms both;
+  }
+  .lostLead {
+    animation: surface 700ms var(--ease-out) 320ms both;
+  }
+}
+@keyframes surface {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 -0.2em 0);
+    transform: none;
+  }
 }

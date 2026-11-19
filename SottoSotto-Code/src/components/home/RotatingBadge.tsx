@@ -31,9 +31,15 @@ export function RotatingBadge({ text = 'Book a table' }: Props) {
           </textPath>
         </text>
       </svg>
-      <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.arrow}>
-        <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" strokeWidth="1.25" />
-      </svg>
+      {/* The grapes from the logo (D82): the restaurant's own mark at the centre of the ring. */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export, tiny PNG */}
+      <img
+        src="/brand/sotto-sotto-grapes.png"
+        alt=""
+        width={48}
+        height={36}
+        className={styles.mark}
+      />
       <span className="sr-only">Book a Table</span>
     </Link>
   );
