@@ -3,7 +3,7 @@ import { BookButton } from '@/components/global/BookButton';
 import { Picture } from '@/components/shared/Picture';
 import { VenuePhoto } from '@/components/shared/VenuePhoto';
 import { pageMetadata, venue, venuePhoto } from '@/content';
-import { siteEnv } from '@/lib/env';
+import { isDemo, siteEnv } from '@/lib/env';
 import { MotionScope } from '@/motion/MotionScope';
 import styles from './venue.module.css';
 
@@ -28,6 +28,7 @@ export default function VenuePage() {
   // The street fact needs verification (Q33): shown in dev/staging only; a production
   // build cannot run while it is flagged.
   const showFact = !setting.fact.needsVerification || siteEnv() !== 'production';
+  const showStory = !(story.mock && isDemo());
   const street = venuePhoto(stairs.image);
   const streetCredit = stairs.image.credit;
   const stone = venuePhoto(wall.texture);
@@ -112,25 +113,27 @@ export default function VenuePage() {
           </div>
         ) : null}
 
-        {/* 4a. Our story (MOCK, Q34) */}
-        <section className={styles.story} aria-labelledby="venue-story">
-          <div className={`container ${styles.storyGrid}`}>
-            <VenuePhoto
-              image={story.image}
-              sizes="(min-width: 64em) 30vw, 70vw"
-              ratio="3 / 4"
-              className={`${styles.niche} ${styles.storyNiche}`}
-              frameClassName={styles.arch}
-              rise
-            />
-            <div className={styles.storyText} data-rise="">
-              <h2 id="venue-story" className={styles.heading}>
-                {story.heading}
-              </h2>
-              <p className={styles.lead}>{story.text}</p>
+        {/* 4a. Our story (MOCK, Q34): left out of the client demo until the text exists (D83). */}
+        {showStory ? (
+          <section className={styles.story} aria-labelledby="venue-story">
+            <div className={`container ${styles.storyGrid}`}>
+              <VenuePhoto
+                image={story.image}
+                sizes="(min-width: 64em) 30vw, 70vw"
+                ratio="3 / 4"
+                className={`${styles.niche} ${styles.storyNiche}`}
+                frameClassName={styles.arch}
+                rise
+              />
+              <div className={styles.storyText} data-rise="">
+                <h2 id="venue-story" className={styles.heading}>
+                  {story.heading}
+                </h2>
+                <p className={styles.lead}>{story.text}</p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
 
         {/* 4b. The rooms, set into the wall */}
         <section className={styles.wall} aria-labelledby="venue-rooms">

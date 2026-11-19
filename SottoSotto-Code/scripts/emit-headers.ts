@@ -72,12 +72,36 @@ if (!existsSync(outDir)) {
   process.exit(1);
 }
 mkdirSync(join(deployDir, 'nginx'), { recursive: true });
-// M2 review pages (D53) never ship to production: remove them so they are real 404s.
-if (env === 'production') rmSync(join(outDir, 'lab'), { recursive: true, force: true });
+// M2 review pages (D53) never ship to production or the demo: remove them so they are real 404s.
+if (env === 'production' || env === 'demo') {
+  rmSync(join(outDir, 'lab'), { recursive: true, force: true });
+}
 
 writeFileSync(join(outDir, '_headers'), headersFile());
 writeFileSync(join(outDir, '_redirects'), redirectsFile());
 writeFileSync(join(deployDir, 'vercel.json'), vercelConfig());
+// The demo is hosted on Vercel (D83): Vercel reads vercel.json from the project root before
+// it builds, so the demo build keeps the committed copy in step (build command, output,
+// headers, redirects). Commit it after `npm run build:demo` changes it.
+if (env === 'demo') {
+  const config = JSON.parse(vercelConfig()) as Record<string, unknown>;
+  writeFileSync(
+    join(root, 'vercel.json'),
+    JSON.stringify(
+      {
+        $schema: 'https://openapi.vercel.sh/vercel.json',
+        framework: null,
+        installCommand: 'npm ci',
+        buildCommand: 'npm run build:demo',
+        outputDirectory: 'out',
+        trailingSlash: true,
+        ...config,
+      },
+      null,
+      2,
+    ) + '\n',
+  );
+}
 writeFileSync(join(deployDir, 'nginx', 'security-headers.conf'), nginxConf());
 console.log(
   `✓ Headers and redirects written for SITE_ENV=${env} (out/_headers, out/_redirects, deploy/).`,

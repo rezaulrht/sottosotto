@@ -4,7 +4,7 @@ import { Footer } from '@/components/global/Footer';
 import { Header } from '@/components/global/Header';
 import { MockBadge, showMockBadge } from '@/components/global/MockBadge';
 import { bookingFlowProps, seo, site } from '@/content';
-import { siteEnv } from '@/lib/env';
+import { siteEnv, siteUrl } from '@/lib/env';
 import { MotionProvider } from '@/motion/MotionProvider';
 import { BookingDialog } from '@/booking/BookingDialog';
 import { CookieBanner } from '@/consent/CookieBanner';
@@ -16,7 +16,7 @@ import '@/styles/globals.css';
 const indexable = siteEnv() === 'production' && !showMockBadge();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.website),
+  metadataBase: new URL(siteUrl(site.website)),
   title: { template: seo.titleTemplate, default: seo.pages.home.title },
   description: seo.pages.home.description,
   applicationName: site.name,

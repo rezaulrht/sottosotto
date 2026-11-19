@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   env: {
     SITE_ENV: process.env.SITE_ENV ?? 'development',
+    SITE_URL: process.env.SITE_URL ?? '',
   },
 };
 

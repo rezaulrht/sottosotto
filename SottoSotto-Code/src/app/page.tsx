@@ -8,6 +8,7 @@ import {
 } from '@/components/home/HomeSections';
 import { PressSection } from '@/components/home/PressSection';
 import { pageMetadata, site } from '@/content';
+import { siteUrl } from '@/lib/env';
 import { weeklySummary } from '@/lib/hours';
 import { restaurantJsonLd, serialiseJsonLd } from '@/lib/jsonld';
 import { legacyRedirectScript } from '@/lib/nav';
@@ -31,7 +32,9 @@ export default function HomePage() {
       <script dangerouslySetInnerHTML={{ __html: legacyRedirectScript() }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serialiseJsonLd(restaurantJsonLd(site)) }}
+        dangerouslySetInnerHTML={{
+          __html: serialiseJsonLd(restaurantJsonLd({ ...site, website: siteUrl(site.website) })),
+        }}
       />
       <HomeHero hoursSummary={openDaysSummary()} />
       <Philosophy />

@@ -17,6 +17,7 @@
     "contrast": "tsx scripts/check-contrast.ts",
     "build": "npm run content:guard && next build && tsx scripts/emit-headers.ts",
     "build:staging": "SITE_ENV=staging npm run build",
+    "build:demo": "SITE_ENV=demo SITE_URL=https://sottosotto.vercel.app npm run build",
     "build:production": "SITE_ENV=production npm run build",
     "start": "npx --yes serve@14.2.4 out -l 3000",
     "lint": "eslint .",

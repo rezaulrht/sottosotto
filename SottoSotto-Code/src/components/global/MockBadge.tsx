@@ -2,9 +2,13 @@ import { flags } from '@/content';
 import { mockOverride, siteEnv } from '@/lib/env';
 import styles from './MockBadge.module.css';
 
-/** True when the mock badge must show: dev and staging, or production built with the override. */
+/**
+ * True when the mock badge must show: development and staging, or production built with the
+ * override. Never in the client demo (D83).
+ */
 export function showMockBadge(): boolean {
-  return siteEnv() !== 'production' || mockOverride();
+  const env = siteEnv();
+  return env === 'development' || env === 'staging' || mockOverride();
 }
 
 /**
